@@ -1,104 +1,183 @@
-import React from 'react';
-import { ShieldCheck, Sparkles, Lock, ArrowLeft } from 'lucide-react';
+import React, { useState } from 'react';
+import { ShieldCheck, Lock, ArrowLeft, FileText, CheckCircle2, Mail, Phone } from 'lucide-react';
+
+const SECTIONS = [
+  { id: 'non-disclosure', title: '1. Third Party Non-Disclosure' },
+  { id: 'data-protection', title: '2. Data Protection & Consent' },
+  { id: 'credentials', title: '3. User Credentials & Responsibilities' },
+  { id: 'optional-info', title: '4. Optional Information Choice' },
+  { id: 'communication', title: '5. User Communication & Cookies' },
+  { id: 'compliance', title: '6. Law Enforcement Compliance' },
+  { id: 'remarketing', title: '7. Authenticity & Display Remarketing' }
+];
 
 export default function PrivacyPolicyPage({ onNavigate }) {
+  const [activeSection, setActiveSection] = useState('non-disclosure');
+
   return (
-    <div className="pt-28 pb-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+    <div className="pt-28 sm:pt-36 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
-      <div>
+      {/* 1. Top Breadcrumb Navigation */}
+      <div className="flex items-center justify-between border-b border-[#DEDAD2] pb-4">
         <button
           onClick={() => onNavigate('/')}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-none bg-white text-[#B69B65] border border-[#E6E2D8] text-xs font-mono uppercase tracking-wider hover:border-[#B69B65] transition-all"
+          className="inline-flex items-center gap-2 text-xs font-sans font-semibold uppercase tracking-[0.18em] text-[#B69B65] hover:text-[#171717] transition-colors cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Back to Home</span>
+          <span>Return to Home</span>
         </button>
+
+        <span className="text-[11px] font-sans text-[#77736C] uppercase tracking-wider hidden sm:inline">
+          Legal Framework • Version 2.4
+        </span>
       </div>
 
-      <div className="text-center space-y-3 border-b border-[#E6E2D8] pb-8">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-none bg-white border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase tracking-widest">
-          <ShieldCheck className="w-3.5 h-3.5 text-[#B69B65]" />
-          <span>OFFICIAL LEGAL DOCUMENTATION</span>
+      {/* 2. Executive Page Banner */}
+      <div className="bg-[#FAF9F6] border border-[#DEDAD2] p-8 sm:p-12 relative overflow-hidden">
+        <div className="max-w-3xl space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#DEDAD2] text-[#B69B65] text-[10px] font-sans font-bold uppercase tracking-[0.25em]">
+            <ShieldCheck className="w-3.5 h-3.5" />
+            <span>Corporate Governance</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-cinzel font-bold text-[#171717] tracking-tight">
+            Privacy Policy
+          </h1>
+          <p className="text-sm sm:text-base text-[#5C5852] font-light leading-relaxed">
+            Nirvana Group is committed to upholding strict confidentiality, digital data protection, and transparent advisory standards across all investor and client communications.
+          </p>
         </div>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight">
-          Privacy Policy
-        </h1>
-        <p className="text-xs sm:text-sm text-[#5C5852] font-light">
-          Subject to the terms of the Site Policy (User Agreement) of NIRVANA GROUP website.
-        </p>
       </div>
 
-      <div className="rounded-none bg-white p-6 sm:p-10 border border-[#E6E2D8] shadow-xl space-y-8 text-xs sm:text-sm text-[#5C5852] leading-relaxed font-light">
+      {/* 3. Two-Column Corporate Dossier Layout */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         
-        <div className="p-4 rounded-none bg-[#FAF9F6] border border-[#E6E2D8] text-[#B69B65] text-xs font-mono">
-          This Privacy policy is subject to the terms of the Site Policy (User Agreement) of this website.
+        {/* Left Column: Sticky Index Navigation & Corporate Credentials */}
+        <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
+          
+          <div className="bg-white border border-[#DEDAD2] p-6 space-y-4 shadow-sm">
+            <span className="text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-[#B69B65] block border-b border-[#DEDAD2] pb-2">
+              DOCUMENT SECTIONS
+            </span>
+            
+            <nav className="space-y-1.5">
+              {SECTIONS.map((sec) => (
+                <a
+                  key={sec.id}
+                  href={`#${sec.id}`}
+                  onClick={() => setActiveSection(sec.id)}
+                  className={`block px-3 py-2 text-xs font-sans transition-colors cursor-pointer ${
+                    activeSection === sec.id
+                      ? 'bg-[#FAF9F6] border-l-2 border-[#B69B65] text-[#171717] font-semibold'
+                      : 'text-[#5C5852] hover:text-[#171717] hover:bg-[#FAF9F6]'
+                  }`}
+                >
+                  {sec.title}
+                </a>
+              ))}
+            </nav>
+          </div>
+
+          {/* Privacy Office Contact Card */}
+          <div className="bg-[#FAF9F6] border border-[#DEDAD2] p-6 space-y-3">
+            <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#77736C] block">
+              Grievance & Privacy Desk
+            </span>
+            <p className="text-xs text-[#5C5852] leading-relaxed">
+              For inquiries regarding personal data processing or to opt out of communications, contact our legal desk:
+            </p>
+            <div className="space-y-2 pt-1 text-xs">
+              <a href="mailto:himanshuramchandani2006@gmail.com" className="flex items-center gap-2 text-[#171717] hover:text-[#B69B65] transition-colors truncate">
+                <Mail className="w-3.5 h-3.5 text-[#B69B65] shrink-0" />
+                <span className="truncate">himanshuramchandani2006@gmail.com</span>
+              </a>
+              <a href="tel:+919081507342" className="flex items-center gap-2 text-[#171717] hover:text-[#B69B65] transition-colors">
+                <Phone className="w-3.5 h-3.5 text-[#B69B65] shrink-0" />
+                <span>+91 90815 07342</span>
+              </a>
+            </div>
+          </div>
+
         </div>
 
-        <div className="space-y-6 divide-y divide-[#E6E2D8]">
+        {/* Right Column: Complete Legal Clauses */}
+        <div className="lg:col-span-8 bg-white border border-[#DEDAD2] p-8 sm:p-12 shadow-sm space-y-10 text-xs sm:text-sm text-[#3D3A35] leading-relaxed font-light">
           
-          <div className="pt-4 space-y-2">
-            <h3 className="font-bold text-[#B69B65] font-mono text-xs uppercase tracking-wider">[1] Third Party Non-Disclosure</h3>
-            <p>
-              The personal information provided by the users to us will not be provided to third parties without previous consent of the concerned user. Information of a general nature may however be revealed to external parties.
-            </p>
+          <div className="p-4 bg-[#FAF9F6] border border-[#DEDAD2] text-xs text-[#5C5852] font-sans">
+            <strong className="text-[#171717] font-semibold">Statutory Preamble:</strong> This Privacy Policy is subject to the terms of the Master Site Policy (User Agreement) of the NIRVANA GROUP digital platform.
           </div>
 
-          <div className="pt-4 space-y-2">
-            <h3 className="font-bold text-[#B69B65] font-mono text-xs uppercase tracking-wider">[2] Data Protection & Consent</h3>
+          {/* Clause 1 */}
+          <section id="non-disclosure" className="space-y-3 pt-2">
+            <h2 className="text-lg sm:text-xl font-serif font-bold text-[#171717]">
+              1. Third Party Non-Disclosure Framework
+            </h2>
             <p>
-              Every effort shall be made to keep the information provided by the users in a safe manner, the information will be displayed on the website will be done so only after obtaining consent from the users.
+              The personal information provided by clients and investors to NIRVANA GROUP will not be shared, rented, or distributed to non-affiliated third parties without the prior explicit consent of the concerned user. Non-personally identifiable statistical summaries of a general demographic nature may be utilized internally for architectural portfolio planning.
             </p>
-          </div>
+          </section>
 
-          <div className="pt-4 space-y-2">
-            <h3 className="font-bold text-[#B69B65] font-mono text-xs uppercase tracking-wider">[3] User Responsibilities & Transaction Credentials</h3>
+          {/* Clause 2 */}
+          <section id="data-protection" className="space-y-3 pt-6 border-t border-[#DEDAD2]">
+            <h2 className="text-lg sm:text-xl font-serif font-bold text-[#171717]">
+              2. Data Protection, Storage & Consent
+            </h2>
             <p>
-              You are solely responsible for maintaining confidentiality of the User password and user identification and all activities and transmission performed by the User through his user identification and shall be solely responsible for carrying out any online or off-line transaction involving credit cards / debit cards or such other forms of instruments or documents for making such transactions and NIRVANA GROUP assumes no responsibility or liability for their improper use of information relating to such usage of credit cards / debit cards used by the subscriber online / off-line.
+              Rigorous administrative and digital safeguards are maintained to keep all client information safe and restricted. Any display or attribution of testimonials or client feedback on our platforms is performed strictly following written authorization.
             </p>
-          </div>
+          </section>
 
-          <div className="pt-4 space-y-2">
-            <h3 className="font-bold text-[#B69B65] font-mono text-xs uppercase tracking-wider">[4] Optional Information Choice</h3>
+          {/* Clause 3 */}
+          <section id="credentials" className="space-y-3 pt-6 border-t border-[#DEDAD2]">
+            <h2 className="text-lg sm:text-xl font-serif font-bold text-[#171717]">
+              3. User Credentials & Financial Transaction Disclaimer
+            </h2>
             <p>
-              A user always has the option of not providing the information which is not mandatory.
+              Clients are solely responsible for maintaining the confidentiality of any access credentials, consultation portals, and personal transmission IDs. NIRVANA GROUP explicitly does not solicit banking passwords or debit/credit card CVV credentials over telephone or unencrypted channels.
             </p>
-          </div>
+          </section>
 
-          <div className="pt-4 space-y-2">
-            <h3 className="font-bold text-[#B69B65] font-mono text-xs uppercase tracking-wider">[5] User Communication & Personalization</h3>
+          {/* Clause 4 */}
+          <section id="optional-info" className="space-y-3 pt-6 border-t border-[#DEDAD2]">
+            <h2 className="text-lg sm:text-xl font-serif font-bold text-[#171717]">
+              4. Optional Information Choice
+            </h2>
             <p>
-              <strong className="text-[#171717]">To Communicate with You:</strong> We may use your information to respond to your inquiries, provide customer service support, send you important information about the services, and send you marketing communications (with your consent) via different channels, including but not limited to SMS, Email, WhatsApp, RCS and Voice.
+              Visitors retain complete autonomy to decline furnishing non-mandatory profile fields during portfolio brochure requests and site visit reservations.
+            </p>
+          </section>
+
+          {/* Clause 5 */}
+          <section id="communication" className="space-y-3 pt-6 border-t border-[#DEDAD2]">
+            <h2 className="text-lg sm:text-xl font-serif font-bold text-[#171717]">
+              5. Communications & Cookie Preferences
+            </h2>
+            <p>
+              We utilize client contact coordinates to respond to asset inquiries, share certified RERA documentation, coordinate scheduled site inspections, and deliver relevant architectural updates via SMS, Email, WhatsApp, and voice consultations.
             </p>
             <p className="mt-2">
-              In order to provide a personalized browsing experience, we may collect personal information from you. Also, we may require you to complete a registration form or ask for some information seeking your preferences regarding the property you are looking for. Based on your preferences, we will be able to deliver or allow you to access the most relevant information that meets your end.
+              To enhance navigational speed, our web platform utilizes lightweight session cookies. Visitors may adjust individual browser settings to decline cookie storage without inhibiting core property viewing capabilities.
             </p>
-            <p className="mt-2">
-              To extend this personalized experience we may track the IP address of a User’s computer / device and save certain information on your system in the form of cookies. A User has the option of accepting or declining the cookies of this website by changing the settings of your browser.
-            </p>
-          </div>
+          </section>
 
-          <div className="pt-4 space-y-2">
-            <h3 className="font-bold text-[#B69B65] font-mono text-xs uppercase tracking-wider">Site Usage, Marketing & Law Enforcement Compliance</h3>
+          {/* Clause 6 */}
+          <section id="compliance" className="space-y-3 pt-6 border-t border-[#DEDAD2]">
+            <h2 className="text-lg sm:text-xl font-serif font-bold text-[#171717]">
+              6. Regulatory & Law Enforcement Cooperation
+            </h2>
             <p>
-              Any User browsing this website, is not required to disclose his identity or provide any of his information every time. It is only at the time of registration, the User is required to furnish the details in the registration form. You agree that NIRVANA GROUP may use personal information provided by you to improve its marketing and promotional efforts, to analyze site usage, improve the Site’s content and product offerings, and customize the Site’s content, layout, and services. This shall further improve the website content and help us to tailor it to meet your needs, and to provide a smooth, efficient, safe and customized experience while using this website.
+              All NIRVANA GROUP web properties operate in strict conformity with applicable Indian regulatory frameworks, including the Real Estate (Regulation and Development) Act (RERA) and the Information Technology Act. We cooperate fully with verified statutory authorities under lawful directives.
             </p>
-            <p className="mt-2">
-              You agree that NIRVANA GROUP may use your personal information to contact you and deliver information to you that are targeted to your interests, such as targeted banner advertisements, administrative notices, product offerings, forum comments and reviews, your portfolio related updates, and communications relevant to your use of this website. By accepting this Privacy Policy, you explicitly agree to receive this information via SMS, Whatsapp, Email or Calls. If you do not wish to receive these communications, you may opt out of the receipt of certain communications in your profile. You may make changes to your profile at any time. It is the belief of NIRVANA GROUP that privacy of a person can be best guaranteed by working in conjunction with the Law enforcement authorities.
-            </p>
-            <p className="mt-2">
-              All NIRVANA GROUP websites including this website fully comply with all Indian Laws applicable. NIRVANA GROUP has always cooperated with all law enforcement inquires. NIRVANA GROUP may disclose all or part of your personal details in response to a request from the law enforcement authorities or in a case of bonafide requirement to prevent an imminent breach of the law.
-            </p>
-          </div>
+          </section>
 
-          <div className="pt-4 space-y-2">
-            <h3 className="font-bold text-[#B69B65] font-mono text-xs uppercase tracking-wider">Authenticity & Display Advertising Remarketing</h3>
+          {/* Clause 7 */}
+          <section id="remarketing" className="space-y-3 pt-6 border-t border-[#DEDAD2]">
+            <h2 className="text-lg sm:text-xl font-serif font-bold text-[#171717]">
+              7. Authenticity & Display Remarketing
+            </h2>
             <p>
-              NIRVANA GROUP has taken all reasonable steps to ensure that all the information on this website is authentic. Users are advised to research independently the credential of the advertisers provided on this website. NIRVANA GROUP shall not have any responsibility in this regard. We also recommend that you visit link to User Agreement for more comprehensive information on this aspect.
+              NIRVANA GROUP undertakes exhaustive verification of all architectural benchmarks, unit sizes, and corridor specifications published on this platform. Users may opt out of third-party analytics remarketing through Google Ads Preferences at any time.
             </p>
-            <p className="mt-2">
-              NIRVANA GROUP has implemented and uses Display Advertising. NIRVANA GROUP is using Remarketing with Google Analytics to advertise online. You can opt-out of Google Analytics for Display Advertising and customize Google Display Network ads using the Ads Preferences Manager. Third-party vendors, including Google, show our ads on sites across the Internet. We and third-party vendors, including Google, use first-party cookies (such as the Google Analytics cookies) and third-party cookies (such as the Double Click cookie) together to inform, optimize, and serve ads based on someone’s past visits to our website.
-            </p>
-          </div>
+          </section>
 
         </div>
 

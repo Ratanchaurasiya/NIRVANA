@@ -59,22 +59,22 @@ export default function ProjectDetailPage({ projectId, onNavigate, onShowToast }
         </div>
       </div>
 
-      {/* ---------------- 2. 3D FLOOR PLAN LAYOUT VIEWER Visual ---------------- */}
+      {/* ---------------- 2. ARCHITECTURAL FLOOR PLAN LAYOUT STUDIO ---------------- */}
       <div className="space-y-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between border-b border-[#DEDAD2] pb-3">
           <h2 className="text-xl font-serif font-bold text-[#171717] flex items-center gap-2">
             <Layers className="w-5 h-5 text-[#B69B65]" />
-            <span>Interactive Floor Plan Layout</span>
+            <span>Architectural CAD Floor Plan & Spatial Layout</span>
           </h2>
-          <span className="text-xs font-mono text-[#77736C]">Drag to inspect layout</span>
+          <span className="text-xs font-sans text-[#77736C]">Sanctioned CAD Schematic</span>
         </div>
 
-        {/* 3D Floor Plan Viewer Component */}
+        {/* CAD Floor Plan Studio Component */}
         <FloorPlan3DViewer unitName={project.floorPlanUnit} />
       </div>
 
       {/* ---------------- 3. DEVELOPMENT METRICS GRID ---------------- */}
-      <div className="rounded-none bg-white p-6 sm:p-8 border border-[#E6E2D8] shadow-xl space-y-6">
+      <div className="bg-white p-6 sm:p-8 border border-[#DEDAD2] shadow-sm space-y-6">
         <h3 className="text-lg font-serif font-bold text-[#171717] border-b border-[#E6E2D8] pb-3">
           Development Metrics & Specifications
         </h3>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Compass, Shield, Award } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Award, Building2, CheckCircle2 } from 'lucide-react';
 import Hero3DBuilding from './3d/Hero3DBuilding';
 
 const Hero = ({ onNavigate, onOpenDossier }) => {
@@ -26,12 +26,12 @@ const Hero = ({ onNavigate, onOpenDossier }) => {
         {/* 2. Main Hero Editorial Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center w-full">
           
-          {/* Left Column: Brand Typography, Tagline, Editorial Description & CTAs */}
+          {/* Left Column: Brand Typography, Tagline, Editorial Description, CTAs & Metrics */}
           <div className="lg:col-span-6 xl:col-span-7 flex flex-col items-start space-y-6 text-left">
             
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#DEDAD2] text-[#B69B65] text-[10px] font-sans font-bold uppercase tracking-[0.25em] shadow-sm">
-                <span>Developer Portfolio</span>
+                <span>Official Developer Portfolio</span>
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-cinzel font-bold text-[#171717] tracking-[0.04em] leading-[1.06]">
                 NIRVANA GROUP
@@ -43,11 +43,11 @@ const Hero = ({ onNavigate, onOpenDossier }) => {
 
             {/* Architectural Sub-Manifesto */}
             <p className="text-sm sm:text-base text-[#3D3A35] font-light leading-relaxed max-w-xl">
-              Curating landmark corporate environments, high-street retail suites, and bespoke residential sanctuaries across Western Ahmedabad’s highest-velocity growth corridors.
+              Delivering state-of-the-art corporate offices, prime commercial retail suites, and curated luxury residential estates across Science City, Sola, and SG Highway growth corridors in Gujarat.
             </p>
 
             {/* Action Buttons: Clean Architectural Geometry */}
-            <div className="flex flex-wrap items-center gap-4 pt-2 w-full sm:w-auto">
+            <div className="flex flex-wrap items-center gap-4 pt-1 w-full sm:w-auto">
               <button
                 onClick={() => onNavigate && onNavigate('/projects')}
                 className="w-full sm:w-auto px-8 py-3.5 bg-[#B69B65] text-white text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#A38854] transition-all flex items-center justify-center gap-2.5 cursor-pointer shadow-sm"
@@ -64,16 +64,31 @@ const Hero = ({ onNavigate, onOpenDossier }) => {
               </button>
             </div>
 
-            {/* Architectural Trust Pillars */}
-            <div className="flex items-center gap-6 pt-2 text-[11px] font-sans uppercase tracking-[0.18em] text-[#77736C]">
-              <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#B69B65]" />
-                100% RERA Registered
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#B69B65]" />
-                BIS Zone 5 Engineered
-              </span>
+            {/* Architectural Credibility Matrix Strip (Eliminates Blank Space on Left) */}
+            <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-3 pt-3 border-t border-[#DEDAD2]">
+              <div className="p-3 bg-white border border-[#DEDAD2] space-y-0.5">
+                <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#B69B65] block">Portfolio</span>
+                <span className="text-base font-serif font-bold text-[#171717] block">6 Projects</span>
+                <span className="text-[10px] text-[#77736C] block">Ahmedabad</span>
+              </div>
+
+              <div className="p-3 bg-white border border-[#DEDAD2] space-y-0.5">
+                <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#B69B65] block">Statutory</span>
+                <span className="text-base font-serif font-bold text-[#171717] block">100% RERA</span>
+                <span className="text-[10px] text-[#77736C] block">Clear Titles</span>
+              </div>
+
+              <div className="p-3 bg-white border border-[#DEDAD2] space-y-0.5">
+                <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#B69B65] block">Engineering</span>
+                <span className="text-base font-serif font-bold text-[#171717] block">BIS Zone 5</span>
+                <span className="text-[10px] text-[#77736C] block">Seismic Core</span>
+              </div>
+
+              <div className="p-3 bg-white border border-[#DEDAD2] space-y-0.5">
+                <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#B69B65] block">Standards</span>
+                <span className="text-base font-serif font-bold text-[#171717] block">Grade-A</span>
+                <span className="text-[10px] text-[#77736C] block">Commercial</span>
+              </div>
             </div>
 
           </div>

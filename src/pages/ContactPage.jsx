@@ -17,80 +17,80 @@ export default function ContactPage({ onShowToast }) {
     e.preventDefault();
     setSubmitted(true);
     if (onShowToast) {
-      onShowToast('Communication line open! Message received by NIRVANA GROUP.');
+      onShowToast('Inquiry received. Nirvana Group advisory desk will connect shortly.');
     }
   };
 
   return (
-    <div className="pt-28 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <div className="pt-28 sm:pt-36 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
       
       {/* Page Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-none bg-white border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase tracking-widest">
-          <Sparkles className="w-3.5 h-3.5 text-[#B69B65]" />
-          <span>OFFICIAL COMMUNICATION TERMINAL</span>
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white border border-[#DEDAD2] text-[#B69B65] text-[10px] font-sans font-bold uppercase tracking-[0.25em]">
+          <ShieldCheck className="w-3.5 h-3.5 text-[#B69B65]" />
+          <span>Corporate Advisory & Consultations</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight">
-          Contact <span className="text-[#B69B65]">NIRVANA GROUP</span>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-cinzel font-bold text-[#171717] tracking-tight">
+          Connect With <span className="text-[#B69B65]">NIRVANA GROUP</span>
         </h1>
         <div className="w-12 h-px bg-[#B69B65]/40 mx-auto" />
-        <p className="text-[#5C5852] text-base font-light leading-relaxed">
-          Reach our corporate headquarters in Ahmedabad, Gujarat, India.
+        <p className="text-[#5C5852] text-sm sm:text-base font-light leading-relaxed">
+          Direct consultation desk for Grade-A commercial acquisitions, residential investments, and private site inspections across Ahmedabad, Gujarat.
         </p>
       </div>
 
-      {/* ---------------- 3D LOCALIZATION MAP Visual ---------------- */}
+      {/* Strategic Corridor Navigator */}
       <div className="space-y-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between border-b border-[#DEDAD2] pb-3">
           <h2 className="text-xl font-serif font-bold text-[#171717] flex items-center gap-2">
             <MapPin className="w-5 h-5 text-[#B69B65]" />
-            <span>Interactive Localization Coordinates</span>
+            <span>Western Ahmedabad Strategic Corridors</span>
           </h2>
-          <span className="text-xs font-mono text-[#77736C]">Naranpura • Khoraj • Sola • Thaltej</span>
+          <span className="text-xs font-sans text-[#77736C]">Science City • Sola • SG Highway • Jagatpur • Thaltej</span>
         </div>
 
-        {/* 3D Localization Wireframe Map */}
+        {/* Strategic Corridor Map Navigator */}
         <LocalizationMap3D />
       </div>
 
-      {/* ---------------- FUTURISTIC "COMMUNICATION LINE" FORM & ADDRESS ---------------- */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      {/* Advisory Query Form & Corporate Headquarters */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         
-        {/* Left Column: Official Headquarters Address */}
+        {/* Left Column: Official Headquarters Brief */}
         <div className="lg:col-span-5 space-y-6">
-          <div className="rounded-none bg-white p-8 border border-[#E6E2D8] shadow-xl space-y-6">
+          <div className="bg-white p-8 border border-[#DEDAD2] shadow-sm space-y-6">
             <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-[#B69B65] font-bold">CORPORATE HEADQUARTERS</span>
-              <h3 className="text-2xl font-serif font-bold text-[#171717] mt-1">NIRVANA GROUP</h3>
-              <p className="text-xs text-[#5C5852] mt-1">Real Estate Development & Holding Group</p>
+              <span className="text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-[#B69B65]">CORPORATE HEADQUARTERS</span>
+              <h3 className="text-2xl font-cinzel font-bold text-[#171717] mt-1">NIRVANA GROUP</h3>
+              <p className="text-xs text-[#5C5852] mt-1">Real Estate Development & Asset Management</p>
             </div>
 
-            <div className="space-y-4 pt-2 text-xs">
+            <div className="space-y-3.5 pt-2 text-xs">
               
-              <div className="p-4 rounded-none bg-[#FAF9F6] border border-[#E6E2D8] space-y-1">
-                <span className="text-[10px] font-mono text-[#77736C] uppercase tracking-wider block">Headquarters</span>
-                <p className="text-sm font-bold text-[#171717] leading-relaxed">
+              <div className="p-4 bg-[#FAF9F6] border border-[#DEDAD2] space-y-1">
+                <span className="text-[10px] font-sans font-semibold text-[#77736C] uppercase tracking-wider block">Headquarters</span>
+                <p className="text-sm font-semibold text-[#171717] leading-relaxed">
                   Ahmedabad, Gujarat, India
                 </p>
                 <p className="text-[11px] text-[#B69B65]">
-                  Private consultations by appointment
+                  Private executive boardroom viewings by appointment
                 </p>
               </div>
 
-              <div className="p-4 rounded-none bg-[#FAF9F6] border border-[#E6E2D8] space-y-1">
-                <span className="text-[10px] font-mono text-[#77736C] uppercase tracking-wider block">Advisory Service</span>
-                <p className="text-sm font-bold text-[#171717]">
-                  Direct Advisory Portal Active
-                </p>
+              <div className="p-4 bg-[#FAF9F6] border border-[#DEDAD2] space-y-1">
+                <span className="text-[10px] font-sans font-semibold text-[#77736C] uppercase tracking-wider block">Advisory Desk</span>
+                <a href="tel:+919081507342" className="text-sm font-semibold text-[#171717] hover:text-[#B69B65] transition-colors block">
+                  +91 90815 07342
+                </a>
                 <p className="text-[11px] text-[#5C5852]">
-                  Priority scheduling via web enquiry
+                  Monday to Saturday: 10:00 AM – 7:00 PM
                 </p>
               </div>
 
-              <div className="p-4 rounded-none bg-[#FAF9F6] border border-[#E6E2D8] space-y-1">
-                <span className="text-[10px] font-mono text-[#77736C] uppercase tracking-wider block">Corporate Mail</span>
-                <a href="mailto:contact@nirvana.group" className="text-xs font-bold text-[#B69B65] hover:underline block truncate">
-                  contact@nirvana.group
+              <div className="p-4 bg-[#FAF9F6] border border-[#DEDAD2] space-y-1">
+                <span className="text-[10px] font-sans font-semibold text-[#77736C] uppercase tracking-wider block">Corporate Correspondence</span>
+                <a href="mailto:himanshuramchandani2006@gmail.com" className="text-xs font-semibold text-[#B69B65] hover:underline block truncate">
+                  himanshuramchandani2006@gmail.com
                 </a>
               </div>
 
@@ -98,13 +98,13 @@ export default function ContactPage({ onShowToast }) {
           </div>
         </div>
 
-        {/* Right Column: Sleek COMMUNICATION LINE Form */}
+        {/* Right Column: Advisory Inquiry Form */}
         <div className="lg:col-span-7">
-          <div className="rounded-none bg-white p-8 sm:p-10 border border-[#E6E2D8] shadow-xl space-y-6">
-            <div className="border-b border-[#E6E2D8] pb-4">
-              <span className="text-xs font-mono uppercase tracking-widest text-[#B69B65] font-bold">SECURE ENCRYPTED CHANNEL</span>
-              <h3 className="text-2xl font-serif font-bold text-[#171717] mt-1">COMMUNICATION LINE</h3>
-              <p className="text-xs text-[#5C5852] mt-1">Send a direct advisory query to our corporate engineering group.</p>
+          <div className="bg-white p-8 sm:p-10 border border-[#DEDAD2] shadow-sm space-y-6">
+            <div className="border-b border-[#DEDAD2] pb-4">
+              <span className="text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-[#B69B65]">DIRECT ADVISORY DESK</span>
+              <h3 className="text-2xl font-serif font-bold text-[#171717] mt-1">Submit Your Property Inquiry</h3>
+              <p className="text-xs text-[#5C5852] mt-1">Direct consultation regarding commercial acquisitions, retail investments, and sky villas.</p>
             </div>
 
             {!submitted ? (
@@ -112,81 +112,85 @@ export default function ContactPage({ onShowToast }) {
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="font-mono uppercase text-[#5C5852] text-[11px] font-bold">FULL NAME *</label>
+                    <label className="font-sans uppercase text-[#5C5852] text-[10px] font-bold">FULL NAME *</label>
                     <input
                       type="text"
                       required
                       placeholder="e.g. Ramesh Patel"
                       value={commForm.name}
                       onChange={(e) => setCommForm({ ...commForm, name: e.target.value })}
-                      className="w-full bg-[#FAF9F6] border border-[#E6E2D8] rounded-none px-4 py-3 text-[#171717] focus:outline-none focus:border-[#B69B65]"
+                      className="w-full bg-[#FAF9F6] border border-[#DEDAD2] px-4 py-3 text-[#171717] focus:outline-none focus:border-[#B69B65]"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="font-mono uppercase text-[#5C5852] text-[11px] font-bold">PHONE NUMBER *</label>
+                    <label className="font-sans uppercase text-[#5C5852] text-[10px] font-bold">PHONE NUMBER *</label>
                     <input
                       type="tel"
                       required
                       placeholder="+91 98765 43210"
                       value={commForm.phone}
                       onChange={(e) => setCommForm({ ...commForm, phone: e.target.value })}
-                      className="w-full bg-[#FAF9F6] border border-[#E6E2D8] rounded-none px-4 py-3 text-[#171717] focus:outline-none focus:border-[#B69B65]"
+                      className="w-full bg-[#FAF9F6] border border-[#DEDAD2] px-4 py-3 text-[#171717] focus:outline-none focus:border-[#B69B65]"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="font-mono uppercase text-[#5C5852] text-[11px] font-bold">EMAIL ADDRESS</label>
+                    <label className="font-sans uppercase text-[#5C5852] text-[10px] font-bold">EMAIL ADDRESS</label>
                     <input
                       type="email"
                       placeholder="name@company.com"
                       value={commForm.email}
                       onChange={(e) => setCommForm({ ...commForm, email: e.target.value })}
-                      className="w-full bg-[#FAF9F6] border border-[#E6E2D8] rounded-none px-4 py-3 text-[#171717] focus:outline-none focus:border-[#B69B65]"
+                      className="w-full bg-[#FAF9F6] border border-[#DEDAD2] px-4 py-3 text-[#171717] focus:outline-none focus:border-[#B69B65]"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="font-mono uppercase text-[#5C5852] text-[11px] font-bold">SUBJECT</label>
-                    <input
-                      type="text"
+                    <label className="font-sans uppercase text-[#5C5852] text-[10px] font-bold">INQUIRY CATEGORY</label>
+                    <select
                       value={commForm.subject}
                       onChange={(e) => setCommForm({ ...commForm, subject: e.target.value })}
-                      className="w-full bg-[#FAF9F6] border border-[#E6E2D8] rounded-none px-4 py-3 text-[#171717] focus:outline-none focus:border-[#B69B65]"
-                    />
+                      className="w-full bg-[#FAF9F6] border border-[#DEDAD2] px-4 py-3 text-[#171717] focus:outline-none focus:border-[#B69B65] cursor-pointer"
+                    >
+                      <option value="Grade-A Commercial Query">Grade-A Commercial Office</option>
+                      <option value="Residential Sky Villa">Residential Sky Villa / Apartment</option>
+                      <option value="Plotted Land / Weekend Villa">Plotted Land / Weekend Villa</option>
+                      <option value="Institutional Investment">Institutional Investment</option>
+                    </select>
                   </div>
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="font-mono uppercase text-[#5C5852] text-[11px] font-bold">MESSAGE / SPECIFICATIONS</label>
+                  <label className="font-sans uppercase text-[#5C5852] text-[10px] font-bold">PROJECT OR SPATIAL SPECIFICATIONS</label>
                   <textarea
                     rows={4}
-                    placeholder="Describe your corporate requirement or site query..."
+                    placeholder="Describe your property requirements, corridor preference, or site visit timeline..."
                     value={commForm.message}
                     onChange={(e) => setCommForm({ ...commForm, message: e.target.value })}
-                    className="w-full bg-[#FAF9F6] border border-[#E6E2D8] rounded-none px-4 py-3 text-[#171717] focus:outline-none focus:border-[#B69B65] resize-none"
+                    className="w-full bg-[#FAF9F6] border border-[#DEDAD2] px-4 py-3 text-[#171717] focus:outline-none focus:border-[#B69B65] resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-none bg-[#B69B65] text-white font-bold uppercase tracking-wider hover:bg-[#A38854] transition-all flex items-center justify-center gap-2"
+                  className="w-full py-4 bg-[#B69B65] text-white font-semibold text-xs uppercase tracking-[0.2em] hover:bg-[#A38854] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
                 >
-                  <Send className="w-4 h-4 text-[#171717]" />
-                  <span>TRANSMIT COMMUNICATION</span>
+                  <Send className="w-4 h-4" />
+                  <span>Send Advisory Inquiry</span>
                 </button>
 
               </form>
             ) : (
-              <div className="p-8 rounded-none bg-[#FAF9F6] border border-[#E6E2D8] text-center space-y-4">
-                <div className="w-14 h-14 rounded-none bg-white text-[#B69B65] flex items-center justify-center mx-auto border border-[#E6E2D8]">
-                  <CheckCircle2 className="w-8 h-8" />
+              <div className="p-8 bg-[#FAF9F6] border border-[#DEDAD2] text-center space-y-4">
+                <div className="w-12 h-12 bg-white text-[#B69B65] flex items-center justify-center mx-auto border border-[#DEDAD2]">
+                  <CheckCircle2 className="w-6 h-6" />
                 </div>
-                <h4 className="text-xl font-bold text-[#171717]">TRANSMISSION CONFIRMED</h4>
+                <h4 className="text-xl font-serif font-bold text-[#171717]">Inquiry Registered Successfully</h4>
                 <p className="text-xs text-[#5C5852]">
-                  Thank you. Your communication has been received by the NIRVANA GROUP advisory desk.
+                  Thank you. Your consultation parameters have been received by the NIRVANA GROUP advisory desk.
                 </p>
               </div>
             )}
@@ -195,8 +199,6 @@ export default function ContactPage({ onShowToast }) {
 
       </div>
 
-      {/* Embedded Map & Full Section */}
-      <ContactSection onShowToast={onShowToast} />
     </div>
   );
 }

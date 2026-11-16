@@ -39,56 +39,32 @@ export default function AboutPage({ onNavigate }) {
         </div>
       </div>
 
-      {/* ---------------- 3D Seismic Foundation Exploded View Visual ---------------- */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-        <div className="lg:col-span-7">
-          <SeismicFoundation3D />
-        </div>
-
-        <div className="lg:col-span-5 space-y-6 text-left">
-          <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#B69B65] font-bold">
+      {/* ---------------- Seismic Foundation & Core Engineering ---------------- */}
+      <div className="space-y-4">
+        <div className="flex items-center justify-between border-b border-[#DEDAD2] pb-3">
+          <div className="flex items-center gap-2 text-xs font-sans uppercase tracking-[0.2em] text-[#B69B65] font-bold">
             <ShieldCheck className="w-4 h-4 text-[#B69B65]" />
-            <span>Structural Integrity Standard</span>
+            <span>Structural Integrity Standards • BIS Zone 5</span>
           </div>
-
-          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#171717]">
-            Seismic-Resistant Structures & Engineering
-          </h2>
-
-          <p className="text-xs sm:text-sm text-[#5C5852] font-light leading-relaxed">
-            Every NIRVANA project incorporates deep bedrock piling, hydraulic damper assemblies, high-tensile steel rebar cages, and BIS Zone 5 compliant concrete cores.
-          </p>
-
-          <div className="space-y-3 text-xs">
-            <div className="p-3.5 rounded-none bg-white border border-[#E6E2D8] text-[#171717] flex items-center gap-3">
-              <CheckCircle2 className="w-4 h-4 text-[#B69B65] shrink-0" />
-              <span>BIS Zone 5 Earth Shock Isolation Engineering</span>
-            </div>
-            <div className="p-3.5 rounded-none bg-white border border-[#E6E2D8] text-[#171717] flex items-center gap-3">
-              <CheckCircle2 className="w-4 h-4 text-[#B69B65] shrink-0" />
-              <span>Acoustic & Thermal Double Glazed Curtain Walling</span>
-            </div>
-            <div className="p-3.5 rounded-none bg-white border border-[#E6E2D8] text-[#171717] flex items-center gap-3">
-              <CheckCircle2 className="w-4 h-4 text-[#B69B65] shrink-0" />
-              <span>Solar Grid Clean Energy & Water Harvesting</span>
-            </div>
-          </div>
+          <span className="text-xs text-[#77736C]">Deep Piling to Monolithic Core</span>
         </div>
+
+        <SeismicFoundation3D />
       </div>
 
-      {/* ---------------- Interactive Metallic Development Standards List ---------------- */}
+      {/* ---------------- Development Standards List ---------------- */}
       <div className="space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#B69B65] font-bold">ENGINEERING BENCHMARKS</span>
+          <span className="text-[10px] font-sans uppercase tracking-[0.25em] text-[#B69B65] font-bold">ENGINEERING BENCHMARKS</span>
           <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#171717]">
             Development Standards (01 to 05)
           </h2>
-          <p className="text-xs text-[#77736C] font-light">Select any standard below to inspect engineering specifics</p>
+          <p className="text-xs text-[#77736C] font-light">Select any benchmark below to inspect engineering specifics</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           
-          {/* Metallic List Buttons Column */}
+          {/* List Buttons Column */}
           <div className="lg:col-span-5 space-y-3">
             {DEVELOPMENT_STANDARDS.map((std) => {
               const isActive = activeStandard === std.id;
@@ -96,15 +72,15 @@ export default function AboutPage({ onNavigate }) {
                 <button
                   key={std.id}
                   onClick={() => setActiveStandard(std.id)}
-                  className={`w-full p-4 rounded-none text-left border transition-all duration-300 flex items-center justify-between group ${
+                  className={`w-full p-4 text-left border transition-all duration-200 flex items-center justify-between group cursor-pointer ${
                     isActive
-                      ? 'bg-[#B69B65] text-white border-[#B69B65]'
-                      : 'bg-white text-[#171717] border-[#E6E2D8] hover:border-[#B69B65]/40 hover:bg-[#F5F3EE]'
+                      ? 'bg-[#B69B65] text-white border-[#B69B65] shadow-sm'
+                      : 'bg-white text-[#171717] border-[#DEDAD2] hover:border-[#171717] hover:bg-[#FAF9F6]'
                   }`}
                 >
                   <div className="flex items-center gap-4">
-                    <span className={`font-mono text-xs font-extrabold px-2.5 py-1 rounded-none ${
-                      isActive ? 'bg-[#FAF9F6] text-[#B69B65]' : 'bg-[#FAF9F6] text-[#5C5852] border border-[#E6E2D8]'
+                    <span className={`text-xs font-sans font-bold px-2.5 py-1 ${
+                      isActive ? 'bg-white text-[#B69B65]' : 'bg-[#FAF9F6] text-[#5C5852] border border-[#DEDAD2]'
                     }`}>
                       {std.id}
                     </span>
@@ -112,7 +88,7 @@ export default function AboutPage({ onNavigate }) {
                   </div>
 
                   <ChevronRight className={`w-4 h-4 transition-transform ${
-                    isActive ? 'text-[#171717] translate-x-1' : 'text-[#77736C] group-hover:text-[#B69B65]'
+                    isActive ? 'text-white translate-x-1' : 'text-[#77736C] group-hover:text-[#171717]'
                   }`} />
                 </button>
               );
@@ -124,11 +100,11 @@ export default function AboutPage({ onNavigate }) {
             {(() => {
               const active = DEVELOPMENT_STANDARDS.find(s => s.id === activeStandard) || DEVELOPMENT_STANDARDS[0];
               return (
-                <div className="rounded-none bg-white p-8 border border-[#E6E2D8] shadow-xl space-y-6 h-full flex flex-col justify-between min-h-[300px]">
+                <div className="bg-white p-8 border border-[#DEDAD2] shadow-sm space-y-6 h-full flex flex-col justify-between min-h-[300px]">
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between border-b border-[#E6E2D8] pb-4">
-                      <span className="text-xs font-mono uppercase tracking-widest text-[#B69B65] font-bold">
-                        STANDARD {active.id} DEFINITION
+                    <div className="flex items-center justify-between border-b border-[#DEDAD2] pb-4">
+                      <span className="text-[10px] font-sans uppercase tracking-[0.22em] text-[#B69B65] font-bold">
+                        STANDARD {active.id} SPECIFICATION
                       </span>
                       <Layers className="w-5 h-5 text-[#B69B65]" />
                     </div>
@@ -142,11 +118,11 @@ export default function AboutPage({ onNavigate }) {
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-[#E6E2D8] flex items-center justify-between">
-                    <span className="text-[11px] font-mono text-[#77736C]">COMPLIANCE: BIS ISO 9001 / IGBC GOLD</span>
+                  <div className="pt-4 border-t border-[#DEDAD2] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <span className="text-[11px] font-sans text-[#77736C]">COMPLIANCE: BIS ISO 9001 / IGBC GOLD</span>
                     <button
                       onClick={() => onNavigate('/contact')}
-                      className="px-5 py-2.5 rounded-none bg-[#B69B65] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#A38854] transition-colors"
+                      className="px-5 py-2.5 bg-[#B69B65] text-white text-xs font-semibold uppercase tracking-[0.18em] hover:bg-[#A38854] transition-colors cursor-pointer"
                     >
                       Enquire Specifications
                     </button>
