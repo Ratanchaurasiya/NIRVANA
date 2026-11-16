@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ShieldCheck, Lock, ArrowLeft, FileText, CheckCircle2, Mail, Phone } from 'lucide-react';
+import TypewriterTitle from '../components/TypewriterTitle';
 
 const SECTIONS = [
   { id: 'non-disclosure', title: '1. Third Party Non-Disclosure' },
@@ -39,9 +40,12 @@ export default function PrivacyPolicyPage({ onNavigate }) {
             <ShieldCheck className="w-3.5 h-3.5" />
             <span>Corporate Governance</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-cinzel font-bold text-[#171717] tracking-tight">
+          <TypewriterTitle
+            as="h1"
+            className="text-3xl sm:text-4xl lg:text-5xl font-cinzel font-bold text-[#171717] tracking-tight"
+          >
             Privacy Policy
-          </h1>
+          </TypewriterTitle>
           <p className="text-sm sm:text-base text-[#5C5852] font-light leading-relaxed">
             Nirvana Group is committed to upholding strict confidentiality, digital data protection, and transparent advisory standards across all investor and client communications.
           </p>

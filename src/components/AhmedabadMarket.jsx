@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AHMEDABAD_LOCATIONS } from '../data/propertyData';
 import { MapPin, Navigation, CheckCircle2, ArrowRight, Building, Landmark } from 'lucide-react';
+import TypewriterTitle from './TypewriterTitle';
 
 const AhmedabadMarket = () => {
   const [activeLocId, setActiveLocId] = useState('sola');
@@ -16,9 +17,12 @@ const AhmedabadMarket = () => {
           <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase tracking-[0.22em]">
             <span>Corridor Intelligence</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight">
+          <TypewriterTitle
+            as="h2"
+            className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight"
+          >
             Prime Corridors — <span className="text-[#B69B65]">Architectural Growth</span>
-          </h2>
+          </TypewriterTitle>
           <div className="w-12 h-px bg-[#B69B65] mx-auto" />
           <p className="text-[#5C5852] text-sm sm:text-base font-light leading-relaxed">
             Select a sector below to explore key location advantages, residential/commercial focus, and long-term infrastructural connectivity across Western Ahmedabad.

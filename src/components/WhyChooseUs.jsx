@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, MessageCircle, BarChart3, UserCheck, Building, CalendarCheck, FileCheck, PhoneCall, Award } from 'lucide-react';
+import TypewriterTitle from './TypewriterTitle';
 
 const REASONS = [
   {
@@ -54,9 +55,12 @@ const WhyChooseUs = () => {
           <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase tracking-[0.22em]">
             <span>Guiding Principles</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight">
+          <TypewriterTitle
+            as="h2"
+            className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight"
+          >
             Why Discerning Clients Choose <span className="text-[#B69B65]">NIRVANA GROUP</span>
-          </h2>
+          </TypewriterTitle>
           <div className="w-12 h-px bg-[#B69B65] mx-auto" />
           <p className="text-[#5C5852] text-sm sm:text-base font-light leading-relaxed">
             Our client-first philosophy prioritizes clarity, structural integrity, and long-term asset value over sales rhetoric.
@@ -70,11 +74,11 @@ const WhyChooseUs = () => {
             return (
               <div
                 key={idx}
-                className="p-6 bg-white border border-[#E6E2D8] hover:border-[#B69B65]/40 transition-colors flex flex-col justify-between"
+                className="group p-6 bg-white border border-[#E6E2D8] hover:border-[#B69B65] hover:shadow-md transition-all duration-300 hover:translate-y-[-2px] flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-10 h-10 bg-[#FAF9F6] border border-[#E6E2D8] text-[#B69B65] flex items-center justify-center mb-5">
-                    <IconComp className="w-5 h-5" />
+                  <div className="w-10 h-10 bg-[#FAF9F6] border border-[#E6E2D8] text-[#B69B65] flex items-center justify-center mb-5 group-hover:border-[#B69B65] transition-colors">
+                    <IconComp className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   </div>
                   <h3 className="text-base font-bold font-serif text-[#171717] mb-2">
                     {item.title}

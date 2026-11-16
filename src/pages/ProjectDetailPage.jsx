@@ -5,6 +5,7 @@ import {
   Building2, MapPin, Calendar, ArrowLeft, Check, Sparkles, 
   MessageSquare, Phone, ShieldCheck, Layers, Maximize2, Compass
 } from 'lucide-react';
+import TypewriterTitle from '../components/TypewriterTitle';
 
 export default function ProjectDetailPage({ projectId, onNavigate, onShowToast }) {
   const [bookingSuccess, setBookingSuccess] = useState(false);
@@ -47,9 +48,12 @@ export default function ProjectDetailPage({ projectId, onNavigate, onShowToast }
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight">
+          <TypewriterTitle
+            as="h1"
+            className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight"
+          >
             {project.name}
-          </h1>
+          </TypewriterTitle>
           <p className="text-sm sm:text-base text-[#B69B65] font-mono">{project.subtitle}</p>
         </div>
 

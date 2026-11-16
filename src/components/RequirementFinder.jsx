@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Search, MessageSquare, CheckCircle2, X } from 'lucide-react';
+import TypewriterTitle from './TypewriterTitle';
 
 const RequirementFinder = ({ onShowToast }) => {
   const [formData, setFormData] = useState({
@@ -27,9 +28,12 @@ const RequirementFinder = ({ onShowToast }) => {
             <div className="inline-flex items-center gap-2 text-[10px] font-sans tracking-[0.25em] text-[#B69B65] uppercase font-bold">
               <span>Interactive Portfolio Finder</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#171717] mt-1">
+            <TypewriterTitle
+              as="h2"
+              className="text-2xl sm:text-3xl font-serif font-bold text-[#171717] mt-1"
+            >
               Identify Your Property Objective
-            </h2>
+            </TypewriterTitle>
           </div>
           <p className="text-xs sm:text-sm text-[#5C5852] max-w-md font-light leading-relaxed">
             Select parameters below to review curated residential or commercial asset shortlists tailored to your acquisition schedule.

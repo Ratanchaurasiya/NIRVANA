@@ -4,6 +4,7 @@ import {
   Building2, MapPin, ShieldCheck, X, Calendar, 
   ArrowLeftRight, Check, Eye, MessageSquare 
 } from 'lucide-react';
+import TypewriterTitle from './TypewriterTitle';
 
 const TopProjectsShowcase = ({ onShowToast }) => {
   const [selectedProjectModal, setSelectedProjectModal] = useState(null);
@@ -50,9 +51,12 @@ const TopProjectsShowcase = ({ onShowToast }) => {
           <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white border border-[#DEDAD2] text-[#B69B65] text-[10px] font-sans font-bold uppercase tracking-[0.25em]">
             <span>Flagship Developments</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold text-[#171717] tracking-tight">
+          <TypewriterTitle
+            as="h2"
+            className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold text-[#171717] tracking-tight"
+          >
             Top 5 <span className="text-[#B69B65]">Landmark Projects</span>
-          </h2>
+          </TypewriterTitle>
           <div className="w-12 h-px bg-[#B69B65] mx-auto" />
           <p className="text-[#5C5852] text-sm sm:text-base font-light leading-relaxed">
             Compare configurations, sizes, and architectural benchmarks across Science City, Sola, and SG Highway developments.
@@ -277,6 +281,8 @@ const TopProjectsShowcase = ({ onShowToast }) => {
                   <img
                     src={activeProject.image}
                     alt={activeProject.name}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#171717]/90 via-[#171717]/20 to-transparent" />
@@ -487,7 +493,7 @@ const TopProjectsShowcase = ({ onShowToast }) => {
             </button>
 
             <div className="relative overflow-hidden h-60 border border-[#E6E2D8]">
-              <img src={selectedProjectModal.image} alt={selectedProjectModal.name} className="w-full h-full object-cover" />
+              <img src={selectedProjectModal.image} alt={selectedProjectModal.name} loading="lazy" decoding="async" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#171717]/95 via-[#171717]/30 to-transparent" />
               <div className="absolute bottom-4 left-4 right-4">
                 <h3 className="text-2xl font-serif font-bold text-white mt-1 drop-shadow-sm">{selectedProjectModal.name}</h3>

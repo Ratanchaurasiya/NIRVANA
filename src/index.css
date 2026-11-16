@@ -167,3 +167,49 @@ html, body, #root {
 ::-webkit-scrollbar-thumb:hover {
   background: #B69B65;
 }
+
+/* Luxury Architectural Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmerSweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.shimmer-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(182, 155, 101, 0.15), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.8s ease;
+}
+
+.shimmer-hover:hover::after {
+  transform: translateX(100%);
+}

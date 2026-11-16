@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import GoogleMapCard from './GoogleMapCard';
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
 import InstagramIcon from './icons/InstagramIcon';
+import TypewriterTitle from './TypewriterTitle';
 
 const ContactSection = ({ onShowToast }) => {
   const [formData, setFormData] = useState({
@@ -41,9 +42,12 @@ const ContactSection = ({ onShowToast }) => {
           <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white border border-[#DEDAD2] text-[#B69B65] text-[10px] font-sans font-bold uppercase tracking-[0.25em]">
             <span>Advisory & Inquiries</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold text-[#171717] tracking-tight">
+          <TypewriterTitle
+            as="h2"
+            className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold text-[#171717] tracking-tight"
+          >
             Initiate a <span className="text-[#B69B65]">Private Consultation</span>
-          </h2>
+          </TypewriterTitle>
           <div className="w-12 h-px bg-[#B69B65] mx-auto" />
           <p className="text-[#5C5852] text-sm sm:text-base font-light leading-relaxed">
             Connect with our corporate advisory desk for confidential discussions on premier residential and commercial opportunities in Gujarat.

@@ -72,6 +72,8 @@ export default function Hero3DBuilding() {
         <img
           src="/images/hero_building.jpg"
           alt="Nirvana Abode Architectural Landmark"
+          decoding="async"
+          fetchPriority="high"
           className="w-full h-full object-cover object-center transition-all duration-700 ease-out"
           style={{ filter: currentLighting.filter }}
         />

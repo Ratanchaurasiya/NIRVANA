@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircle2, Shield, MapPin } from 'lucide-react';
+import TypewriterTitle from './TypewriterTitle';
 
 const AboutSection = () => {
   return (
@@ -11,9 +12,12 @@ const AboutSection = () => {
           <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase tracking-[0.22em]">
             <span>Corporate Identity & Vision</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight">
+          <TypewriterTitle
+            as="h2"
+            className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight"
+          >
             About <span className="text-[#B69B65]">NIRVANA GROUP</span>
-          </h2>
+          </TypewriterTitle>
           <div className="w-12 h-px bg-[#B69B65] mx-auto" />
           <p className="text-[#5C5852] text-sm sm:text-base font-light leading-relaxed">
             We focus on principled real estate development and transparent advisory, guiding clients across location viability, asset appreciation, and architectural potential.
@@ -29,6 +33,8 @@ const AboutSection = () => {
               <img
                 src="/images/about_property.jpg"
                 alt="NIRVANA GROUP Ahmedabad Property Guidance"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-[450px] lg:h-[500px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
 

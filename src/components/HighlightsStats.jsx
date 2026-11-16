@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Home, Building2, PhoneCall } from 'lucide-react';
+import AnimatedCounter from './AnimatedCounter';
 
 const STATS_DATA = [
   {
@@ -46,14 +47,14 @@ const HighlightsStats = () => {
             return (
               <div
                 key={stat.id}
-                className="p-6 bg-white border border-[#E6E2D8] text-center flex flex-col justify-between hover:border-[#B69B65]/40 transition-colors"
+                className="group p-6 bg-white border border-[#E6E2D8] text-center flex flex-col justify-between hover:border-[#B69B65] hover:shadow-md transition-all duration-300 hover:translate-y-[-2px]"
               >
-                <div className="w-10 h-10 bg-[#FAF9F6] border border-[#E6E2D8] text-[#B69B65] flex items-center justify-center mx-auto mb-4">
-                  <IconComp className="w-5 h-5" />
+                <div className="w-10 h-10 bg-[#FAF9F6] border border-[#E6E2D8] text-[#B69B65] flex items-center justify-center mx-auto mb-4 group-hover:border-[#B69B65] transition-colors">
+                  <IconComp className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </div>
                 <div className="space-y-1">
                   <span className="text-2xl sm:text-3xl font-serif font-bold text-[#171717] block">
-                    {stat.countText}
+                    <AnimatedCounter value={stat.countText} />
                   </span>
                   <h3 className="text-base font-bold text-[#171717] font-serif">{stat.title}</h3>
                   <p className="text-xs text-[#B69B65] font-mono tracking-wider">{stat.subtitle}</p>

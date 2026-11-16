@@ -1,6 +1,9 @@
 import React from 'react';
 import { ArrowRight, ShieldCheck, Award, Building2, CheckCircle2 } from 'lucide-react';
 import Hero3DBuilding from './3d/Hero3DBuilding';
+import TypewriterTitle from './TypewriterTitle';
+import ScrollReveal from './ScrollReveal';
+import AnimatedCounter from './AnimatedCounter';
 
 const Hero = ({ onNavigate, onOpenDossier }) => {
   return (
@@ -33,9 +36,13 @@ const Hero = ({ onNavigate, onOpenDossier }) => {
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#DEDAD2] text-[#B69B65] text-[10px] font-sans font-bold uppercase tracking-[0.25em] shadow-sm">
                 <span>Official Developer Portfolio</span>
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-cinzel font-semibold text-[#171717] tracking-[0.12em] uppercase leading-[1.08]">
+              <TypewriterTitle
+                as="h1"
+                className="text-4xl sm:text-5xl lg:text-6xl font-cinzel font-semibold text-[#171717] tracking-[0.12em] uppercase leading-[1.08] block"
+                delay={180}
+              >
                 NIRVANA GROUP
-              </h1>
+              </TypewriterTitle>
               <p className="text-xl sm:text-2xl font-editorial italic text-[#B69B65] tracking-wide pt-0.5">
                 "Building Dreams. Creating Landmarks."
               </p>
@@ -46,45 +53,49 @@ const Hero = ({ onNavigate, onOpenDossier }) => {
               Delivering state-of-the-art corporate offices, prime commercial retail suites, and curated luxury residential estates across Science City, Sola, and SG Highway growth corridors in Gujarat.
             </p>
 
-            {/* Action Buttons: Clean Architectural Geometry */}
+            {/* Action Buttons: Clean Architectural Geometry with Luxury Hover */}
             <div className="flex flex-wrap items-center gap-4 pt-1 w-full sm:w-auto">
               <button
                 onClick={() => onNavigate && onNavigate('/projects')}
-                className="w-full sm:w-auto px-8 py-3.5 bg-[#B69B65] text-white text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#A38854] transition-all flex items-center justify-center gap-2.5 cursor-pointer shadow-sm"
+                className="group relative overflow-hidden w-full sm:w-auto px-8 py-3.5 bg-[#B69B65] text-white text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#A38854] transition-all flex items-center justify-center gap-2.5 cursor-pointer shadow-sm hover:shadow-md hover:translate-y-[-1px]"
               >
                 <span>Explore Developments</span>
-                <ArrowRight className="w-4 h-4 stroke-[2]" />
+                <ArrowRight className="w-4 h-4 stroke-[2] group-hover:translate-x-1 transition-transform" />
               </button>
 
               <button
                 onClick={() => onOpenDossier && onOpenDossier()}
-                className="w-full sm:w-auto px-7 py-3.5 border border-[#171717] text-[#171717] text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#171717] hover:text-white transition-all cursor-pointer flex items-center justify-center bg-white shadow-sm"
+                className="w-full sm:w-auto px-7 py-3.5 border border-[#171717] text-[#171717] text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#171717] hover:text-white transition-all cursor-pointer flex items-center justify-center bg-white shadow-sm hover:shadow-md hover:translate-y-[-1px]"
               >
                 <span>Project Dossier (PDF)</span>
               </button>
             </div>
 
-            {/* Architectural Credibility Matrix Strip (Eliminates Blank Space on Left) */}
+            {/* Architectural Credibility Matrix Strip with Animated Numbers */}
             <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-3 pt-3 border-t border-[#DEDAD2]">
-              <div className="p-3 bg-white border border-[#DEDAD2] space-y-0.5">
+              <div className="p-3 bg-white border border-[#DEDAD2] space-y-0.5 hover:border-[#B69B65] transition-colors">
                 <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#B69B65] block">Portfolio</span>
-                <span className="text-base font-serif font-bold text-[#171717] block">6 Projects</span>
+                <span className="text-base font-serif font-bold text-[#171717] block">
+                  <AnimatedCounter value="6 Projects" />
+                </span>
                 <span className="text-[10px] text-[#77736C] block">Ahmedabad</span>
               </div>
 
-              <div className="p-3 bg-white border border-[#DEDAD2] space-y-0.5">
+              <div className="p-3 bg-white border border-[#DEDAD2] space-y-0.5 hover:border-[#B69B65] transition-colors">
                 <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#B69B65] block">Statutory</span>
-                <span className="text-base font-serif font-bold text-[#171717] block">100% RERA</span>
+                <span className="text-base font-serif font-bold text-[#171717] block">
+                  <AnimatedCounter value="100%" /> RERA
+                </span>
                 <span className="text-[10px] text-[#77736C] block">Clear Titles</span>
               </div>
 
-              <div className="p-3 bg-white border border-[#DEDAD2] space-y-0.5">
+              <div className="p-3 bg-white border border-[#DEDAD2] space-y-0.5 hover:border-[#B69B65] transition-colors">
                 <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#B69B65] block">Engineering</span>
                 <span className="text-base font-serif font-bold text-[#171717] block">BIS Zone 5</span>
                 <span className="text-[10px] text-[#77736C] block">Seismic Core</span>
               </div>
 
-              <div className="p-3 bg-white border border-[#DEDAD2] space-y-0.5">
+              <div className="p-3 bg-white border border-[#DEDAD2] space-y-0.5 hover:border-[#B69B65] transition-colors">
                 <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#B69B65] block">Standards</span>
                 <span className="text-base font-serif font-bold text-[#171717] block">Grade-A</span>
                 <span className="text-[10px] text-[#77736C] block">Commercial</span>

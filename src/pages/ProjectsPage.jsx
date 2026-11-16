@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { PROJECTS_LIST } from '../data/projectsData';
 import { motion } from 'framer-motion';
 import { Building2, MapPin, ArrowRight, Sparkles, Eye, ShieldCheck } from 'lucide-react';
+import TypewriterTitle from '../components/TypewriterTitle';
 
 export default function ProjectsPage({ onNavigate }) {
   const [zoomingId, setZoomingId] = useState(null);
@@ -28,9 +29,12 @@ export default function ProjectsPage({ onNavigate }) {
           <Sparkles className="w-3.5 h-3.5 text-[#B69B65]" />
           <span>Interactive 3D Portfolio Grid</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight">
+        <TypewriterTitle
+          as="h1"
+          className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight"
+        >
           Landmark <span className="text-[#B69B65]">Projects Portfolio</span>
-        </h1>
+        </TypewriterTitle>
         <div className="w-12 h-px bg-[#B69B65]/40 mx-auto" />
         <p className="text-[#5C5852] text-base font-light leading-relaxed">
           Hover cards for architectural perspective • Click any card to launch full layout view
@@ -73,6 +77,8 @@ export default function ProjectsPage({ onNavigate }) {
                 <img
                   src={project.image}
                   alt={project.name}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#171717]/95 via-[#171717]/30 to-black/40" />

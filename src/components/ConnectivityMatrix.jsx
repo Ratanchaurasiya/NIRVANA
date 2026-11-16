@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Compass, Car, Plane, Train, Building, GraduationCap, HeartPulse, Navigation, Clock } from 'lucide-react';
+import TypewriterTitle from './TypewriterTitle';
 
 const CONNECTIVITY_HUBS = [
   {
@@ -79,10 +80,12 @@ export default function ConnectivityMatrix() {
               <span>Transit & Location Index</span>
             </div>
             
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight leading-tight">
-              Strategic Proximity. <br />
-              <span className="text-[#B69B65]">Minutes From Every Essential Hub.</span>
-            </h2>
+            <TypewriterTitle
+              as="h2"
+              className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight leading-tight"
+            >
+              Strategic Proximity. <span className="text-[#B69B65]">Minutes From Every Essential Hub.</span>
+            </TypewriterTitle>
 
             <p className="text-sm sm:text-base text-[#5C5852] font-light leading-relaxed">
               Positioned along Western Ahmedabad’s highest-velocity growth corridors, balancing residential privacy with instant access to arterial transit.

@@ -3,6 +3,7 @@ import LocalizationMap3D from '../components/3d/LocalizationMap3D';
 import ContactSection from '../components/ContactSection';
 import { Phone, Mail, MapPin, Clock, Send, Sparkles, CheckCircle2, ShieldCheck } from 'lucide-react';
 import InstagramIcon from '../components/icons/InstagramIcon';
+import TypewriterTitle from '../components/TypewriterTitle';
 
 export default function ContactPage({ onShowToast }) {
   const [commForm, setCommForm] = useState({
@@ -31,9 +32,12 @@ export default function ContactPage({ onShowToast }) {
           <ShieldCheck className="w-3.5 h-3.5 text-[#B69B65]" />
           <span>Corporate Advisory & Consultations</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-cinzel font-bold text-[#171717] tracking-tight">
+        <TypewriterTitle
+          as="h1"
+          className="text-3xl sm:text-4xl lg:text-5xl font-cinzel font-bold text-[#171717] tracking-tight"
+        >
           Connect With <span className="text-[#B69B65]">NIRVANA GROUP</span>
-        </h1>
+        </TypewriterTitle>
         <div className="w-12 h-px bg-[#B69B65]/40 mx-auto" />
         <p className="text-[#5C5852] text-sm sm:text-base font-light leading-relaxed">
           Direct consultation desk for Grade-A commercial acquisitions, residential investments, and private site inspections across Ahmedabad, Gujarat.

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PROPERTIES_DATA } from '../data/propertyData';
 import { MapPin, X, Phone, MessageSquare, Check } from 'lucide-react';
+import TypewriterTitle from './TypewriterTitle';
 
 const CATEGORIES = ['All', 'Residential', 'Commercial', 'Plots', 'Investment'];
 
@@ -21,9 +22,12 @@ const FeaturedOpportunities = ({ onShowToast }) => {
           <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white border border-[#DEDAD2] text-[#B69B65] text-[10px] font-sans font-bold uppercase tracking-[0.25em]">
             <span>Portfolio Highlights</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold text-[#171717] tracking-tight">
+          <TypewriterTitle
+            as="h2"
+            className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold text-[#171717] tracking-tight"
+          >
             Curated <span className="text-[#B69B65]">Opportunities</span>
-          </h2>
+          </TypewriterTitle>
           <div className="w-12 h-px bg-[#B69B65] mx-auto" />
           <p className="text-[#5C5852] text-sm sm:text-base font-light leading-relaxed">
             Verified residential, commercial, and plotted opportunities across Sola, Science City Road, and SG Highway growth corridors.
@@ -59,6 +63,8 @@ const FeaturedOpportunities = ({ onShowToast }) => {
                 <img
                   src={item.image}
                   alt={item.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
@@ -130,7 +136,7 @@ const FeaturedOpportunities = ({ onShowToast }) => {
             </button>
 
             <div className="relative overflow-hidden h-56 border border-[#E6E2D8]">
-              <img src={selectedProp.image} alt={selectedProp.title} className="w-full h-full object-cover" />
+              <img src={selectedProp.image} alt={selectedProp.title} loading="lazy" decoding="async" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#171717]/95 via-[#171717]/30 to-transparent" />
               <div className="absolute bottom-4 left-4 right-4">
                 <h3 className="text-xl sm:text-2xl font-bold font-serif text-white mt-1 drop-shadow-sm">{selectedProp.title}</h3>

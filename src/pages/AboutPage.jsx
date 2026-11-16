@@ -3,6 +3,7 @@ import SeismicFoundation3D from '../components/3d/SeismicFoundation3D';
 import { DEVELOPMENT_STANDARDS } from '../data/projectsData';
 import AboutSection from '../components/AboutSection';
 import { ShieldCheck, Sparkles, CheckCircle2, ChevronRight, Award, Layers } from 'lucide-react';
+import TypewriterTitle from '../components/TypewriterTitle';
 
 export default function AboutPage({ onNavigate }) {
   const [activeStandard, setActiveStandard] = useState("01");
@@ -16,9 +17,12 @@ export default function AboutPage({ onNavigate }) {
           <Sparkles className="w-3.5 h-3.5 text-[#B69B65]" />
           <span>CORPORATE ARCHITECTURE PROFILE</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight">
+        <TypewriterTitle
+          as="h1"
+          className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight"
+        >
           About <span className="text-[#B69B65]">NIRVANA GROUP</span>
-        </h1>
+        </TypewriterTitle>
         <div className="w-12 h-px bg-[#B69B65]/40 mx-auto" />
       </div>
 

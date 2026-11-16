@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FAQS_DATA } from '../data/propertyData';
 import { ChevronDown, HelpCircle } from 'lucide-react';
+import TypewriterTitle from './TypewriterTitle';
 
 const FaqAccordion = () => {
   const [openIndex, setOpenIndex] = useState(0);
@@ -19,9 +20,12 @@ const FaqAccordion = () => {
             <HelpCircle className="w-3.5 h-3.5 text-[#B69B65]" />
             <span>Advisory Inquiries</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight">
+          <TypewriterTitle
+            as="h2"
+            className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight"
+          >
             Frequently Asked <span className="text-[#B69B65]">Questions</span>
-          </h2>
+          </TypewriterTitle>
           <div className="w-12 h-px bg-[#B69B65] mx-auto" />
           <p className="text-[#5C5852] text-sm sm:text-base font-light leading-relaxed">
             Essential information regarding NIRVANA GROUP's development standards, acquisition procedures, and advisory framework in Gujarat.

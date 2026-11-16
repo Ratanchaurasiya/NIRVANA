@@ -1,18 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Interactive3DBackground from './components/3d/Interactive3DBackground';
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import ProjectsPage from './pages/ProjectsPage';
-import ProjectDetailPage from './pages/ProjectDetailPage';
-import ContactPage from './pages/ContactPage';
-import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
-import TermsPage from './pages/TermsPage';
+import ScrollProgressBar from './components/ScrollProgressBar';
+import PageLoader from './components/PageLoader';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import MobileBottomBar from './components/MobileBottomBar';
 import BackToTop from './components/BackToTop';
 import ToastNotification from './components/ToastNotification';
+
+// Lazy Loaded Pages for Instant Initial Payload & High-Performance Lazy Loading
+const HomePage = lazy(() => import('./pages/HomePage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const ProjectsPage = lazy(() => import('./pages/ProjectsPage'));
+const ProjectDetailPage = lazy(() => import('./pages/ProjectDetailPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'));
+const TermsPage = lazy(() => import('./pages/TermsPage'));
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname || '/');
@@ -66,6 +70,9 @@ function App() {
   return (
     <div className="min-h-screen relative font-sans selection:bg-[#B69B65] selection:text-white bg-[#FAF9F6] text-[#171717]">
       
+      {/* 2px Gold Scroll Progress Tracker */}
+      <ScrollProgressBar />
+
       {/* Subtle Architectural Perspective Ambience */}
       <Interactive3DBackground />
 
@@ -75,9 +82,11 @@ function App() {
         onNavigate={handleNavigate}
       />
 
-      {/* Main Content Area */}
+      {/* Main Content Area with Lazy Loading Suspense Fallback */}
       <main className="relative z-10">
-        {renderCurrentPage()}
+        <Suspense fallback={<PageLoader />}>
+          {renderCurrentPage()}
+        </Suspense>
       </main>
 
       {/* Footer */}

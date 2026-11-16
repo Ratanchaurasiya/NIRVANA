@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FileText, ArrowLeft, ShieldCheck, Mail, Phone, Scale } from 'lucide-react';
+import TypewriterTitle from '../components/TypewriterTitle';
 
 const TERMS_SECTIONS = [
   { id: 'general-use', title: '1. General Terms of Use' },
@@ -39,9 +40,12 @@ export default function TermsPage({ onNavigate }) {
             <Scale className="w-3.5 h-3.5" />
             <span>Statutory Agreement</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-cinzel font-bold text-[#171717] tracking-tight">
+          <TypewriterTitle
+            as="h1"
+            className="text-3xl sm:text-4xl lg:text-5xl font-cinzel font-bold text-[#171717] tracking-tight"
+          >
             Terms & Conditions
-          </h1>
+          </TypewriterTitle>
           <p className="text-sm sm:text-base text-[#5C5852] font-light leading-relaxed">
             Please read these terms and conditions carefully before utilizing the Nirvana Group digital platform, scheduling site walkthroughs, or downloading official architectural dossiers.
           </p>

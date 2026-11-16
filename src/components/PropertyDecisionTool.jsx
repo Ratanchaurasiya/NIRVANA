@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { HelpCircle, Check, ArrowRight, RotateCcw, MessageSquare, ShieldAlert } from 'lucide-react';
+import TypewriterTitle from './TypewriterTitle';
 
 const PropertyDecisionTool = ({ onShowToast }) => {
   const [step, setStep] = useState(1);
@@ -49,9 +50,12 @@ const PropertyDecisionTool = ({ onShowToast }) => {
               <HelpCircle className="w-3.5 h-3.5 text-[#B69B65]" />
               <span>Interactive Decision Framework</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#171717]">
+            <TypewriterTitle
+              as="h2"
+              className="text-2xl sm:text-3xl font-serif font-bold text-[#171717]"
+            >
               Which Asset Class Fits Your Requirement?
-            </h2>
+            </TypewriterTitle>
             <p className="text-xs sm:text-sm text-[#5C5852] font-light">
               Answer 4 questions to generate a tailored preliminary direction for Gujarat property acquisitions.
             </p>

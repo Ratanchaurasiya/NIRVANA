@@ -1,5 +1,6 @@
 import React from 'react';
 import { MessageSquare, Layers, CheckCircle, ArrowRight } from 'lucide-react';
+import TypewriterTitle from './TypewriterTitle';
 
 const STEPS = [
   {
@@ -38,9 +39,12 @@ const HowWeWork = () => {
           <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase tracking-[0.22em]">
             <span>Methodology</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight">
+          <TypewriterTitle
+            as="h2"
+            className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight"
+          >
             How We <span className="text-[#B69B65]">Work</span>
-          </h2>
+          </TypewriterTitle>
           <div className="w-12 h-px bg-[#B69B65] mx-auto" />
           <p className="text-[#5C5852] text-sm sm:text-base font-light leading-relaxed">
             A disciplined, transparent three-stage approach designed to ensure complete clarity when acquiring premier real estate in Gujarat.
