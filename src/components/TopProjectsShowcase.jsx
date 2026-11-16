@@ -102,7 +102,7 @@ const TopProjectsShowcase = ({ onShowToast }) => {
                     <tr 
                       key={proj.id} 
                       className={`transition-colors group ${
-                        isSpotlightActive ? 'bg-[#F5F3EE]' : 'hover:bg-[#1E1E1E]'
+                        isSpotlightActive ? 'bg-[#F5F1E8]' : 'hover:bg-[#F5F1E8]'
                       }`}
                     >
                       {/* Checkbox */}
@@ -279,9 +279,9 @@ const TopProjectsShowcase = ({ onShowToast }) => {
                     alt={activeProject.name}
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#171717]/90 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#171717]/90 via-[#171717]/20 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-2xl font-serif font-bold text-[#171717] mt-1">{activeProject.name}</h3>
+                    <h3 className="text-2xl font-serif font-bold text-white mt-1 drop-shadow-sm">{activeProject.name}</h3>
                   </div>
                 </div>
               </div>
@@ -488,10 +488,10 @@ const TopProjectsShowcase = ({ onShowToast }) => {
 
             <div className="relative overflow-hidden h-60 border border-[#E6E2D8]">
               <img src={selectedProjectModal.image} alt={selectedProjectModal.name} className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#171717] via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#171717]/95 via-[#171717]/30 to-transparent" />
               <div className="absolute bottom-4 left-4 right-4">
-                <h3 className="text-2xl font-serif font-bold text-[#171717] mt-1">{selectedProjectModal.name}</h3>
-                <p className="text-xs text-[#B69B65] font-mono">{selectedProjectModal.location}</p>
+                <h3 className="text-2xl font-serif font-bold text-white mt-1 drop-shadow-sm">{selectedProjectModal.name}</h3>
+                <p className="text-xs text-[#E6D5B8] font-sans tracking-wider">{selectedProjectModal.location}</p>
               </div>
             </div>
 

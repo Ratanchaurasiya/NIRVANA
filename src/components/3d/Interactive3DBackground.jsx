@@ -1,42 +1,20 @@
-import React, { useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import React from 'react';
 
-function ArchitecturalPerspectivePlane() {
-  const meshRef = useRef();
-
-  useFrame((state) => {
-    if (meshRef.current) {
-      // Extremely subtle, imperceptible architectural drift
-      meshRef.current.position.y = -6 + Math.sin(state.clock.getElapsedTime() * 0.15) * 0.15;
-    }
-  });
-
-  return (
-    <group ref={meshRef} position={[0, -6, -8]} rotation={[-Math.PI / 2.3, 0, 0]}>
-      {/* Subtle Architectural Drafting Grid */}
-      <mesh>
-        <planeGeometry args={[80, 80, 24, 24]} />
-        <meshBasicMaterial
-          color="#B69B65"
-          wireframe
-          transparent
-          opacity={0.07}
-        />
-      </mesh>
-    </group>
-  );
-}
-
+/**
+ * Architectural Luxury Canvas Background
+ * Replaces distracting 3D wireframe mesh with a pristine, timeless architectural canvas.
+ * Designed according to high-end real estate and architectural publishing standards.
+ */
 export default function Interactive3DBackground() {
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-[#FAF9F6]">
-      <Canvas
-        camera={{ position: [0, 0, 16], fov: 55 }}
-        gl={{ alpha: true, antialias: true }}
-      >
-        <ambientLight intensity={0.4} />
-        <ArchitecturalPerspectivePlane />
-      </Canvas>
+      {/* Subtle architectural vertical grid rules matching max-w-7xl content container */}
+      <div className="max-w-7xl mx-auto h-full w-full px-4 sm:px-6 lg:px-8 grid grid-cols-12 pointer-events-none">
+        <div className="border-r border-[#DEDAD2]/30 h-full hidden lg:block col-span-3" />
+        <div className="border-r border-[#DEDAD2]/30 h-full hidden lg:block col-span-3" />
+        <div className="border-r border-[#DEDAD2]/30 h-full hidden lg:block col-span-3" />
+        <div className="h-full hidden lg:block col-span-3" />
+      </div>
     </div>
   );
 }

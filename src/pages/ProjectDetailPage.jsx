@@ -80,23 +80,23 @@ export default function ProjectDetailPage({ projectId, onNavigate, onShowToast }
         </h3>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs">
-          <div className="p-4 rounded-none bg-[#FAF9F6] border border-[#E6E2D8] space-y-1">
-            <span className="text-[10px] font-mono uppercase text-[#77736C] block">Valuation Status</span>
+          <div className="p-4 bg-[#FAF9F6] border border-[#DEDAD2] space-y-1">
+            <span className="text-[10px] font-sans font-semibold uppercase text-[#77736C] block">Certification / Class</span>
             <span className="font-bold text-[#B69B65] text-sm">{project.valuation}</span>
           </div>
 
-          <div className="p-4 rounded-none bg-[#FAF9F6] border border-[#E6E2D8] space-y-1">
-            <span className="text-[10px] font-mono uppercase text-[#77736C] block">Unit Size Range</span>
+          <div className="p-4 bg-[#FAF9F6] border border-[#DEDAD2] space-y-1">
+            <span className="text-[10px] font-sans font-semibold uppercase text-[#77736C] block">Unit Size Range</span>
             <span className="font-bold text-[#171717] text-sm">{project.size}</span>
           </div>
 
-          <div className="p-4 rounded-none bg-[#FAF9F6] border border-[#E6E2D8] space-y-1">
-            <span className="text-[10px] font-mono uppercase text-[#77736C] block">Configurations</span>
+          <div className="p-4 bg-[#FAF9F6] border border-[#DEDAD2] space-y-1">
+            <span className="text-[10px] font-sans font-semibold uppercase text-[#77736C] block">Configurations</span>
             <span className="font-bold text-[#171717] text-sm">{project.config}</span>
           </div>
 
-          <div className="p-4 rounded-none bg-[#FAF9F6] border border-[#E6E2D8] space-y-1">
-            <span className="text-[10px] font-mono uppercase text-[#77736C] block">Estimated Possession</span>
+          <div className="p-4 bg-[#FAF9F6] border border-[#DEDAD2] space-y-1">
+            <span className="text-[10px] font-sans font-semibold uppercase text-[#77736C] block">Estimated Possession</span>
             <span className="font-bold text-[#B69B65] text-sm">{project.completion}</span>
           </div>
         </div>

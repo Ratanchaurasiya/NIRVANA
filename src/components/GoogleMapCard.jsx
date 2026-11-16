@@ -31,28 +31,26 @@ const GoogleMapCard = () => {
       </div>
 
       {/* Styled Regional Map Preview Container */}
-      <div className="relative overflow-hidden h-[250px] border border-[#E6E2D8] group">
+      <div className="relative overflow-hidden h-[250px] border border-[#DEDAD2] group">
         <iframe
           title="NIRVANA GROUP Corporate Territory"
           src={regionalMapUrl}
-          className="w-full h-full border-0 filter invert-[90%] hue-rotate-[180deg] contrast-[110%] opacity-75 group-hover:opacity-90 transition-opacity duration-500"
+          className="w-full h-full border-0 grayscale-[30%] contrast-[102%] opacity-90 group-hover:opacity-100 transition-opacity duration-500"
           loading="lazy"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-[#171717] via-transparent to-transparent pointer-events-none" />
-
         {/* Floating Strategic Overlay Badge */}
-        <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2 p-3 bg-white/95 border border-[#E6E2D8] text-xs">
-          <div className="flex items-center gap-2 text-[#5C5852]">
+        <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2 p-3 bg-white/95 border border-[#DEDAD2] text-xs shadow-sm">
+          <div className="flex items-center gap-2 text-[#3D3A35]">
             <Navigation className="w-3.5 h-3.5 text-[#B69B65]" />
-            <span className="text-[11px] font-mono">Territory: Western Ahmedabad Growth Belt</span>
+            <span className="text-[11px] font-sans font-medium">Territory: Western Ahmedabad Growth Belt</span>
           </div>
 
           <a
             href="https://maps.google.com/?q=Ahmedabad,Gujarat"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-[11px] font-mono text-[#B69B65] hover:text-[#171717] transition-colors"
+            className="inline-flex items-center gap-1 text-[11px] font-sans font-semibold uppercase tracking-wider text-[#B69B65] hover:text-[#171717] transition-colors"
           >
             <span>City Map</span>
             <ArrowUpRight className="w-3 h-3" />

@@ -55,13 +55,12 @@ const FeaturedOpportunities = ({ onShowToast }) => {
               className="group bg-white border border-[#E6E2D8] hover:border-[#B69B65]/40 transition-colors flex flex-col justify-between"
             >
               {/* Image Container */}
-              <div className="relative h-60 overflow-hidden border-b border-[#E6E2D8]">
+              <div className="relative h-60 overflow-hidden border-b border-[#E6E2D8] bg-[#F5F1E8]">
                 <img
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1F1F1F] via-transparent to-transparent opacity-80" />
               </div>
 
               {/* Card Body */}
@@ -132,9 +131,9 @@ const FeaturedOpportunities = ({ onShowToast }) => {
 
             <div className="relative overflow-hidden h-56 border border-[#E6E2D8]">
               <img src={selectedProp.image} alt={selectedProp.title} className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1F1F1F] via-transparent to-transparent opacity-80" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#171717]/95 via-[#171717]/30 to-transparent" />
               <div className="absolute bottom-4 left-4 right-4">
-                <h3 className="text-xl sm:text-2xl font-bold font-serif text-[#171717] mt-1">{selectedProp.title}</h3>
+                <h3 className="text-xl sm:text-2xl font-bold font-serif text-white mt-1 drop-shadow-sm">{selectedProp.title}</h3>
               </div>
             </div>
 

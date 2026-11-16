@@ -37,7 +37,7 @@ const ContactSection = ({ onShowToast }) => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase tracking-[0.22em]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white border border-[#DEDAD2] text-[#B69B65] text-[10px] font-sans font-bold uppercase tracking-[0.25em]">
             <span>Advisory & Inquiries</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight">
@@ -54,22 +54,22 @@ const ContactSection = ({ onShowToast }) => {
           {/* Left Column: Official Contact Brief */}
           <div className="lg:col-span-5 space-y-6">
             
-            <div className="bg-white border border-[#E6E2D8] p-6 sm:p-8 space-y-6">
+            <div className="bg-white border border-[#DEDAD2] p-6 sm:p-8 space-y-6 shadow-sm">
               <div>
-                <span className="text-xs font-mono uppercase tracking-[0.22em] text-[#B69B65] font-semibold">OFFICIAL PRESENCE</span>
+                <span className="text-[10px] font-sans font-bold uppercase tracking-[0.25em] text-[#B69B65]">OFFICIAL PRESENCE</span>
                 <h3 className="text-2xl font-serif font-bold text-[#171717] mt-1">NIRVANA GROUP</h3>
-                <p className="text-xs text-[#77736C] mt-1 font-mono">Corporate Property Development & Advisory</p>
+                <p className="text-xs text-[#77736C] mt-1 font-sans">Corporate Property Development & Advisory</p>
               </div>
 
               <div className="space-y-3.5 pt-2">
                 
                 {/* Location */}
-                <div className="flex items-start gap-4 p-4 bg-[#FAF9F6] border border-[#E6E2D8]">
-                  <div className="w-9 h-9 bg-white border border-[#E6E2D8] flex items-center justify-center shrink-0 text-[#B69B65]">
+                <div className="flex items-start gap-4 p-4 bg-[#FAF9F6] border border-[#DEDAD2]">
+                  <div className="w-9 h-9 bg-white border border-[#DEDAD2] flex items-center justify-center shrink-0 text-[#B69B65]">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[10px] font-mono text-[#77736C] uppercase tracking-wider block">Headquarters & Corridors</span>
+                    <span className="text-[10px] font-sans text-[#77736C] uppercase tracking-wider font-semibold block">Headquarters & Corridors</span>
                     <p className="text-sm font-semibold text-[#171717] mt-0.5">
                       Ahmedabad, Gujarat, India
                     </p>
@@ -80,12 +80,12 @@ const ContactSection = ({ onShowToast }) => {
                 </div>
 
                 {/* Direct Line */}
-                <div className="flex items-start gap-4 p-4 bg-[#FAF9F6] border border-[#E6E2D8]">
-                  <div className="w-9 h-9 bg-white border border-[#E6E2D8] flex items-center justify-center shrink-0 text-[#B69B65]">
+                <div className="flex items-start gap-4 p-4 bg-[#FAF9F6] border border-[#DEDAD2]">
+                  <div className="w-9 h-9 bg-white border border-[#DEDAD2] flex items-center justify-center shrink-0 text-[#B69B65]">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[10px] font-mono text-[#77736C] uppercase tracking-wider block">Advisory Desk</span>
+                    <span className="text-[10px] font-sans text-[#77736C] uppercase tracking-wider font-semibold block">Advisory Desk</span>
                     <a href="tel:+919081507342" className="text-sm font-semibold text-[#171717] hover:text-[#B69B65] transition-colors block mt-0.5">
                       +91 90815 07342
                     </a>
@@ -96,12 +96,12 @@ const ContactSection = ({ onShowToast }) => {
                 </div>
 
                 {/* Corporate Correspondence */}
-                <div className="flex items-start gap-4 p-4 bg-[#FAF9F6] border border-[#E6E2D8]">
-                  <div className="w-9 h-9 bg-white border border-[#E6E2D8] flex items-center justify-center shrink-0 text-[#B69B65]">
+                <div className="flex items-start gap-4 p-4 bg-[#FAF9F6] border border-[#DEDAD2]">
+                  <div className="w-9 h-9 bg-white border border-[#DEDAD2] flex items-center justify-center shrink-0 text-[#B69B65]">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div className="min-w-0">
-                    <span className="text-[10px] font-mono text-[#77736C] uppercase tracking-wider block">Corporate Inquiries</span>
+                    <span className="text-[10px] font-sans text-[#77736C] uppercase tracking-wider font-semibold block">Corporate Inquiries</span>
                     <a href="mailto:himanshuramchandani2006@gmail.com" className="text-sm font-semibold text-[#171717] hover:text-[#B69B65] transition-colors block mt-0.5 truncate">
                       himanshuramchandani2006@gmail.com
                     </a>
@@ -112,12 +112,12 @@ const ContactSection = ({ onShowToast }) => {
                 </div>
 
                 {/* Consultation Hours */}
-                <div className="flex items-start gap-4 p-4 bg-[#FAF9F6] border border-[#E6E2D8]">
-                  <div className="w-9 h-9 bg-white border border-[#E6E2D8] flex items-center justify-center shrink-0 text-[#B69B65]">
+                <div className="flex items-start gap-4 p-4 bg-[#FAF9F6] border border-[#DEDAD2]">
+                  <div className="w-9 h-9 bg-white border border-[#DEDAD2] flex items-center justify-center shrink-0 text-[#B69B65]">
                     <Clock className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[10px] font-mono text-[#77736C] uppercase tracking-wider block">Hours</span>
+                    <span className="text-[10px] font-sans text-[#77736C] uppercase tracking-wider font-semibold block">Hours</span>
                     <p className="text-xs font-semibold text-[#171717] mt-0.5">Monday to Saturday: 10:00 AM – 7:00 PM</p>
                     <p className="text-[11px] text-[#77736C]">Sunday: Private Viewings By Prior Appointment</p>
                   </div>
@@ -133,7 +133,7 @@ const ContactSection = ({ onShowToast }) => {
 
           {/* Right Column: Modern Contact Form */}
           <div className="lg:col-span-7">
-            <div className="bg-white border border-[#E6E2D8] p-6 sm:p-10">
+            <div className="bg-white border border-[#DEDAD2] p-6 sm:p-10 shadow-sm">
               
               <div className="mb-8 border-b border-[#E6E2D8] pb-4">
                 <span className="text-xs font-mono uppercase tracking-[0.22em] text-[#B69B65] font-semibold">DIRECT INQUIRY DOSSIER</span>

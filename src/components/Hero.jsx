@@ -1,79 +1,79 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Compass, Shield, Award } from 'lucide-react';
 import Hero3DBuilding from './3d/Hero3DBuilding';
 
 const Hero = ({ onNavigate, onOpenDossier }) => {
   return (
-    <div className="w-full bg-[#FAF9F6] overflow-hidden pt-28 sm:pt-32 pb-16">
+    <div className="w-full bg-[#FAF9F6] overflow-hidden pt-28 sm:pt-36 pb-16">
       <section className="relative w-full flex flex-col justify-between px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto z-10 space-y-12">
         
-        {/* 1. Subtle Editorial Metadata Header */}
-        <div className="flex items-center justify-between gap-4 w-full border-b border-[#E6E2D8] pb-3 text-xs font-mono uppercase tracking-[0.22em] text-[#77736C]">
-          <div className="flex items-center gap-2">
+        {/* 1. Subtle Architectural Monogram Header */}
+        <div className="flex items-center justify-between gap-4 w-full border-b border-[#DEDAD2] pb-3.5 text-[11px] font-sans font-semibold uppercase tracking-[0.25em] text-[#77736C]">
+          <div className="flex items-center gap-2.5">
             <span className="w-1.5 h-1.5 bg-[#B69B65]" />
-            <span className="text-[#B69B65]">Architectural Engineering & Development</span>
+            <span className="text-[#171717]">Architectural Engineering & Property Holdings</span>
           </div>
 
-          <div className="hidden sm:block text-[#77736C]">
-            Ahmedabad • Gujarat • India
+          <div className="hidden sm:flex items-center gap-2 text-[#77736C]">
+            <span>Ahmedabad</span>
+            <span className="text-[#DEDAD2]">•</span>
+            <span>Gujarat</span>
+            <span className="text-[#DEDAD2]">•</span>
+            <span>India</span>
           </div>
         </div>
 
-        {/* 2. Main Hero Content Grid */}
+        {/* 2. Main Hero Editorial Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center w-full">
           
           {/* Left Column: Brand Typography, Tagline, Editorial Description & CTAs */}
           <div className="lg:col-span-6 xl:col-span-7 flex flex-col items-start space-y-6 text-left">
             
-            <div className="space-y-2">
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#B69B65] font-semibold block">
-                Official Developer Portfolio
-              </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#171717] tracking-tight leading-[1.08]">
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#DEDAD2] text-[#B69B65] text-[10px] font-sans font-bold uppercase tracking-[0.25em] shadow-sm">
+                <span>Developer Portfolio</span>
+              </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#171717] tracking-tight leading-[1.06]">
                 NIRVANA GROUP
               </h1>
-              <p className="text-sm font-serif italic text-[#5C5852] tracking-wide pt-1">
+              <p className="text-lg sm:text-xl font-serif italic text-[#B69B65] tracking-wide pt-0.5">
                 "Building Dreams. Creating Landmarks."
               </p>
             </div>
 
-            {/* Editorial Focus Line */}
-            <div className="text-xs font-mono uppercase tracking-[0.2em] text-[#B69B65] flex items-center gap-2">
-              <span>Architectural Excellence</span>
-              <span className="text-[#77736C]">—</span>
-              <span>Strategic Corridors</span>
-              <span className="text-[#77736C]">—</span>
-              <span>Sustainable Core</span>
-            </div>
-
-            {/* Description */}
-            <p className="text-sm sm:text-base text-[#4B4842] font-light leading-relaxed max-w-xl">
-              Delivering state-of-the-art corporate offices, prime commercial suites, and luxury residential estates across premier growth hubs in Gujarat.
+            {/* Architectural Sub-Manifesto */}
+            <p className="text-sm sm:text-base text-[#3D3A35] font-light leading-relaxed max-w-xl">
+              Curating landmark corporate environments, high-street retail suites, and bespoke residential sanctuaries across Western Ahmedabad’s highest-velocity growth corridors.
             </p>
 
-            {/* Action Buttons: Clean Architectural Geometry (No Rounded Bubbles) */}
-            <div className="flex flex-wrap items-center gap-3.5 pt-2 w-full sm:w-auto">
+            {/* Action Buttons: Clean Architectural Geometry */}
+            <div className="flex flex-wrap items-center gap-4 pt-2 w-full sm:w-auto">
               <button
                 onClick={() => onNavigate && onNavigate('/projects')}
-                className="w-full sm:w-auto px-7 py-3.5 bg-[#B69B65] text-white text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#A38854] transition-all flex items-center justify-center gap-2.5 cursor-pointer shadow-sm"
+                className="w-full sm:w-auto px-8 py-3.5 bg-[#B69B65] text-white text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#A38854] transition-all flex items-center justify-center gap-2.5 cursor-pointer shadow-sm"
               >
-                <span>Explore Portfolio</span>
+                <span>Explore Developments</span>
                 <ArrowRight className="w-4 h-4 stroke-[2]" />
               </button>
 
               <button
                 onClick={() => onOpenDossier && onOpenDossier()}
-                className="w-full sm:w-auto px-6 py-3.5 border border-[#B69B65] text-[#171717] text-xs font-medium uppercase tracking-[0.18em] hover:bg-[#B69B65]/10 transition-all cursor-pointer flex items-center justify-center bg-white shadow-sm"
+                className="w-full sm:w-auto px-7 py-3.5 border border-[#171717] text-[#171717] text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#171717] hover:text-white transition-all cursor-pointer flex items-center justify-center bg-white shadow-sm"
               >
                 <span>Project Dossier (PDF)</span>
               </button>
+            </div>
 
-              <button
-                onClick={() => onNavigate && onNavigate('/contact')}
-                className="w-full sm:w-auto px-6 py-3.5 border border-[#E6E2D8] bg-white text-[#171717] text-xs font-medium uppercase tracking-[0.18em] hover:border-[#171717] transition-all cursor-pointer shadow-sm"
-              >
-                <span>Initiate Enquiry</span>
-              </button>
+            {/* Architectural Trust Pillars */}
+            <div className="flex items-center gap-6 pt-2 text-[11px] font-sans uppercase tracking-[0.18em] text-[#77736C]">
+              <span className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#B69B65]" />
+                100% RERA Registered
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#B69B65]" />
+                BIS Zone 5 Engineered
+              </span>
             </div>
 
           </div>
@@ -86,23 +86,23 @@ const Hero = ({ onNavigate, onOpenDossier }) => {
         </div>
 
         {/* 3. Bottom Architectural Benchmarks Bar */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-[#E6E2D8] w-full">
-          <div className="p-5 bg-white border border-[#E6E2D8] shadow-sm space-y-1.5 transition-colors hover:border-[#B69B65]">
-            <span className="text-[11px] font-mono text-[#B69B65] uppercase tracking-[0.2em] block">01 / Sustainability</span>
-            <p className="text-sm text-[#171717] font-serif font-bold tracking-tight">Zero Carbon & Solar Grids</p>
-            <p className="text-xs text-[#77736C]">IGBC Certified Standards</p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-8 border-t border-[#DEDAD2] w-full">
+          <div className="p-6 bg-white border border-[#DEDAD2] shadow-sm space-y-2 transition-all hover:border-[#B69B65]">
+            <span className="text-[10px] font-sans font-bold text-[#B69B65] uppercase tracking-[0.22em] block">Pillar I • Sustainability</span>
+            <p className="text-base text-[#171717] font-serif font-bold tracking-tight">Zero Carbon & Solar Micro-Grids</p>
+            <p className="text-xs text-[#5C5852] font-light leading-relaxed">Integrated rainwater harvesting and IGBC gold-standard environmental envelopes.</p>
           </div>
 
-          <div className="p-5 bg-white border border-[#E6E2D8] shadow-sm space-y-1.5 transition-colors hover:border-[#B69B65]">
-            <span className="text-[11px] font-mono text-[#B69B65] uppercase tracking-[0.2em] block">02 / Engineering</span>
-            <p className="text-sm text-[#171717] font-serif font-bold tracking-tight">BIS Zone 5 Seismic Core</p>
-            <p className="text-xs text-[#77736C]">High Tensile Rebar Exoskeleton</p>
+          <div className="p-6 bg-white border border-[#DEDAD2] shadow-sm space-y-2 transition-all hover:border-[#B69B65]">
+            <span className="text-[10px] font-sans font-bold text-[#B69B65] uppercase tracking-[0.22em] block">Pillar II • Structural Core</span>
+            <p className="text-base text-[#171717] font-serif font-bold tracking-tight">BIS Zone 5 Seismic Exoskeleton</p>
+            <p className="text-xs text-[#5C5852] font-light leading-relaxed">Monolithic high-tensile steel rebar foundation engineered for multi-generational longevity.</p>
           </div>
 
-          <div className="p-5 bg-white border border-[#E6E2D8] shadow-sm space-y-1.5 transition-colors hover:border-[#B69B65]">
-            <span className="text-[11px] font-mono text-[#B69B65] uppercase tracking-[0.2em] block">03 / Strategic Presence</span>
-            <p className="text-sm text-[#171717] font-serif font-bold tracking-tight">Prime Gujarat Corridors</p>
-            <p className="text-xs text-[#77736C]">Science City, Sola & SG Highway</p>
+          <div className="p-6 bg-white border border-[#DEDAD2] shadow-sm space-y-2 transition-all hover:border-[#B69B65]">
+            <span className="text-[10px] font-sans font-bold text-[#B69B65] uppercase tracking-[0.22em] block">Pillar III • Strategic Belts</span>
+            <p className="text-base text-[#171717] font-serif font-bold tracking-tight">Gujarat Arterial Corridors</p>
+            <p className="text-xs text-[#5C5852] font-light leading-relaxed">Prime positions spanning Science City Road, Sola, and SG Highway arterial expressways.</p>
           </div>
         </div>
 

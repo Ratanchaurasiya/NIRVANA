@@ -21,21 +21,21 @@ export default function Navbar({ currentPath, onNavigate }) {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-3">
-        <div className="border transition-all duration-300 backdrop-blur-md px-6 py-3.5 flex items-center justify-between bg-white/95 border-[#E6E2D8] shadow-sm text-[#171717]">
+        <div className="border transition-all duration-300 backdrop-blur-md px-6 py-3.5 flex items-center justify-between bg-white/95 border-[#DEDAD2] shadow-sm text-[#171717]">
           
           {/* Brand Logo & Monogram */}
           <button
             onClick={() => handleLinkClick('/')}
             className="flex items-center gap-3.5 group text-left cursor-pointer"
           >
-            <div className="w-9 h-9 border border-[#E6E2D8] bg-[#F5F3EE] flex items-center justify-center shrink-0 transition-colors group-hover:border-[#B69B65]">
+            <div className="w-9 h-9 border border-[#DEDAD2] bg-[#F5F1E8] flex items-center justify-center shrink-0 transition-colors group-hover:border-[#B69B65]">
               <Building2 className="w-4 h-4 text-[#B69B65]" />
             </div>
             <div className="flex flex-col">
               <span className="font-serif font-bold text-base sm:text-lg tracking-wider uppercase text-[#171717] leading-tight">
                 NIRVANA <span className="text-[#B69B65]">GROUP</span>
               </span>
-              <span className="text-[9px] font-mono text-[#77736C] tracking-[0.25em] block uppercase mt-0.5">
+              <span className="text-[10px] font-sans font-semibold text-[#77736C] tracking-[0.25em] block uppercase mt-0.5">
                 EST. 2026 • GUJARAT
               </span>
             </div>

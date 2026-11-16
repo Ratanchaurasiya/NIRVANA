@@ -12,7 +12,7 @@ export default function AboutPage({ onNavigate }) {
       
       {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-none bg-white border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase tracking-widest">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white border border-[#DEDAD2] text-[#B69B65] text-[10px] font-sans font-bold uppercase tracking-[0.25em]">
           <Sparkles className="w-3.5 h-3.5 text-[#B69B65]" />
           <span>CORPORATE ARCHITECTURE PROFILE</span>
         </div>
@@ -23,9 +23,9 @@ export default function AboutPage({ onNavigate }) {
       </div>
 
       {/* ---------------- Exact Corporate Profile Block ---------------- */}
-      <div className="rounded-none bg-white p-8 sm:p-12 border border-[#E6E2D8] shadow-xl relative overflow-hidden">
+      <div className="bg-white p-8 sm:p-12 border border-[#DEDAD2] shadow-sm relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center space-y-6">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-none bg-[#FAF9F6] border border-[#E6E2D8] text-[#B69B65] mx-auto">
+          <div className="inline-flex items-center justify-center w-14 h-14 bg-[#FAF9F6] border border-[#DEDAD2] text-[#B69B65] mx-auto">
             <Award className="w-7 h-7" />
           </div>
           

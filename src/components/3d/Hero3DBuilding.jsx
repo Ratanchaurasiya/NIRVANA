@@ -86,13 +86,13 @@ export default function Hero3DBuilding() {
           className="absolute top-4 left-4 right-4 flex items-center justify-between gap-3 z-20 pointer-events-auto"
           style={{ transform: 'translateZ(25px)' }}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/95 border border-[#E6E2D8] shadow-sm text-[11px] font-mono uppercase tracking-[0.18em] text-[#B69B65]">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/95 border border-[#DEDAD2] shadow-sm text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-[#B69B65]">
             <span className="w-1.5 h-1.5 bg-[#B69B65]" />
             <span>NIRVANA ABODE</span>
           </div>
 
           {/* Minimalist Lighting Tabs */}
-          <div className="inline-flex items-center bg-white/95 border border-[#E6E2D8] shadow-sm p-0.5">
+          <div className="inline-flex items-center bg-white/95 border border-[#DEDAD2] shadow-sm p-0.5">
             <button
               type="button"
               onClick={(e) => {
@@ -100,7 +100,7 @@ export default function Hero3DBuilding() {
                 setLightingMode('day');
               }}
               title="Daylight View"
-              className={`flex items-center gap-1 px-2.5 py-1 text-[10px] font-mono tracking-wider transition-colors ${
+              className={`flex items-center gap-1 px-2.5 py-1 text-[10px] font-sans font-medium tracking-wider transition-colors cursor-pointer ${
                 lightingMode === 'day'
                   ? 'bg-[#B69B65] text-white font-semibold'
                   : 'text-[#77736C] hover:text-[#171717]'
@@ -117,7 +117,7 @@ export default function Hero3DBuilding() {
                 setLightingMode('sunset');
               }}
               title="Dusk View"
-              className={`flex items-center gap-1 px-2.5 py-1 text-[10px] font-mono tracking-wider transition-colors ${
+              className={`flex items-center gap-1 px-2.5 py-1 text-[10px] font-sans font-medium tracking-wider transition-colors cursor-pointer ${
                 lightingMode === 'sunset'
                   ? 'bg-[#B69B65] text-white font-semibold'
                   : 'text-[#77736C] hover:text-[#171717]'
@@ -134,7 +134,7 @@ export default function Hero3DBuilding() {
                 setLightingMode('night');
               }}
               title="Night View"
-              className={`flex items-center gap-1 px-2.5 py-1 text-[10px] font-mono tracking-wider transition-colors ${
+              className={`flex items-center gap-1 px-2.5 py-1 text-[10px] font-sans font-medium tracking-wider transition-colors cursor-pointer ${
                 lightingMode === 'night'
                   ? 'bg-[#B69B65] text-white font-semibold'
                   : 'text-[#77736C] hover:text-[#171717]'
@@ -148,10 +148,10 @@ export default function Hero3DBuilding() {
 
         {/* Bottom Architectural Caption */}
         <div
-          className="absolute bottom-4 left-4 right-4 z-20 pointer-events-none p-4 bg-white/95 border border-[#E6E2D8] shadow-md flex flex-col gap-1"
+          className="absolute bottom-4 left-4 right-4 z-20 pointer-events-none p-4 bg-white/95 border border-[#DEDAD2] shadow-md flex flex-col gap-1"
           style={{ transform: 'translateZ(20px)' }}
         >
-          <div className="flex items-center justify-between text-[11px] font-mono tracking-[0.15em] text-[#B69B65] uppercase">
+          <div className="flex items-center justify-between text-[10px] font-sans font-semibold tracking-[0.2em] text-[#B69B65] uppercase">
             <span>{currentLighting.label}</span>
             <span className="text-[#77736C]">Gujarat</span>
           </div>

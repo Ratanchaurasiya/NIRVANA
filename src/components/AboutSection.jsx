@@ -31,10 +31,9 @@ const AboutSection = () => {
                 alt="NIRVANA GROUP Ahmedabad Property Guidance"
                 className="w-full h-[450px] lg:h-[500px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#171717]/90 via-transparent to-transparent" />
 
               {/* Trust & Advisory Badge */}
-              <div className="absolute bottom-6 left-6 right-6 p-5 bg-white/95 border border-[#E6E2D8] backdrop-blur-md">
+              <div className="absolute bottom-6 left-6 right-6 p-5 bg-white/95 border border-[#DEDAD2] backdrop-blur-md shadow-sm">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 bg-white border border-[#B69B65]/40 text-[#B69B65] flex items-center justify-center shrink-0">
                     <Shield className="w-5 h-5" />

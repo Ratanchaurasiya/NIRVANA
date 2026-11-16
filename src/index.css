@@ -13,17 +13,17 @@ html, body, #root {
 
 @layer base {
   :root {
-    /* Primary Architectural White & Ivory Canvas */
+    /* Primary Architectural White & Warm Ivory Canvas */
     --color-canvas-main: #FAF9F6;
     --color-canvas-white: #FFFFFF;
-    --color-canvas-alt: #F5F3EE;
+    --color-canvas-alt: #F5F1E8;
     --color-card-white: #FFFFFF;
-    --color-border-light: #E6E2D8;
-    --color-border-subtle: #EFECE6;
+    --color-border-light: #DEDAD2;
+    --color-border-subtle: #EBE7DF;
 
     /* Charcoal & Contrast Typography */
     --color-text-primary: #171717;
-    --color-text-secondary: #4B4842;
+    --color-text-secondary: #3D3A35;
     --color-text-muted: #77736C;
     --color-text-light: #A39F97;
 
@@ -42,13 +42,18 @@ html, body, #root {
   }
 
   h1, h2, h3, h4, .font-serif-brand {
-    font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+    font-family: 'Playfair Display', 'Cinzel', Georgia, serif;
     letter-spacing: -0.015em;
     color: #171717;
   }
 
-  .font-display {
-    font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+  .font-brand-heading {
+    font-family: 'Cinzel', 'Playfair Display', serif;
+    letter-spacing: 0.05em;
+  }
+
+  .font-editorial {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
   }
 }
 

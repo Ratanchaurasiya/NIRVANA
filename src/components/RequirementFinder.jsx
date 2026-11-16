@@ -19,19 +19,19 @@ const RequirementFinder = ({ onShowToast }) => {
   };
 
   return (
-    <section id="requirement-finder" className="relative z-20 -mt-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="bg-white border border-[#E6E2D8] p-6 sm:p-8 lg:p-10 shadow-md">
+    <section id="requirement-finder" className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+      <div className="bg-white border border-[#DEDAD2] p-6 sm:p-8 lg:p-10 shadow-sm">
         
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 mb-8 border-b border-[#E6E2D8]">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 mb-8 border-b border-[#DEDAD2]">
           <div>
-            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-[#B69B65] uppercase font-semibold">
+            <div className="inline-flex items-center gap-2 text-[10px] font-sans tracking-[0.25em] text-[#B69B65] uppercase font-bold">
               <span>Interactive Portfolio Finder</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#171717] mt-1">
               Identify Your Property Objective
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-[#5C5852] max-w-md font-light">
+          <p className="text-xs sm:text-sm text-[#5C5852] max-w-md font-light leading-relaxed">
             Select parameters below to review curated residential or commercial asset shortlists tailored to your acquisition schedule.
           </p>
         </div>
@@ -41,13 +41,13 @@ const RequirementFinder = ({ onShowToast }) => {
             
             {/* Property Type Dropdown */}
             <div className="flex flex-col gap-2">
-              <label className="text-xs font-mono uppercase tracking-wider text-[#77736C]">
+              <label className="text-xs font-sans uppercase tracking-wider text-[#77736C]">
                 Asset Category
               </label>
               <select
                 value={formData.propertyType}
                 onChange={(e) => setFormData({ ...formData, propertyType: e.target.value })}
-                className="w-full bg-[#FAF9F6] border border-[#E6E2D8] px-4 py-3.5 text-sm text-[#171717] focus:outline-none focus:border-[#B69B65] focus:bg-white cursor-pointer"
+                className="w-full bg-[#FAF9F6] border border-[#DEDAD2] px-4 py-3.5 text-sm text-[#171717] focus:outline-none focus:border-[#B69B65] focus:bg-white cursor-pointer"
               >
                 <option value="Residential">Residential (Sky Villa / Apartment)</option>
                 <option value="Commercial">Commercial (Office / Retail Suite)</option>
@@ -58,13 +58,13 @@ const RequirementFinder = ({ onShowToast }) => {
 
             {/* Purpose Dropdown */}
             <div className="flex flex-col gap-2">
-              <label className="text-xs font-mono uppercase tracking-wider text-[#77736C]">
+              <label className="text-xs font-sans uppercase tracking-wider text-[#77736C]">
                 Acquisition Purpose
               </label>
               <select
                 value={formData.purpose}
                 onChange={(e) => setFormData({ ...formData, purpose: e.target.value })}
-                className="w-full bg-[#FAF9F6] border border-[#E6E2D8] px-4 py-3.5 text-sm text-[#171717] focus:outline-none focus:border-[#B69B65] focus:bg-white cursor-pointer"
+                className="w-full bg-[#FAF9F6] border border-[#DEDAD2] px-4 py-3.5 text-sm text-[#171717] focus:outline-none focus:border-[#B69B65] focus:bg-white cursor-pointer"
               >
                 <option value="Buy">Personal Family Residence</option>
                 <option value="Invest">Capital Investment & Yield</option>
@@ -75,13 +75,13 @@ const RequirementFinder = ({ onShowToast }) => {
 
             {/* Preferred Location Dropdown */}
             <div className="flex flex-col gap-2">
-              <label className="text-xs font-mono uppercase tracking-wider text-[#77736C]">
+              <label className="text-xs font-sans uppercase tracking-wider text-[#77736C]">
                 Target Corridor
               </label>
               <select
                 value={formData.location}
                 onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                className="w-full bg-[#FAF9F6] border border-[#E6E2D8] px-4 py-3.5 text-sm text-[#171717] focus:outline-none focus:border-[#B69B65] focus:bg-white cursor-pointer"
+                className="w-full bg-[#FAF9F6] border border-[#DEDAD2] px-4 py-3.5 text-sm text-[#171717] focus:outline-none focus:border-[#B69B65] focus:bg-white cursor-pointer"
               >
                 <option value="Science City">Science City Road</option>
                 <option value="Sola">Sola</option>

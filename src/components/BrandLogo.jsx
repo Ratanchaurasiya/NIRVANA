@@ -34,7 +34,7 @@ const BrandLogo = ({ variant = "default", className = "" }) => {
         <span className="font-serif text-lg font-bold tracking-wider text-[#171717] group-hover:text-[#B69B65] transition-colors leading-tight">
           NIRVANA <span className="text-[#B69B65]">GROUP</span>
         </span>
-        <span className="text-[9px] font-mono uppercase tracking-[0.22em] text-[#77736C] font-medium mt-0.5">
+        <span className="text-[10px] font-sans font-semibold uppercase tracking-[0.25em] text-[#77736C] mt-0.5">
           BUILDING DREAMS
         </span>
       </div>

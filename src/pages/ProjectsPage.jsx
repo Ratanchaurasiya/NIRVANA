@@ -75,22 +75,22 @@ export default function ProjectsPage({ onNavigate }) {
                   alt={project.name}
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1F1F1F] via-transparent to-black/60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#171717]/95 via-[#171717]/30 to-black/40" />
 
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                  <span className="px-3 py-1 rounded-none bg-white/95 backdrop-blur-md border border-[#E6E2D8] text-[#171717] text-[10px] font-mono uppercase tracking-wider">
+                  <span className="px-3 py-1 bg-white/95 backdrop-blur-md border border-[#E6E2D8] text-[#171717] text-[10px] font-sans font-semibold uppercase tracking-wider shadow-sm">
                     {project.status}
                   </span>
-                  <span className="px-3 py-1 rounded-none bg-[#B69B65] text-white text-[10px] font-mono font-bold uppercase tracking-wider">
+                  <span className="px-3 py-1 bg-[#B69B65] text-white text-[10px] font-sans font-bold uppercase tracking-wider shadow-sm">
                     {project.badge}
                   </span>
                 </div>
 
                 <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#171717] group-hover:text-[#B69B65] transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-white drop-shadow-sm group-hover:text-[#B69B65] transition-colors">
                     {project.name}
                   </h3>
-                  <p className="text-xs text-[#B69B65] font-mono mt-0.5">{project.subtitle}</p>
+                  <p className="text-xs text-[#E6D5B8] font-sans tracking-wide mt-0.5">{project.subtitle}</p>
                 </div>
               </div>
 

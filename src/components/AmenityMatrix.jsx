@@ -132,16 +132,15 @@ export default function AmenityMatrix() {
           </div>
 
           {/* Right: Architectural Image Presentation */}
-          <div className="lg:col-span-5 h-[340px] sm:h-[400px] relative overflow-hidden border border-[#E6E2D8] bg-[#FAF9F6] group">
+          <div className="lg:col-span-5 h-[340px] sm:h-[400px] relative overflow-hidden border border-[#DEDAD2] bg-[#FAF9F6] group">
             <img
               src={currentLevel.image}
               alt={currentLevel.title}
               className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#171717] via-transparent to-transparent pointer-events-none" />
             
-            <div className="absolute bottom-4 left-4 right-4 p-3 bg-white/95 border border-[#E6E2D8] text-xs">
-              <span className="font-mono text-[#B69B65] text-[10px] uppercase block">NIRVANA ABODE</span>
+            <div className="absolute bottom-4 left-4 right-4 p-3.5 bg-white/95 border border-[#DEDAD2] text-xs shadow-sm">
+              <span className="font-sans font-semibold text-[#B69B65] text-[10px] uppercase tracking-wider block">NIRVANA ABODE</span>
               <p className="font-serif font-bold text-[#171717] mt-0.5">{currentLevel.title}</p>
             </div>
           </div>
