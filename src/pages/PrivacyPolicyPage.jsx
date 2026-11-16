@@ -86,13 +86,13 @@ export default function PrivacyPolicyPage({ onNavigate }) {
               For inquiries regarding personal data processing or to opt out of communications, contact our legal desk:
             </p>
             <div className="space-y-2 pt-1 text-xs">
-              <a href="mailto:himanshuramchandani2006@gmail.com" className="flex items-center gap-2 text-[#171717] hover:text-[#B69B65] transition-colors truncate">
+              <a href="mailto:contact@nirvana.group" className="flex items-center gap-2 text-[#171717] hover:text-[#B69B65] transition-colors truncate">
                 <Mail className="w-3.5 h-3.5 text-[#B69B65] shrink-0" />
-                <span className="truncate">himanshuramchandani2006@gmail.com</span>
+                <span className="truncate">contact@nirvana.group</span>
               </a>
-              <a href="tel:+919081507342" className="flex items-center gap-2 text-[#171717] hover:text-[#B69B65] transition-colors">
+              <a href="tel:+917940007890" className="flex items-center gap-2 text-[#171717] hover:text-[#B69B65] transition-colors">
                 <Phone className="w-3.5 h-3.5 text-[#B69B65] shrink-0" />
-                <span>+91 90815 07342</span>
+                <span>+91 79 4000 7890</span>
               </a>
             </div>
           </div>

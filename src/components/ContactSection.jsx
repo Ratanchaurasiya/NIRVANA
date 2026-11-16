@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import GoogleMapCard from './GoogleMapCard';
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
+import InstagramIcon from './icons/InstagramIcon';
 
 const ContactSection = ({ onShowToast }) => {
   const [formData, setFormData] = useState({
@@ -86,8 +87,8 @@ const ContactSection = ({ onShowToast }) => {
                   </div>
                   <div>
                     <span className="text-[10px] font-sans text-[#77736C] uppercase tracking-wider font-semibold block">Advisory Desk</span>
-                    <a href="tel:+919081507342" className="text-sm font-semibold text-[#171717] hover:text-[#B69B65] transition-colors block mt-0.5">
-                      +91 90815 07342
+                    <a href="tel:+917940007890" className="text-sm font-semibold text-[#171717] hover:text-[#B69B65] transition-colors block mt-0.5">
+                      +91 79 4000 7890
                     </a>
                     <p className="text-[11px] text-[#77736C] mt-0.5">
                       Direct consultation line
@@ -102,11 +103,33 @@ const ContactSection = ({ onShowToast }) => {
                   </div>
                   <div className="min-w-0">
                     <span className="text-[10px] font-sans text-[#77736C] uppercase tracking-wider font-semibold block">Corporate Inquiries</span>
-                    <a href="mailto:himanshuramchandani2006@gmail.com" className="text-sm font-semibold text-[#171717] hover:text-[#B69B65] transition-colors block mt-0.5 truncate">
-                      himanshuramchandani2006@gmail.com
+                    <a href="mailto:contact@nirvana.group" className="text-sm font-semibold text-[#171717] hover:text-[#B69B65] transition-colors block mt-0.5 truncate">
+                      contact@nirvana.group
                     </a>
                     <p className="text-[11px] text-[#77736C] mt-0.5">
                       Official correspondence desk
+                    </p>
+                  </div>
+                </div>
+
+                {/* Official Instagram */}
+                <div className="flex items-start gap-4 p-4 bg-[#FAF9F6] border border-[#DEDAD2]">
+                  <div className="w-9 h-9 bg-white border border-[#DEDAD2] flex items-center justify-center shrink-0 text-[#B69B65]">
+                    <InstagramIcon className="w-4 h-4" />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="text-[10px] font-sans text-[#77736C] uppercase tracking-wider font-semibold block">Official Instagram</span>
+                    <a 
+                      href="https://www.instagram.com/nirvana.group._/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-sm font-semibold text-[#171717] hover:text-[#B69B65] transition-colors inline-flex items-center gap-1.5 mt-0.5"
+                    >
+                      <span>@nirvana.group._</span>
+                      <span className="text-[#B69B65] text-xs">↗</span>
+                    </a>
+                    <p className="text-[11px] text-[#77736C] mt-0.5">
+                      Follow project developments & previews
                     </p>
                   </div>
                 </div>

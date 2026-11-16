@@ -1,5 +1,6 @@
 import React from 'react';
 import { Building2, Phone, Mail, MapPin, ArrowUp, ShieldCheck } from 'lucide-react';
+import InstagramIcon from './icons/InstagramIcon';
 
 export default function Footer({ onNavigate }) {
   const scrollToTop = () => {
@@ -80,15 +81,15 @@ export default function Footer({ onNavigate }) {
 
               <div className="flex items-center gap-3 text-[#A39F97]">
                 <Phone className="w-4 h-4 text-[#B69B65] shrink-0" />
-                <a href="tel:+919081507342" className="hover:text-[#F5F1E8] transition-colors">
-                  +91 90815 07342
+                <a href="tel:+917940007890" className="hover:text-[#F5F1E8] transition-colors">
+                  +91 79 4000 7890
                 </a>
               </div>
 
               <div className="flex items-center gap-3 text-[#A39F97]">
                 <Mail className="w-4 h-4 text-[#B69B65] shrink-0" />
-                <a href="mailto:himanshuramchandani2006@gmail.com" className="hover:text-[#F5F1E8] transition-colors truncate">
-                  himanshuramchandani2006@gmail.com
+                <a href="mailto:contact@nirvana.group" className="hover:text-[#F5F1E8] transition-colors truncate">
+                  contact@nirvana.group
                 </a>
               </div>
             </div>
@@ -98,10 +99,11 @@ export default function Footer({ onNavigate }) {
                 href="https://www.instagram.com/nirvana.group._/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.18em] text-[#B69B65] hover:text-[#F5F1E8] transition-colors"
+                className="inline-flex items-center gap-2.5 px-3 py-2 bg-[#1F1F1F] border border-[#2E2E2E] hover:border-[#B69B65] text-xs font-mono uppercase tracking-[0.14em] text-[#F5F1E8] hover:text-[#B69B65] transition-all group"
               >
-                <span>Follow on Instagram</span>
-                <span>↗</span>
+                <InstagramIcon className="w-4 h-4 text-[#B69B65] group-hover:scale-110 transition-transform" />
+                <span>@nirvana.group._</span>
+                <span className="text-[#B69B65]">↗</span>
               </a>
             </div>
           </div>

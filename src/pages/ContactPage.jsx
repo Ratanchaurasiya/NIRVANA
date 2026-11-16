@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import LocalizationMap3D from '../components/3d/LocalizationMap3D';
 import ContactSection from '../components/ContactSection';
 import { Phone, Mail, MapPin, Clock, Send, Sparkles, CheckCircle2, ShieldCheck } from 'lucide-react';
+import InstagramIcon from '../components/icons/InstagramIcon';
 
 export default function ContactPage({ onShowToast }) {
   const [commForm, setCommForm] = useState({
@@ -79,8 +80,8 @@ export default function ContactPage({ onShowToast }) {
 
               <div className="p-4 bg-[#FAF9F6] border border-[#DEDAD2] space-y-1">
                 <span className="text-[10px] font-sans font-semibold text-[#77736C] uppercase tracking-wider block">Advisory Desk</span>
-                <a href="tel:+919081507342" className="text-sm font-semibold text-[#171717] hover:text-[#B69B65] transition-colors block">
-                  +91 90815 07342
+                <a href="tel:+917940007890" className="text-sm font-semibold text-[#171717] hover:text-[#B69B65] transition-colors block">
+                  +91 79 4000 7890
                 </a>
                 <p className="text-[11px] text-[#5C5852]">
                   Monday to Saturday: 10:00 AM – 7:00 PM
@@ -89,9 +90,29 @@ export default function ContactPage({ onShowToast }) {
 
               <div className="p-4 bg-[#FAF9F6] border border-[#DEDAD2] space-y-1">
                 <span className="text-[10px] font-sans font-semibold text-[#77736C] uppercase tracking-wider block">Corporate Correspondence</span>
-                <a href="mailto:himanshuramchandani2006@gmail.com" className="text-xs font-semibold text-[#B69B65] hover:underline block truncate">
-                  himanshuramchandani2006@gmail.com
+                <a href="mailto:contact@nirvana.group" className="text-sm font-semibold text-[#171717] hover:text-[#B69B65] transition-colors block truncate">
+                  contact@nirvana.group
                 </a>
+                <p className="text-[11px] text-[#5C5852]">
+                  Direct client & investor communications
+                </p>
+              </div>
+
+              <div className="p-4 bg-[#FAF9F6] border border-[#DEDAD2] space-y-1">
+                <span className="text-[10px] font-sans font-semibold text-[#77736C] uppercase tracking-wider block">Official Instagram</span>
+                <a 
+                  href="https://www.instagram.com/nirvana.group._/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#171717] hover:text-[#B69B65] transition-colors"
+                >
+                  <InstagramIcon className="w-3.5 h-3.5 text-[#B69B65]" />
+                  <span>@nirvana.group._</span>
+                  <span className="text-[#B69B65] text-xs">↗</span>
+                </a>
+                <p className="text-[11px] text-[#5C5852]">
+                  Follow our developments & project showcases
+                </p>
               </div>
 
             </div>

@@ -46,7 +46,7 @@ const MobileBottomBar = () => {
 
         {/* Call */}
         <a
-          href="tel:+919081507342"
+          href="tel:+917940007890"
           className="flex flex-col items-center justify-center py-1 text-[#77736C] hover:text-[#B69B65] transition-colors"
         >
           <Phone className="w-4 h-4" />
