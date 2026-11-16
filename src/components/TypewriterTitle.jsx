@@ -121,10 +121,12 @@ export default function TypewriterTitle({
     };
   }, [hasStarted, chars.length, delay, typingSpeed]);
 
+  const displayClass = className.includes('block') ? '' : 'inline-block';
+
   return (
     <Component
       ref={containerRef}
-      className={`relative inline-block ${className}`}
+      className={`relative ${displayClass} ${className}`.trim()}
       aria-label={fullText}
     >
       <span aria-hidden="true" className="inline">

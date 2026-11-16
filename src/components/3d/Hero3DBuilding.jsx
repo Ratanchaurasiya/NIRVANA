@@ -88,7 +88,7 @@ export default function Hero3DBuilding() {
           className="absolute top-4 left-4 right-4 flex items-center justify-between gap-3 z-20 pointer-events-auto"
           style={{ transform: 'translateZ(25px)' }}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/95 border border-[#DEDAD2] shadow-sm text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-[#B69B65]">
+          <div className="flex items-center gap-2 text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-white drop-shadow">
             <span className="w-1.5 h-1.5 bg-[#B69B65]" />
             <span>NIRVANA ABODE</span>
           </div>

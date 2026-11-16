@@ -4,6 +4,7 @@ import { DEVELOPMENT_STANDARDS } from '../data/projectsData';
 import AboutSection from '../components/AboutSection';
 import { ShieldCheck, Sparkles, CheckCircle2, ChevronRight, Award, Layers } from 'lucide-react';
 import TypewriterTitle from '../components/TypewriterTitle';
+import ScrollReveal from '../components/ScrollReveal';
 
 export default function AboutPage({ onNavigate }) {
   const [activeStandard, setActiveStandard] = useState("01");
@@ -13,13 +14,9 @@ export default function AboutPage({ onNavigate }) {
       
       {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white border border-[#DEDAD2] text-[#B69B65] text-[10px] font-sans font-bold uppercase tracking-[0.25em]">
-          <Sparkles className="w-3.5 h-3.5 text-[#B69B65]" />
-          <span>CORPORATE ARCHITECTURE PROFILE</span>
-        </div>
         <TypewriterTitle
           as="h1"
-          className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight"
+          className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight block"
         >
           About <span className="text-[#B69B65]">NIRVANA GROUP</span>
         </TypewriterTitle>
@@ -27,37 +24,42 @@ export default function AboutPage({ onNavigate }) {
       </div>
 
       {/* ---------------- Exact Corporate Profile Block ---------------- */}
-      <div className="bg-white p-8 sm:p-12 border border-[#DEDAD2] shadow-sm relative overflow-hidden">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
-          <div className="inline-flex items-center justify-center w-14 h-14 bg-[#FAF9F6] border border-[#DEDAD2] text-[#B69B65] mx-auto">
-            <Award className="w-7 h-7" />
-          </div>
-          
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#171717] leading-snug">
-            "Nirvana Group is a premier real estate development group specializing in Grade-A commercial and residential property engineering based in Gujarat."
-          </h2>
+      <ScrollReveal>
+        <div className="bg-white p-8 sm:p-12 border border-[#DEDAD2] shadow-sm relative overflow-hidden">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <div className="inline-flex items-center justify-center w-14 h-14 bg-[#FAF9F6] border border-[#DEDAD2] text-[#B69B65] mx-auto">
+              <Award className="w-7 h-7" />
+            </div>
+            
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#171717] leading-snug">
+              "Nirvana Group is a premier real estate development group specializing in Grade-A commercial and residential property engineering based in Gujarat."
+            </h2>
 
-          <p className="text-sm sm:text-base text-[#5C5852] font-light leading-relaxed max-w-2xl mx-auto">
-            Combining structural safety, double-glazed energy efficiency, and modern aesthetic elegance to shape Gujarat's skyline across Sola, Science City Road, SG Highway, Thaltej, and Khoraj.
-          </p>
+            <p className="text-sm sm:text-base text-[#5C5852] font-light leading-relaxed max-w-2xl mx-auto">
+              Combining structural safety, double-glazed energy efficiency, and modern aesthetic elegance to shape Gujarat's skyline across Sola, Science City Road, SG Highway, Thaltej, and Khoraj.
+            </p>
+          </div>
         </div>
-      </div>
+      </ScrollReveal>
 
       {/* ---------------- Seismic Foundation & Core Engineering ---------------- */}
-      <div className="space-y-4">
-        <div className="flex items-center justify-between border-b border-[#DEDAD2] pb-3">
-          <div className="flex items-center gap-2 text-xs font-sans uppercase tracking-[0.2em] text-[#B69B65] font-bold">
-            <ShieldCheck className="w-4 h-4 text-[#B69B65]" />
-            <span>Structural Integrity Standards • BIS Zone 5</span>
+      <ScrollReveal>
+        <div className="space-y-4">
+          <div className="flex items-center justify-between border-b border-[#DEDAD2] pb-3">
+            <div className="flex items-center gap-2 text-xs font-sans uppercase tracking-[0.2em] text-[#B69B65] font-bold">
+              <ShieldCheck className="w-4 h-4 text-[#B69B65]" />
+              <span>Structural Integrity Standards • BIS Zone 5</span>
+            </div>
+            <span className="text-xs text-[#77736C]">Deep Piling to Monolithic Core</span>
           </div>
-          <span className="text-xs text-[#77736C]">Deep Piling to Monolithic Core</span>
-        </div>
 
-        <SeismicFoundation3D />
-      </div>
+          <SeismicFoundation3D />
+        </div>
+      </ScrollReveal>
 
       {/* ---------------- Development Standards List ---------------- */}
-      <div className="space-y-8">
+      <ScrollReveal>
+        <div className="space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <span className="text-[10px] font-sans uppercase tracking-[0.25em] text-[#B69B65] font-bold">ENGINEERING BENCHMARKS</span>
           <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#171717]">
@@ -138,9 +140,12 @@ export default function AboutPage({ onNavigate }) {
 
         </div>
       </div>
+      </ScrollReveal>
 
       {/* Legacy About Section */}
-      <AboutSection />
+      <ScrollReveal>
+        <AboutSection />
+      </ScrollReveal>
     </div>
   );
 }

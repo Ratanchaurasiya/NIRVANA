@@ -33,9 +33,6 @@ const Hero = ({ onNavigate, onOpenDossier }) => {
           <div className="lg:col-span-6 xl:col-span-7 flex flex-col items-start space-y-6 text-left">
             
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#DEDAD2] text-[#B69B65] text-[10px] font-sans font-bold uppercase tracking-[0.25em] shadow-sm">
-                <span>Official Developer Portfolio</span>
-              </div>
               <TypewriterTitle
                 as="h1"
                 className="text-4xl sm:text-5xl lg:text-6xl font-cinzel font-semibold text-[#171717] tracking-[0.12em] uppercase leading-[1.08] block"

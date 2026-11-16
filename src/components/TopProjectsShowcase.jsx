@@ -48,12 +48,9 @@ const TopProjectsShowcase = ({ onShowToast }) => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white border border-[#DEDAD2] text-[#B69B65] text-[10px] font-sans font-bold uppercase tracking-[0.25em]">
-            <span>Flagship Developments</span>
-          </div>
           <TypewriterTitle
             as="h2"
-            className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold text-[#171717] tracking-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold text-[#171717] tracking-tight block"
           >
             Top 5 <span className="text-[#B69B65]">Landmark Projects</span>
           </TypewriterTitle>

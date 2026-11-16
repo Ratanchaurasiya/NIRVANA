@@ -40,11 +40,11 @@ export default function ProjectDetailPage({ projectId, onNavigate, onShowToast }
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-[#E6E2D8]">
         <div className="space-y-3">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="px-3 py-1 rounded-none bg-[#B69B65] text-white text-xs font-mono font-bold uppercase tracking-wider">
+            <span className="px-3 py-1 bg-[#B69B65] text-white text-xs font-mono font-bold uppercase tracking-wider">
               {project.status}
             </span>
-            <span className="px-3 py-1 rounded-none bg-white text-[#B69B65] border border-[#E6E2D8] text-xs font-mono uppercase tracking-wider">
-              {project.badge}
+            <span className="text-xs font-mono text-[#77736C] uppercase tracking-wider font-semibold">
+              • {project.badge}
             </span>
           </div>
 

@@ -46,13 +46,9 @@ const PropertyDecisionTool = ({ onShowToast }) => {
         <div className="bg-white border border-[#E6E2D8] p-6 sm:p-10 relative">
           
           <div className="text-center space-y-3 pb-8 border-b border-[#E6E2D8] mb-8">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#FAF9F6] border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase tracking-[0.22em]">
-              <HelpCircle className="w-3.5 h-3.5 text-[#B69B65]" />
-              <span>Interactive Decision Framework</span>
-            </div>
             <TypewriterTitle
               as="h2"
-              className="text-2xl sm:text-3xl font-serif font-bold text-[#171717]"
+              className="text-2xl sm:text-3xl font-serif font-bold text-[#171717] block"
             >
               Which Asset Class Fits Your Requirement?
             </TypewriterTitle>
