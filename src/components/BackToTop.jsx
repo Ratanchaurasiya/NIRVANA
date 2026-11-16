@@ -21,10 +21,10 @@ const BackToTop = () => {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-20 left-6 lg:bottom-8 lg:left-8 z-40 p-3 rounded-full bg-[#111D3E] border border-amber-500/40 text-amber-300 hover:bg-gold-gradient hover:text-navy-950 shadow-xl transition-all duration-300 hover:scale-110"
+      className="fixed bottom-20 left-6 lg:bottom-8 lg:left-8 z-40 p-2.5 bg-[#1F1F1F] border border-[#2E2E2E] text-[#A39F97] hover:text-[#B69B65] hover:border-[#B69B65] shadow-lg transition-colors cursor-pointer"
       aria-label="Back to Top"
     >
-      <ArrowUp className="w-5 h-5" />
+      <ArrowUp className="w-4 h-4" />
     </button>
   );
 };

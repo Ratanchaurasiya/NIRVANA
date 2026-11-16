@@ -4,63 +4,62 @@ import { MapPin, MessageCircle, BarChart3, UserCheck, Building, CalendarCheck, F
 const REASONS = [
   {
     icon: MapPin,
-    title: "Ahmedabad-Focused Guidance",
+    title: "Gujarat-Focused Mastery",
     desc: "In-depth hyper-local awareness of Sola, Science City, SG Highway & surrounding micro-markets."
   },
   {
     icon: MessageCircle,
-    title: "Transparent Communication",
-    desc: "Honest feedback regarding project status, legal approvals, and realistic pricing."
+    title: "Uncompromising Transparency",
+    desc: "Rigorous due diligence regarding project milestones, statutory approvals, and clear valuation."
   },
   {
     icon: BarChart3,
-    title: "Practical Property Evaluation",
-    desc: "Thorough assessment of floorplan usability, ventilation, orientation, and layout efficiency."
+    title: "Structural Due Diligence",
+    desc: "Thorough assessment of floorplan usability, core ventilation, solar pathing, and spatial efficiency."
   },
   {
     icon: UserCheck,
-    title: "Personalized Assistance",
-    desc: "Custom advice tailored specifically to your family's living needs or corporate goals."
+    title: "Tailored Asset Strategy",
+    desc: "Consultative approach tailored specifically to your family's lifestyle or institutional capital goals."
   },
   {
     icon: Building,
-    title: "Residential & Commercial Expertise",
-    desc: "Comprehensive capability covering luxury sky residences, corporate offices, and plots."
+    title: "Grade-A Developer Capability",
+    desc: "Comprehensive capability spanning bespoke luxury sky residences, corporate offices, and master layouts."
   },
   {
     icon: CalendarCheck,
-    title: "Site Visit Coordination",
-    desc: "Seamless appointment scheduling and guided on-site walkthroughs at your convenience."
+    title: "Coordinated Private Walkthroughs",
+    desc: "Seamless appointment scheduling and technical on-site accompaniment at your convenience."
   },
   {
     icon: FileCheck,
-    title: "Clear Comparison Before Decisions",
-    desc: "Side-by-side matrices comparing shortlisted projects on key parameters before final commitment."
+    title: "Objective Comparison Models",
+    desc: "Side-by-side matrices comparing shortlisted projects on key metrics prior to final commitment."
   },
   {
     icon: PhoneCall,
-    title: "Direct Communication",
-    desc: "Direct communication with dedicated project advisors without dealing with call centers or automated bots."
+    title: "Dedicated Advisory Principal",
+    desc: "Direct communication with experienced development managers without call-center intermediaries."
   }
 ];
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-24 relative bg-navy-950 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="py-24 relative bg-[#171717] border-t border-[#2E2E2E]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-mono uppercase tracking-widest">
-            <Award className="w-3.5 h-3.5 text-amber-400" />
-            <span>The Nirvana Standard</span>
+        <div className="text-center max-w-3xl mx-auto space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#1F1F1F] border border-[#2E2E2E] text-[#B69B65] text-xs font-mono uppercase tracking-[0.22em]">
+            <span>Guiding Principles</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white tracking-tight">
-            Why Clients Choose <span className="text-gold-gradient">NIRVANA GROUP</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#F5F1E8] tracking-tight">
+            Why Discerning Clients Choose <span className="text-[#B69B65]">NIRVANA GROUP</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto rounded-full" />
-          <p className="text-slate-300 text-base sm:text-lg font-light leading-relaxed">
-            Our client-first philosophy prioritizes clarity, local expertise, and practical evaluation over sales pitches.
+          <div className="w-12 h-px bg-[#B69B65] mx-auto" />
+          <p className="text-[#A39F97] text-sm sm:text-base font-light leading-relaxed">
+            Our client-first philosophy prioritizes clarity, structural integrity, and long-term asset value over sales rhetoric.
           </p>
         </div>
 
@@ -71,22 +70,22 @@ const WhyChooseUs = () => {
             return (
               <div
                 key={idx}
-                className="group relative rounded-3xl bg-[#0B132B] border border-slate-800 p-6 hover:border-amber-500/40 glass-card-hover flex flex-col justify-between"
+                className="p-6 bg-[#1F1F1F] border border-[#2E2E2E] hover:border-[#B69B65]/40 transition-colors flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:bg-gold-gradient group-hover:text-navy-950 transition-all duration-300 mb-5 shadow-md">
-                    <IconComp className="w-6 h-6" />
+                  <div className="w-10 h-10 bg-[#171717] border border-[#2E2E2E] text-[#B69B65] flex items-center justify-center mb-5">
+                    <IconComp className="w-5 h-5" />
                   </div>
-                  <h3 className="text-base font-bold font-serif text-white group-hover:text-amber-300 transition-colors mb-2">
+                  <h3 className="text-base font-bold font-serif text-[#F5F1E8] mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-slate-300 font-light leading-relaxed">
+                  <p className="text-xs text-[#A39F97] font-light leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
-                <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-amber-400/80 font-mono">
+                <div className="mt-5 pt-3 border-t border-[#2E2E2E] flex items-center justify-between text-[10px] text-[#77736C] font-mono">
                   <span>STANDARD 0{idx + 1}</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400 group-hover:scale-150 transition-transform" />
+                  <span className="w-1 h-1 bg-[#B69B65]" />
                 </div>
               </div>
             );

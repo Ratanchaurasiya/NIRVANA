@@ -13,7 +13,6 @@ import FloatingWhatsApp from './components/FloatingWhatsApp';
 import MobileBottomBar from './components/MobileBottomBar';
 import BackToTop from './components/BackToTop';
 import ToastNotification from './components/ToastNotification';
-import GoldCustomCursor from './components/GoldCustomCursor';
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname || '/');
@@ -65,18 +64,18 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen relative font-sans selection:bg-amber-500 selection:text-navy-950 bg-[#070D1E] text-slate-100">
+    <div className="min-h-screen relative font-sans selection:bg-[#B69B65] selection:text-[#171717] bg-[#171717] text-[#F5F1E8]">
       
-      {/* Persistent Global 3D Interactive Background */}
+      {/* Subtle Architectural Perspective Ambience */}
       <Interactive3DBackground />
 
-      {/* Glassmorphism Fixed Top Navbar */}
+      {/* Fixed Top Luxury Architectural Navbar */}
       <Navbar
         currentPath={currentPath}
         onNavigate={handleNavigate}
       />
 
-      {/* Main Content Render Area */}
+      {/* Main Content Area */}
       <main className="relative z-10">
         {renderCurrentPage()}
       </main>
@@ -84,8 +83,7 @@ function App() {
       {/* Footer */}
       <Footer onNavigate={handleNavigate} />
 
-      {/* Floating Action Utilities */}
-      <GoldCustomCursor />
+      {/* Floating Utilities */}
       <FloatingWhatsApp />
       <MobileBottomBar />
       <BackToTop />

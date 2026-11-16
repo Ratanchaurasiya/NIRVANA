@@ -1,11 +1,10 @@
 import React, { useState, useRef } from 'react';
-import { Building2, Compass, Sun, Moon, Sunset, Sparkles } from 'lucide-react';
+import { Sun, Moon, Sunset, Compass } from 'lucide-react';
 
 export default function Hero3DBuilding() {
   const cardRef = useRef(null);
   const [lightingMode, setLightingMode] = useState('night'); // 'day', 'sunset', 'night'
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
-  const [glare, setGlare] = useState({ x: 50, y: 50, opacity: 0 });
 
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;
@@ -16,47 +15,37 @@ export default function Hero3DBuilding() {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    // Subtle 3D tilt rotation (-9 to +9 degrees)
-    const rotateX = ((y - centerY) / centerY) * -9;
-    const rotateY = ((x - centerX) / centerX) * 9;
+    // Very subtle, gentle perspective tilt (-4 to +4 degrees)
+    const rotateX = ((y - centerY) / centerY) * -4;
+    const rotateY = ((x - centerX) / centerX) * 4;
 
     setRotate({ x: rotateX, y: rotateY });
-    setGlare({
-      x: (x / rect.width) * 100,
-      y: (y / rect.height) * 100,
-      opacity: 0.35,
-    });
   };
 
   const handleMouseLeave = () => {
     setRotate({ x: 0, y: 0 });
-    setGlare((prev) => ({ ...prev, opacity: 0 }));
   };
 
-  // Lighting Mode styles and filters
   const getLightingStyles = () => {
     switch (lightingMode) {
       case 'day':
         return {
-          filter: 'brightness(1.08) contrast(1.05) saturate(1.08)',
-          overlayGradient: 'from-[#070D1E]/80 via-transparent to-sky-400/10',
-          accentColor: '#38bdf8',
-          label: 'Natural Daylight View',
+          filter: 'brightness(1.02) contrast(1.02) saturate(1.0)',
+          overlayGradient: 'from-[#171717]/80 via-transparent to-transparent',
+          label: 'Natural Daylight Facade',
         };
       case 'sunset':
         return {
-          filter: 'brightness(0.98) contrast(1.15) sepia(0.25) saturate(1.3)',
-          overlayGradient: 'from-[#070D1E] via-amber-900/20 to-orange-500/25',
-          accentColor: '#f59e0b',
-          label: 'Golden Hour Sunset',
+          filter: 'brightness(0.96) contrast(1.06) sepia(0.12) saturate(1.15)',
+          overlayGradient: 'from-[#171717]/90 via-[#B69B65]/10 to-transparent',
+          label: 'Golden Hour Dusk View',
         };
       case 'night':
       default:
         return {
-          filter: 'brightness(0.92) contrast(1.22) saturate(1.15)',
-          overlayGradient: 'from-[#070D1E] via-[#070D1E]/40 to-indigo-950/40',
-          accentColor: '#C6A46A',
-          label: 'Architectural Night Facade',
+          filter: 'brightness(0.92) contrast(1.12) saturate(1.05)',
+          overlayGradient: 'from-[#171717]/90 via-[#171717]/40 to-transparent',
+          label: 'Illuminated Night Perspective',
         };
     }
   };
@@ -66,79 +55,59 @@ export default function Hero3DBuilding() {
   return (
     <div
       className="w-full h-[360px] sm:h-[420px] lg:h-[470px] relative select-none"
-      style={{ perspective: '1200px' }}
+      style={{ perspective: '1000px' }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      {/* 3D Tilting Card Container */}
+      {/* Architectural Exhibition Frame */}
       <div
         ref={cardRef}
-        className="w-full h-full relative rounded-3xl overflow-hidden border border-amber-500/40 shadow-[0_25px_60px_rgba(0,0,0,0.9)] transition-all duration-300 ease-out cursor-pointer group"
+        className="w-full h-full relative overflow-hidden border border-[#2E2E2E] bg-[#1F1F1F] transition-all duration-300 ease-out group"
         style={{
-          transform: `perspective(1000px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg) scale3d(1.02, 1.02, 1.02)`,
+          transform: `perspective(1000px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
           transformStyle: 'preserve-3d',
         }}
       >
-        {/* Background Building Image with Lighting Filter Transition */}
+        {/* Background Building Architectural Photograph */}
         <img
           src="/images/hero_building.jpg"
           alt="Nirvana Abode Architectural Landmark"
-          className="w-full h-full object-cover object-center scale-105 group-hover:scale-110 transition-all duration-700 ease-out"
+          className="w-full h-full object-cover object-center transition-all duration-700 ease-out"
           style={{ filter: currentLighting.filter }}
         />
 
-        {/* Ambient Dark Navy & Gold Gradients for luxury depth */}
+        {/* Ambient Dark Charcoal Fade */}
         <div
           className={`absolute inset-0 bg-gradient-to-t ${currentLighting.overlayGradient} transition-colors duration-700 pointer-events-none`}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#070D1E]/60 via-transparent to-[#070D1E]/40 pointer-events-none" />
 
-        {/* Night / Sunset Window Glow Emulation */}
-        {lightingMode === 'night' && (
-          <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/10 via-transparent to-amber-400/5 mix-blend-screen pointer-events-none animate-pulse" />
-        )}
-
-        {/* Dynamic Light Sheen / Cursor-Following Glare */}
+        {/* Top Header Bar: Clean Architectural Tag & Lighting Switcher */}
         <div
-          className="absolute inset-0 pointer-events-none transition-opacity duration-300"
-          style={{
-            background: `radial-gradient(circle at ${glare.x}% ${glare.y}%, rgba(212,175,55,${glare.opacity}) 0%, transparent 60%)`,
-          }}
-        />
-
-        {/* Architectural Grid Corner Accents */}
-        <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-amber-400/80 pointer-events-none" />
-        <div className="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-amber-400/80 pointer-events-none" />
-        <div className="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-amber-400/80 pointer-events-none" />
-        <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-amber-400/80 pointer-events-none" />
-
-        {/* Top Badges & Interactive Lighting Switcher Bar */}
-        <div
-          className="absolute top-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2.5 z-20 pointer-events-auto"
-          style={{ transform: 'translateZ(35px)' }}
+          className="absolute top-4 left-4 right-4 flex items-center justify-between gap-3 z-20 pointer-events-auto"
+          style={{ transform: 'translateZ(25px)' }}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#070D1E]/90 backdrop-blur-md border border-amber-500/40 text-amber-300 text-xs font-mono uppercase tracking-wider shadow-lg">
-            <Building2 className="w-3.5 h-3.5 text-amber-400" />
-            <span className="font-bold">FLAGSHIP LANDMARK</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#171717]/90 border border-[#2E2E2E] text-[11px] font-mono uppercase tracking-[0.18em] text-[#B69B65]">
+            <span className="w-1.5 h-1.5 bg-[#B69B65]" />
+            <span>NIRVANA ABODE</span>
           </div>
 
-          {/* Interactive Lighting Mode Switcher */}
-          <div className="inline-flex items-center p-1 rounded-full bg-[#070D1E]/90 backdrop-blur-md border border-slate-700 shadow-xl">
+          {/* Minimalist Lighting Tabs */}
+          <div className="inline-flex items-center bg-[#171717]/90 border border-[#2E2E2E] p-0.5">
             <button
               type="button"
               onClick={(e) => {
                 e.stopPropagation();
                 setLightingMode('day');
               }}
-              title="Switch to Daylight"
-              className={`flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold transition-all ${
+              title="Daylight View"
+              className={`flex items-center gap-1 px-2.5 py-1 text-[10px] font-mono tracking-wider transition-colors ${
                 lightingMode === 'day'
-                  ? 'bg-amber-400 text-navy-950 shadow-md scale-105'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-[#B69B65] text-[#171717] font-semibold'
+                  : 'text-[#A39F97] hover:text-[#F5F1E8]'
               }`}
             >
               <Sun className="w-3 h-3" />
-              <span className="hidden sm:inline">Day</span>
+              <span>Day</span>
             </button>
 
             <button
@@ -147,15 +116,15 @@ export default function Hero3DBuilding() {
                 e.stopPropagation();
                 setLightingMode('sunset');
               }}
-              title="Switch to Golden Hour Sunset"
-              className={`flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold transition-all ${
+              title="Dusk View"
+              className={`flex items-center gap-1 px-2.5 py-1 text-[10px] font-mono tracking-wider transition-colors ${
                 lightingMode === 'sunset'
-                  ? 'bg-amber-500 text-navy-950 shadow-md scale-105'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-[#B69B65] text-[#171717] font-semibold'
+                  : 'text-[#A39F97] hover:text-[#F5F1E8]'
               }`}
             >
               <Sunset className="w-3 h-3" />
-              <span className="hidden sm:inline">Sunset</span>
+              <span>Dusk</span>
             </button>
 
             <button
@@ -164,44 +133,32 @@ export default function Hero3DBuilding() {
                 e.stopPropagation();
                 setLightingMode('night');
               }}
-              title="Switch to Architectural Night Facade"
-              className={`flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold transition-all ${
+              title="Night View"
+              className={`flex items-center gap-1 px-2.5 py-1 text-[10px] font-mono tracking-wider transition-colors ${
                 lightingMode === 'night'
-                  ? 'bg-gold-gradient text-navy-950 shadow-md scale-105'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-[#B69B65] text-[#171717] font-semibold'
+                  : 'text-[#A39F97] hover:text-[#F5F1E8]'
               }`}
             >
               <Moon className="w-3 h-3" />
-              <span className="hidden sm:inline">Night</span>
+              <span>Night</span>
             </button>
           </div>
         </div>
 
-        {/* Bottom Floating Information Overlay */}
+        {/* Bottom Architectural Caption */}
         <div
-          className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-[#070D1E]/90 backdrop-blur-md border border-amber-500/30 text-white shadow-xl space-y-1.5 pointer-events-none"
-          style={{ transform: 'translateZ(45px)' }}
+          className="absolute bottom-4 left-4 right-4 z-20 pointer-events-none p-4 bg-[#171717]/90 border border-[#2E2E2E] flex flex-col gap-1"
+          style={{ transform: 'translateZ(20px)' }}
         >
-          <div className="flex items-center justify-between">
-            <span className="text-[10px] font-mono uppercase tracking-widest text-amber-400 font-bold flex items-center gap-1.5">
-              <span>NIRVANA ABODE</span>
-              <span className="text-slate-500">•</span>
-              <span className="text-slate-300 font-normal">{currentLighting.label}</span>
-            </span>
-            <span className="text-[10px] font-mono text-emerald-400 font-bold">
-              ● RERA REGISTERED
-            </span>
+          <div className="flex items-center justify-between text-[11px] font-mono tracking-[0.15em] text-[#B69B65] uppercase">
+            <span>{currentLighting.label}</span>
+            <span className="text-[#77736C]">Gujarat</span>
           </div>
-
-          <p className="text-sm sm:text-base font-serif font-black text-white leading-tight">
-            Curated Architectural Residences
-          </p>
-
-          <p className="text-[11px] text-slate-300 leading-snug line-clamp-1">
-            Contemporary facade engineering, double-height private sky terraces & biophilic balconies
+          <p className="text-xs text-[#F5F1E8] font-serif tracking-wide">
+            Curated Architectural Residences with Double-Height Private Sky Terraces
           </p>
         </div>
-
       </div>
     </div>
   );

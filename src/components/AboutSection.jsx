@@ -1,116 +1,109 @@
 import React from 'react';
-import { CheckCircle2, Shield, Building, Compass, MapPin } from 'lucide-react';
+import { CheckCircle2, Shield, MapPin } from 'lucide-react';
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 relative overflow-hidden bg-navy-950">
-      {/* Subtle Background Glow */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl pointer-events-none transform -translate-y-1/2" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="about" className="py-24 relative bg-[#171717] border-t border-[#2E2E2E]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-mono uppercase tracking-widest">
-            <Compass className="w-3.5 h-3.5 text-amber-400" />
-            <span>Company Profile</span>
+        <div className="text-center max-w-3xl mx-auto space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#1F1F1F] border border-[#2E2E2E] text-[#B69B65] text-xs font-mono uppercase tracking-[0.22em]">
+            <span>Corporate Identity & Vision</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white tracking-tight">
-            About <span className="text-gold-gradient">NIRVANA GROUP</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#F5F1E8] tracking-tight">
+            About <span className="text-[#B69B65]">NIRVANA GROUP</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto rounded-full" />
-          <p className="text-slate-300 text-base sm:text-lg font-light leading-relaxed">
-            We focus on practical and transparent real estate assistance, helping clients evaluate location, value, and project potential before making decisions.
+          <div className="w-12 h-px bg-[#B69B65] mx-auto" />
+          <p className="text-[#A39F97] text-sm sm:text-base font-light leading-relaxed">
+            We focus on principled real estate development and transparent advisory, guiding clients across location viability, asset appreciation, and architectural potential.
           </p>
         </div>
 
         {/* Split Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Column: Premium Architectural Visual */}
+          {/* Left Column: Architectural Imagery */}
           <div className="lg:col-span-6 relative">
-            <div className="relative rounded-3xl overflow-hidden border border-amber-500/30 shadow-[0_25px_60px_rgba(0,0,0,0.8)] group">
+            <div className="relative overflow-hidden border border-[#2E2E2E] bg-[#1F1F1F] group">
               <img
                 src="/images/about_property.jpg"
                 alt="NIRVANA GROUP Ahmedabad Property Guidance"
-                className="w-full h-[450px] lg:h-[520px] object-cover object-center transform group-hover:scale-105 transition-transform duration-700 filter brightness-90 contrast-105"
+                className="w-full h-[450px] lg:h-[500px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#070D1E] via-transparent to-transparent opacity-80" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#171717]/90 via-transparent to-transparent" />
 
-              {/* Floating Animated Experience/Trust Visual Badge */}
-              <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl glass-panel border border-amber-500/40 backdrop-blur-xl shadow-2xl">
+              {/* Trust & Advisory Badge */}
+              <div className="absolute bottom-6 left-6 right-6 p-5 bg-[#171717]/95 border border-[#2E2E2E] backdrop-blur-md">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gold-gradient text-navy-950 flex items-center justify-center font-bold text-xl shrink-0 shadow-lg">
-                    <Shield className="w-6 h-6" />
+                  <div className="w-10 h-10 bg-[#1F1F1F] border border-[#B69B65]/40 text-[#B69B65] flex items-center justify-center shrink-0">
+                    <Shield className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-white font-serif">Client-First Real Estate Advisory</h4>
-                    <p className="text-xs text-slate-300 mt-0.5">Serving Sola, Science City Road & Western Ahmedabad corridors with transparent evaluation.</p>
+                    <h4 className="text-sm font-bold text-[#F5F1E8] font-serif">Client-First Real Estate Advisory</h4>
+                    <p className="text-xs text-[#77736C] mt-0.5">Serving Sola, Science City Road & Western Ahmedabad corridors with rigorous due diligence.</p>
                   </div>
                 </div>
               </div>
             </div>
-
-            {/* Subtle background offset frame */}
-            <div className="absolute -bottom-4 -right-4 w-full h-full rounded-3xl border border-amber-500/20 pointer-events-none hidden sm:block -z-10" />
           </div>
 
-          {/* Right Column: Animated Content Cards */}
-          <div className="lg:col-span-6 space-y-6">
+          {/* Right Column: Architectural Content Cards */}
+          <div className="lg:col-span-6 space-y-4">
             
-            <div className="glass-card-hover p-6 rounded-2xl bg-[#0B132B]/80 border border-slate-800 hover:border-amber-500/40 transition-all">
+            <div className="p-6 bg-[#1F1F1F] border border-[#2E2E2E] hover:border-[#B69B65]/40 transition-colors">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center shrink-0 mt-0.5">
-                  <CheckCircle2 className="w-5 h-5 text-amber-400" />
+                <div className="w-8 h-8 bg-[#171717] border border-[#2E2E2E] flex items-center justify-center shrink-0 mt-0.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#B69B65]" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white font-serif">
-                    Location-focused property guidance for Ahmedabad buyers.
+                  <h3 className="text-base font-bold text-[#F5F1E8] font-serif">
+                    Location-focused property guidance for Gujarat's prime corridors.
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 mt-1.5 leading-relaxed font-light">
-                    In-depth market orientation focused specifically on Science City, Sola, SG Highway, Thaltej, Gota, and Shela growth belts to ensure your investment aligns with long-term infrastructure development.
+                  <p className="text-xs sm:text-sm text-[#A39F97] mt-1.5 leading-relaxed font-light">
+                    In-depth market orientation focused on Science City, Sola, SG Highway, Thaltej, Gota, and Shela growth belts to ensure your investment aligns with infrastructure development.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="glass-card-hover p-6 rounded-2xl bg-[#0B132B]/80 border border-slate-800 hover:border-amber-500/40 transition-all">
+            <div className="p-6 bg-[#1F1F1F] border border-[#2E2E2E] hover:border-[#B69B65]/40 transition-colors">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center shrink-0 mt-0.5">
-                  <CheckCircle2 className="w-5 h-5 text-amber-400" />
+                <div className="w-8 h-8 bg-[#171717] border border-[#2E2E2E] flex items-center justify-center shrink-0 mt-0.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#B69B65]" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white font-serif">
-                    Practical support from site shortlisting to final decision.
+                  <h3 className="text-base font-bold text-[#F5F1E8] font-serif">
+                    Practical support from site shortlisting to final handover.
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 mt-1.5 leading-relaxed font-light">
-                    Hands-on assistance throughout every step: site visit scheduling, layout review, developer history verification, and objective side-by-side project comparisons.
+                  <p className="text-xs sm:text-sm text-[#A39F97] mt-1.5 leading-relaxed font-light">
+                    Hands-on assistance throughout every milestone: site scheduling, floor plan analysis, developer credential verification, and structured side-by-side asset comparison.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="glass-card-hover p-6 rounded-2xl bg-[#0B132B]/80 border border-slate-800 hover:border-amber-500/40 transition-all">
+            <div className="p-6 bg-[#1F1F1F] border border-[#2E2E2E] hover:border-[#B69B65]/40 transition-colors">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center shrink-0 mt-0.5">
-                  <CheckCircle2 className="w-5 h-5 text-amber-400" />
+                <div className="w-8 h-8 bg-[#171717] border border-[#2E2E2E] flex items-center justify-center shrink-0 mt-0.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#B69B65]" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white font-serif">
+                  <h3 className="text-base font-bold text-[#F5F1E8] font-serif">
                     Clear communication for investors, families, and businesses.
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 mt-1.5 leading-relaxed font-light">
-                    No pressure, no confusing terms. We communicate clearly whether you are a family purchasing your dream residence or a corporate entity securing new office premises.
+                  <p className="text-xs sm:text-sm text-[#A39F97] mt-1.5 leading-relaxed font-light">
+                    Uncompromising transparency without high-pressure sales tactics. We communicate with clarity whether securing high-yielding commercial premises or bespoke residences.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Office Location Snapshot Pill */}
-            <div className="p-4 rounded-xl bg-[#111D3E]/60 border border-amber-500/20 flex items-center justify-between text-xs text-slate-300">
+            {/* Strategic Presence Bar */}
+            <div className="p-4 bg-[#141414] border border-[#2E2E2E] flex items-center justify-between text-xs text-[#77736C]">
               <div className="flex items-center gap-2.5">
-                <MapPin className="w-4 h-4 text-amber-400 shrink-0" />
-                <span className="font-medium text-slate-200">STRATEGIC PRESENCE: Western Growth Corridors, Ahmedabad, Gujarat, India</span>
+                <MapPin className="w-4 h-4 text-[#B69B65] shrink-0" />
+                <span className="font-mono uppercase tracking-wider text-[#A39F97]">Presence: Western Growth Corridors, Ahmedabad, Gujarat, India</span>
               </div>
             </div>
 

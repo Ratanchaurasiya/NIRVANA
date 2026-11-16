@@ -24,16 +24,16 @@ export default function ProjectsPage({ onNavigate }) {
       
       {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-mono uppercase tracking-widest">
-          <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-none bg-[#1F1F1F] border border-[#2E2E2E] text-[#B69B65] text-xs font-mono uppercase tracking-widest">
+          <Sparkles className="w-3.5 h-3.5 text-[#B69B65]" />
           <span>Interactive 3D Portfolio Grid</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white tracking-tight">
-          Landmark <span className="text-gold-gradient">Projects Portfolio</span>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#F5F1E8] tracking-tight">
+          Landmark <span className="text-[#B69B65]">Projects Portfolio</span>
         </h1>
-        <div className="w-20 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto rounded-full" />
-        <p className="text-slate-300 text-base font-light leading-relaxed">
-          Hover cards for 3D tilt perspective • Click any card to launch full 3D interactive layout view (`/projects/[id]`)
+        <div className="w-12 h-px bg-[#B69B65]/40 mx-auto" />
+        <p className="text-[#A39F97] text-base font-light leading-relaxed">
+          Hover cards for architectural perspective • Click any card to launch full layout view
         </p>
       </div>
 
@@ -43,10 +43,10 @@ export default function ProjectsPage({ onNavigate }) {
           <button
             key={type}
             onClick={() => setFilterType(type)}
-            className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${
+            className={`px-5 py-2.5 rounded-none text-xs font-mono uppercase tracking-wider transition-all ${
               filterType === type
-                ? 'bg-gold-gradient text-navy-950 shadow-[0_0_20px_rgba(212,175,55,0.4)] scale-105'
-                : 'bg-[#0B132B] text-slate-300 hover:text-white border border-slate-800'
+                ? 'bg-[#B69B65] text-[#171717] border border-[#B69B65]'
+                : 'bg-[#1F1F1F] text-[#A39F97] hover:text-[#F5F1E8] border border-[#2E2E2E] hover:border-[#B69B65]/40'
             }`}
           >
             {type}
@@ -61,69 +61,68 @@ export default function ProjectsPage({ onNavigate }) {
           return (
             <motion.div
               key={project.id}
-              whileHover={{ rotateX: 6, rotateY: -6, scale: 1.03 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.3 }}
               onClick={() => handleCardClick(project.id)}
-              className={`group cursor-pointer rounded-3xl bg-[#0B132B] border border-slate-800 hover:border-amber-500/50 glass-card-hover overflow-hidden flex flex-col justify-between shadow-2xl transition-all relative ${
-                isZooming ? 'scale-125 z-50 opacity-90 blur-[1px]' : ''
+              className={`group cursor-pointer rounded-none bg-[#1F1F1F] border border-[#2E2E2E] hover:border-[#B69B65]/50 overflow-hidden flex flex-col justify-between shadow-xl transition-all relative ${
+                isZooming ? 'scale-105 z-50 opacity-90' : ''
               }`}
-              style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
             >
               {/* Image Header with Badge */}
               <div className="relative h-64 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.name}
-                  className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B132B] via-transparent to-black/40" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1F1F1F] via-transparent to-black/60" />
 
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                  <span className="px-3 py-1 rounded-full bg-navy-950/85 backdrop-blur-md border border-amber-500/40 text-amber-300 text-[10px] font-mono uppercase tracking-wider">
+                  <span className="px-3 py-1 rounded-none bg-[#171717]/90 backdrop-blur-md border border-[#2E2E2E] text-[#F5F1E8] text-[10px] font-mono uppercase tracking-wider">
                     {project.status}
                   </span>
-                  <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 backdrop-blur-md text-[10px] font-bold uppercase tracking-wider border border-amber-500/30">
+                  <span className="px-3 py-1 rounded-none bg-[#B69B65] text-[#171717] text-[10px] font-mono font-bold uppercase tracking-wider">
                     {project.badge}
                   </span>
                 </div>
 
                 <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-white group-hover:text-amber-300 transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#F5F1E8] group-hover:text-[#B69B65] transition-colors">
                     {project.name}
                   </h3>
-                  <p className="text-xs text-amber-400 font-mono mt-0.5">{project.subtitle}</p>
+                  <p className="text-xs text-[#B69B65] font-mono mt-0.5">{project.subtitle}</p>
                 </div>
               </div>
 
               {/* Card Body */}
               <div className="p-6 space-y-4">
-                <div className="flex items-center gap-1.5 text-xs text-slate-300 font-medium">
-                  <MapPin className="w-3.5 h-3.5 text-amber-400" />
+                <div className="flex items-center gap-1.5 text-xs text-[#A39F97] font-medium">
+                  <MapPin className="w-3.5 h-3.5 text-[#B69B65]" />
                   <span>{project.location}</span>
                 </div>
 
-                <p className="text-xs text-slate-300 font-light leading-relaxed line-clamp-2">
+                <p className="text-xs text-[#A39F97] font-light leading-relaxed line-clamp-2">
                   {project.description}
                 </p>
 
                 {/* Key Specs Bar */}
-                <div className="pt-3 border-t border-slate-800 grid grid-cols-2 gap-2 text-[11px] text-slate-300">
+                <div className="pt-3 border-t border-[#2E2E2E] grid grid-cols-2 gap-2 text-[11px] text-[#A39F97]">
                   <div>
-                    <span className="text-slate-400 block text-[10px] uppercase font-mono">Configurations</span>
-                    <span className="font-bold text-white">{project.config}</span>
+                    <span className="text-[#77736C] block text-[10px] uppercase font-mono">Configurations</span>
+                    <span className="font-bold text-[#F5F1E8]">{project.config}</span>
                   </div>
                   <div>
-                    <span className="text-slate-400 block text-[10px] uppercase font-mono">Unit Size</span>
-                    <span className="font-mono text-amber-300">{project.size}</span>
+                    <span className="text-[#77736C] block text-[10px] uppercase font-mono">Unit Size</span>
+                    <span className="font-mono text-[#B69B65]">{project.size}</span>
                   </div>
                 </div>
               </div>
 
               {/* Card Action Link */}
               <div className="p-6 pt-0">
-                <div className="w-full py-3 rounded-xl bg-[#111D3E] group-hover:bg-gold-gradient group-hover:text-navy-950 text-amber-300 text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                <div className="w-full py-3 rounded-none bg-[#171717] group-hover:bg-[#B69B65] group-hover:text-[#171717] text-[#B69B65] border border-[#2E2E2E] group-hover:border-[#B69B65] text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2">
                   <Eye className="w-4 h-4" />
-                  <span>Inspect 3D Layout & Details</span>
+                  <span>Inspect Layout & Details</span>
                   <ArrowRight className="w-4 h-4" />
                 </div>
               </div>

@@ -7,36 +7,33 @@ export default function Footer({ onNavigate }) {
   };
 
   return (
-    <footer className="relative bg-navy-950 text-slate-300 border-t border-amber-500/20 pt-16 pb-12 overflow-hidden">
-      {/* Background Lighting */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
-
+    <footer className="relative bg-[#141414] text-[#A39F97] border-t border-[#2E2E2E] pt-16 pb-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           
           {/* Brand Info Column */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3.5">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#111D3E] via-[#0B132B] to-[#070D1E] border border-amber-500/40 p-2 shadow-lg flex items-center justify-center shrink-0">
-                <Building2 className="w-6 h-6 text-amber-400" />
+              <div className="w-10 h-10 bg-[#1F1F1F] border border-[#B69B65]/40 flex items-center justify-center shrink-0">
+                <Building2 className="w-5 h-5 text-[#B69B65]" />
               </div>
               <div className="flex flex-col">
-                <span className="font-serif font-black text-2xl tracking-wider uppercase text-white leading-tight">
-                  NIRVANA <span className="text-amber-400">GROUP</span>
+                <span className="font-serif font-bold text-xl sm:text-2xl tracking-wider uppercase text-[#F5F1E8] leading-tight">
+                  NIRVANA <span className="text-[#B69B65]">GROUP</span>
                 </span>
-                <span className="text-[10px] font-mono text-amber-300 tracking-[0.25em] uppercase font-bold mt-0.5">
+                <span className="text-[10px] font-mono text-[#77736C] tracking-[0.25em] uppercase font-medium mt-0.5">
                   Building Dreams. Creating Landmarks.
                 </span>
               </div>
             </div>
 
-            <p className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed max-w-md">
-              A premium property development group and real estate holding company. Engineering Grade-A commercial office environments and luxury residential estates across Gujarat.
+            <p className="text-xs sm:text-sm text-[#A39F97] font-light leading-relaxed max-w-md">
+              A premier property development group and real estate holding company. Engineering Grade-A commercial office environments and luxury residential estates across Gujarat.
             </p>
 
             <div className="pt-2 flex items-center gap-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-[11px] font-mono">
-                <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#1F1F1F] border border-[#2E2E2E] text-[#B69B65] text-[11px] font-mono uppercase tracking-wider">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#B69B65]" />
                 <span>BIS Zone 5 & IGBC Compliant</span>
               </div>
             </div>
@@ -44,76 +41,80 @@ export default function Footer({ onNavigate }) {
 
           {/* Navigation Links Column */}
           <div className="md:col-span-3 space-y-4">
-            <h4 className="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">
+            <h4 className="text-xs font-mono uppercase tracking-[0.25em] text-[#B69B65] font-semibold">
               SECTIONS
             </h4>
-            <ul className="space-y-2.5 text-xs font-bold uppercase tracking-wider">
+            <ul className="space-y-2.5 text-xs font-medium uppercase tracking-[0.18em]">
               <li>
-                <button onClick={() => onNavigate('/')} className="hover:text-amber-300 transition-colors">Home</button>
+                <button onClick={() => onNavigate('/')} className="hover:text-[#F5F1E8] transition-colors cursor-pointer">Home</button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/about')} className="hover:text-amber-300 transition-colors">About</button>
+                <button onClick={() => onNavigate('/about')} className="hover:text-[#F5F1E8] transition-colors cursor-pointer">About</button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/projects')} className="hover:text-amber-300 transition-colors">Projects</button>
+                <button onClick={() => onNavigate('/projects')} className="hover:text-[#F5F1E8] transition-colors cursor-pointer">Projects</button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/contact')} className="hover:text-amber-300 transition-colors">Contact</button>
+                <button onClick={() => onNavigate('/contact')} className="hover:text-[#F5F1E8] transition-colors cursor-pointer">Contact</button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/privacy-policy')} className="hover:text-amber-300 transition-colors">Privacy Policy</button>
+                <button onClick={() => onNavigate('/privacy-policy')} className="hover:text-[#F5F1E8] transition-colors cursor-pointer">Privacy Policy</button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/terms-and-conditions')} className="hover:text-amber-300 transition-colors">Terms & Conditions</button>
+                <button onClick={() => onNavigate('/terms-and-conditions')} className="hover:text-[#F5F1E8] transition-colors cursor-pointer">Terms & Conditions</button>
               </li>
             </ul>
           </div>
 
           {/* Corporate Headquarters Column */}
           <div className="md:col-span-4 space-y-4">
-            <h4 className="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">
+            <h4 className="text-xs font-mono uppercase tracking-[0.25em] text-[#B69B65] font-semibold">
               HEADQUARTERS & PRESENCE
             </h4>
-            <div className="space-y-3 text-xs text-slate-300">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-bold text-white leading-relaxed">
-                    Ahmedabad, Gujarat, India
-                  </p>
-                  <p className="text-[11px] text-slate-400 mt-0.5">
-                    Private boardroom consultations & site visits by appointment
-                  </p>
-                </div>
+
+            <div className="space-y-3 text-xs leading-relaxed">
+              <div className="flex items-start gap-3 text-[#A39F97]">
+                <MapPin className="w-4 h-4 text-[#B69B65] shrink-0 mt-0.5" />
+                <span>Ahmedabad, Gujarat, India</span>
               </div>
 
-              <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-amber-400 shrink-0" />
-                <a href="mailto:contact@nirvana.group" className="hover:text-amber-300 transition-colors font-medium">
-                  contact@nirvana.group
+              <div className="flex items-center gap-3 text-[#A39F97]">
+                <Phone className="w-4 h-4 text-[#B69B65] shrink-0" />
+                <a href="tel:+919081507342" className="hover:text-[#F5F1E8] transition-colors">
+                  +91 90815 07342
                 </a>
               </div>
 
-              <div className="pt-1">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 text-[11px] font-bold uppercase tracking-wider transition-colors"
-                >
-                  <span>Request Private Consultation</span>
+              <div className="flex items-center gap-3 text-[#A39F97]">
+                <Mail className="w-4 h-4 text-[#B69B65] shrink-0" />
+                <a href="mailto:himanshuramchandani2006@gmail.com" className="hover:text-[#F5F1E8] transition-colors truncate">
+                  himanshuramchandani2006@gmail.com
                 </a>
               </div>
+            </div>
+
+            <div className="pt-2">
+              <a
+                href="https://www.instagram.com/nirvana.group._/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.18em] text-[#B69B65] hover:text-[#F5F1E8] transition-colors"
+              >
+                <span>Follow on Instagram</span>
+                <span>↗</span>
+              </a>
             </div>
           </div>
 
         </div>
 
-        {/* Bottom Bar & Copyright */}
-        <div className="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400">
-          <p>© 2026 NIRVANA GROUP. ALL RIGHTS RESERVED. BUILDING TRUST</p>
+        {/* Bottom Legal & Back to Top Bar */}
+        <div className="pt-8 border-t border-[#2E2E2E] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#77736C]">
+          <p>© 2026 NIRVANA GROUP. All rights reserved. RERA Gujarat Compliant.</p>
 
           <button
             onClick={scrollToTop}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#0B132B] hover:bg-[#111D3E] text-amber-300 border border-slate-800 text-[11px] font-bold uppercase transition-all"
+            className="flex items-center gap-2 text-[#A39F97] hover:text-[#B69B65] transition-colors cursor-pointer uppercase tracking-wider"
           >
             <span>Back to top</span>
             <ArrowUp className="w-3.5 h-3.5" />

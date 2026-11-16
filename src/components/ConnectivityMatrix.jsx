@@ -9,7 +9,7 @@ const CONNECTIVITY_HUBS = [
     time: "4 Mins",
     distance: "2.1 km",
     icon: Building,
-    desc: "Seamless connectivity to prime corporate headquarters, high-end retail, and luxury dining.",
+    desc: "Direct connectivity to corporate headquarters, high-end retail, and luxury hospitality destinations.",
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const CONNECTIVITY_HUBS = [
     time: "3 Mins",
     distance: "1.4 km",
     icon: Compass,
-    desc: "Expansive scientific research pavilions, immersive planetariums, and lush green public gardens.",
+    desc: "Expansive scientific research pavilions, immersive planetariums, and lush green civic spaces.",
   },
   {
     id: 3,
@@ -27,34 +27,34 @@ const CONNECTIVITY_HUBS = [
     time: "7 Mins",
     distance: "3.8 km",
     icon: HeartPulse,
-    desc: "World-class tertiary care medical facility, trauma centers, and diagnostic excellence.",
+    desc: "Tertiary-care medical infrastructure, trauma facilities, and accredited diagnostics.",
   },
   {
     id: 4,
-    name: "Leading International Schools & IB Campuses",
+    name: "International Baccalaureate Academies",
     category: "Education",
     time: "8 Mins",
     distance: "4.2 km",
     icon: GraduationCap,
-    desc: "Renowned international academies, CBSE schools, and premier academic institutions.",
+    desc: "Premier international schools, CBSE academies, and higher education campuses.",
   },
   {
     id: 5,
-    name: "Sardar Vallabhbhai Patel International Airport (AMD)",
+    name: "Sardar Vallabhbhai Patel International Airport",
     category: "Transit",
     time: "25 Mins",
     distance: "18.5 km",
     icon: Plane,
-    desc: "Rapid signal-free expressway access to domestic and international departure terminals.",
+    desc: "Signal-free expressway transit connecting to domestic and international flight terminals.",
   },
   {
     id: 6,
-    name: "Sabarmati High-Speed Rail & Railway Terminal",
+    name: "Sabarmati High-Speed Rail Terminal",
     category: "Transit",
     time: "18 Mins",
     distance: "11.2 km",
     icon: Train,
-    desc: "Direct arterial transit connection to the Mumbai-Ahmedabad High-Speed Bullet Train corridor.",
+    desc: "Direct arterial access to the Mumbai-Ahmedabad High-Speed Bullet Train junction.",
   },
 ];
 
@@ -68,41 +68,38 @@ export default function ConnectivityMatrix() {
     : CONNECTIVITY_HUBS.filter((item) => item.category === activeCategory);
 
   return (
-    <section className="py-20 relative bg-[#070D1E] overflow-hidden border-t border-amber-500/20">
-      {/* Ambient Backdrop Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
+    <section className="py-24 relative bg-[#171717] border-t border-[#2E2E2E]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-14">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-800 pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#2E2E2E] pb-8">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0B132B] border border-amber-500/40 text-amber-300 text-xs font-mono uppercase tracking-widest shadow-md">
-              <Navigation className="w-3.5 h-3.5 text-amber-400" />
-              <span>STRATEGIC PROXIMITY & TRANSIT INDEX</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#1F1F1F] border border-[#2E2E2E] text-[#B69B65] text-xs font-mono uppercase tracking-[0.22em]">
+              <Navigation className="w-3.5 h-3.5 text-[#B69B65]" />
+              <span>Transit & Location Index</span>
             </div>
             
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-white tracking-tight leading-tight">
-              Unrivaled Connectivity. <br />
-              <span className="text-gold-gradient">Minutes from Everywhere That Matters.</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#F5F1E8] tracking-tight leading-tight">
+              Strategic Proximity. <br />
+              <span className="text-[#B69B65]">Minutes From Every Essential Hub.</span>
             </h2>
 
-            <p className="text-sm sm:text-base text-slate-300 font-light leading-relaxed">
-              Strategically positioned along Western Ahmedabad’s highest-velocity growth corridors, balancing serene residential seclusion with instant access to key civic, medical, and transit arteries.
+            <p className="text-sm sm:text-base text-[#A39F97] font-light leading-relaxed">
+              Positioned along Western Ahmedabad’s highest-velocity growth corridors, balancing residential privacy with instant access to arterial transit.
             </p>
           </div>
 
-          {/* Category Filter Pills */}
+          {/* Category Filter Tabs */}
           <div className="flex flex-wrap items-center gap-2">
             {categories.map((cat) => (
               <button
                 key={cat}
                 type="button"
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all duration-300 ${
+                className={`px-4 py-2 text-xs font-mono uppercase tracking-[0.18em] transition-colors cursor-pointer border ${
                   activeCategory === cat
-                    ? 'bg-gold-gradient text-navy-950 shadow-lg shadow-amber-500/20 scale-105'
-                    : 'bg-[#0B132B] text-slate-400 hover:text-white border border-slate-800'
+                    ? 'bg-[#B69B65] text-[#171717] border-[#B69B65] font-semibold'
+                    : 'bg-[#1F1F1F] text-[#A39F97] hover:text-[#F5F1E8] border-[#2E2E2E]'
                 }`}
               >
                 {cat}
@@ -118,43 +115,43 @@ export default function ConnectivityMatrix() {
             return (
               <div
                 key={hub.id}
-                className="group p-6 rounded-3xl bg-[#0B132B]/85 border border-slate-800 hover:border-amber-500/50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 relative space-y-4"
+                className="p-6 bg-[#1F1F1F] border border-[#2E2E2E] hover:border-[#B69B65]/40 transition-colors space-y-4"
               >
                 {/* Top Card Bar */}
                 <div className="flex items-center justify-between">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#111D3E] to-[#1C2B54] border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform shadow-md">
-                    <Icon className="w-6 h-6" />
+                  <div className="w-10 h-10 bg-[#171717] border border-[#2E2E2E] flex items-center justify-center text-[#B69B65]">
+                    <Icon className="w-5 h-5" />
                   </div>
 
                   <div className="text-right">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 font-mono text-xs font-bold">
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#171717] border border-[#2E2E2E] text-[#B69B65] font-mono text-xs font-semibold">
                       <Clock className="w-3 h-3" />
                       <span>{hub.time}</span>
                     </div>
-                    <span className="block text-[10px] font-mono text-slate-400 mt-1">Approx. {hub.distance}</span>
+                    <span className="block text-[10px] font-mono text-[#77736C] mt-1">{hub.distance}</span>
                   </div>
                 </div>
 
                 {/* Hub Information */}
                 <div className="space-y-1.5">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-amber-400/90 font-bold block">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#B69B65] font-semibold block">
                     {hub.category} Corridor
                   </span>
-                  <h3 className="text-base sm:text-lg font-bold text-white font-serif group-hover:text-amber-300 transition-colors">
+                  <h3 className="text-base sm:text-lg font-bold text-[#F5F1E8] font-serif">
                     {hub.name}
                   </h3>
-                  <p className="text-xs text-slate-300 font-light leading-relaxed">
+                  <p className="text-xs text-[#A39F97] font-light leading-relaxed">
                     {hub.desc}
                   </p>
                 </div>
 
                 {/* Bottom Route Indicator */}
-                <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
-                  <span className="flex items-center gap-1">
-                    <Car className="w-3 h-3 text-emerald-400" />
+                <div className="pt-3 border-t border-[#2E2E2E] flex items-center justify-between text-[11px] font-mono text-[#77736C]">
+                  <span className="flex items-center gap-1.5">
+                    <Car className="w-3.5 h-3.5 text-[#B69B65]" />
                     <span>Direct Arterial Access</span>
                   </span>
-                  <span className="text-amber-300 font-bold">Signal-Free</span>
+                  <span className="text-[#D5D1C8]">Signal-Free</span>
                 </div>
               </div>
             );

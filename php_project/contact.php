@@ -4,7 +4,7 @@
  * Luxury Black & Gold Theme with verified office information
  */
 $pageTitle = "Contact Us - Let's Build Something Extraordinary";
-$pageDesc = "Reach Nirvana Group's corporate headquarters at The Capital, Science City Road, Sola, Ahmedabad. Schedule project walkthroughs and private consultations.";
+$pageDesc = "Reach Nirvana Group's corporate headquarters in Ahmedabad, Gujarat, India. Schedule project walkthroughs and private consultations.";
 $activeNav = 'contact';
 
 require_once __DIR__ . '/includes/header.php';

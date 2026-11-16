@@ -167,3 +167,74 @@ h1, h2, h3, .font-serif, .font-display-luxury {
 .scroll-indicator-bounce {
   animation: scrollBounce 2.5s infinite;
 }
+
+/* ==========================================================================
+   NIRVANA GROUP - LUXURY ARCHITECTURAL DESIGN SYSTEM OVERRIDES
+   Palette: #171717, #F5F1E8, #B69B65, #77736C, #1F1F1F, #2E2E2E
+   ========================================================================== */
+
+:root {
+  --color-primary: #171717;
+  --color-secondary: #F5F1E8;
+  --color-accent: #B69B65;
+  --color-supporting: #77736C;
+  --color-card: #1F1F1F;
+  --color-border: #2E2E2E;
+
+  --color-navy-950: #171717 !important;
+  --color-navy-900: #1F1F1F !important;
+  --color-navy-800: #242424 !important;
+  --color-navy-700: #2E2E2E !important;
+  --color-gold-400: #D5D1C8 !important;
+  --color-gold-500: #B69B65 !important;
+  --color-gold-600: #9E844F !important;
+  --color-gold-700: #856E3D !important;
+}
+
+html, body {
+  background-color: #171717 !important;
+  color: #F5F1E8 !important;
+}
+
+/* Neutralize legacy blue/navy container backgrounds */
+.bg-\[\#070D1E\], .bg-\[\#0B132B\], .bg-\[\#111D3E\] {
+  background-color: #1F1F1F !important;
+}
+
+.border-slate-800, .border-slate-700, .border-amber-500\/40, .border-amber-500\/30, .border-amber-500\/20 {
+  border-color: #2E2E2E !important;
+}
+
+/* Subtle Champagne Gold Accents */
+.text-amber-400, .text-amber-300, .text-amber-500, .text-gold-gradient {
+  color: #B69B65 !important;
+}
+
+.text-gold-gradient {
+  background: none !important;
+  -webkit-text-fill-color: #B69B65 !important;
+}
+
+/* Subtle Cards & Architectural Framing */
+.glass-panel, .glass-panel-gold {
+  background: #1F1F1F !important;
+  border-color: #2E2E2E !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: none !important;
+}
+
+/* Button & interactive styling */
+.bg-gold-gradient {
+  background: #B69B65 !important;
+  color: #171717 !important;
+}
+
+.bg-gold-gradient:hover {
+  background: #C4A973 !important;
+}
+
+/* Crisp architectural corners */
+.rounded-3xl, .rounded-2xl {
+  border-radius: 0px !important;
+}
+
