@@ -32,7 +32,7 @@ export default function Navbar({ currentPath, onNavigate }) {
               <Building2 className="w-4 h-4 text-[#B69B65]" />
             </div>
             <div className="flex flex-col">
-              <span className="font-serif font-bold text-base sm:text-lg tracking-wider uppercase text-[#171717] leading-tight">
+              <span className="font-cinzel font-bold text-base sm:text-lg tracking-[0.06em] uppercase text-[#171717] leading-tight">
                 NIRVANA <span className="text-[#B69B65]">GROUP</span>
               </span>
               <span className="text-[10px] font-sans font-semibold text-[#77736C] tracking-[0.25em] block uppercase mt-0.5">

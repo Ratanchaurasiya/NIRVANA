@@ -18,10 +18,10 @@ export default function Footer({ onNavigate }) {
                 <Building2 className="w-5 h-5 text-[#B69B65]" />
               </div>
               <div className="flex flex-col">
-                <span className="font-serif font-bold text-xl sm:text-2xl tracking-wider uppercase text-[#F5F1E8] leading-tight">
+                <span className="font-cinzel font-bold text-xl sm:text-2xl tracking-[0.06em] uppercase text-[#F5F1E8] leading-tight">
                   NIRVANA <span className="text-[#B69B65]">GROUP</span>
                 </span>
-                <span className="text-[10px] font-mono text-[#77736C] tracking-[0.25em] uppercase font-medium mt-0.5">
+                <span className="text-[11px] font-editorial italic text-[#A39F97] tracking-wider mt-0.5">
                   Building Dreams. Creating Landmarks.
                 </span>
               </div>

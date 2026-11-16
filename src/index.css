@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-mono: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-cinzel: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-editorial: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+}
+
 /* Nirvana Group - Timeless Luxury Architectural White Design System */
 html, body, #root {
   background-color: #FAF9F6 !important;
@@ -9,6 +17,7 @@ html, body, #root {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 @layer base {
@@ -41,20 +50,34 @@ html, body, #root {
     letter-spacing: -0.01em;
   }
 
-  h1, h2, h3, h4, .font-serif-brand {
-    font-family: 'Playfair Display', 'Cinzel', Georgia, serif;
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
     letter-spacing: -0.015em;
     color: #171717;
   }
+}
 
-  .font-brand-heading {
-    font-family: 'Cinzel', 'Playfair Display', serif;
-    letter-spacing: 0.05em;
-  }
+/* Enforced Luxury Font Classes */
+.font-serif, .font-serif-brand {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif !important;
+}
 
-  .font-editorial {
-    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
-  }
+.font-cinzel {
+  font-family: 'Cinzel', 'Playfair Display', Georgia, serif !important;
+}
+
+.font-editorial {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif !important;
+}
+
+.font-sans {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+/* Remap font-mono to Plus Jakarta Sans for clean executive typography instead of code */
+.font-mono {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-feature-settings: "tnum" 1, "zero" 1;
 }
 
 /* Sharp Text & Rendering Utilities */
@@ -79,13 +102,13 @@ html, body, #root {
 }
 
 .border-charcoal-subtle {
-  border-color: #E6E2D8;
+  border-color: #DEDAD2;
 }
 
 /* Architectural Card & Panel Utilities (Clean, Crisp White, Hairline Borders) */
 .architectural-card {
   background-color: #FFFFFF;
-  border: 1px solid #E6E2D8;
+  border: 1px solid #DEDAD2;
   box-shadow: 0 4px 25px -2px rgba(0, 0, 0, 0.04);
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
@@ -97,7 +120,7 @@ html, body, #root {
 
 .glass-panel {
   background: #FFFFFF;
-  border: 1px solid #E6E2D8;
+  border: 1px solid #DEDAD2;
   box-shadow: 0 4px 25px -2px rgba(0, 0, 0, 0.04);
 }
 
@@ -135,7 +158,7 @@ html, body, #root {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F5F3EE;
+  background: #F5F1E8;
 }
 ::-webkit-scrollbar-thumb {
   background: #DEDAD2;
