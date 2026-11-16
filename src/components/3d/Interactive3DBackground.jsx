@@ -20,7 +20,7 @@ function ArchitecturalPerspectivePlane() {
           color="#B69B65"
           wireframe
           transparent
-          opacity={0.03}
+          opacity={0.07}
         />
       </mesh>
     </group>
@@ -29,7 +29,7 @@ function ArchitecturalPerspectivePlane() {
 
 export default function Interactive3DBackground() {
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-[#171717]">
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-[#FAF9F6]">
       <Canvas
         camera={{ position: [0, 0, 16], fov: 55 }}
         gl={{ alpha: true, antialias: true }}

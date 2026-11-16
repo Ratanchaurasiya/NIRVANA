@@ -8,33 +8,33 @@ export default function PrivacyPolicyPage({ onNavigate }) {
       <div>
         <button
           onClick={() => onNavigate('/')}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-none bg-[#1F1F1F] text-[#B69B65] border border-[#2E2E2E] text-xs font-mono uppercase tracking-wider hover:border-[#B69B65] transition-all"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-none bg-white text-[#B69B65] border border-[#E6E2D8] text-xs font-mono uppercase tracking-wider hover:border-[#B69B65] transition-all"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to Home</span>
         </button>
       </div>
 
-      <div className="text-center space-y-3 border-b border-[#2E2E2E] pb-8">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-none bg-[#1F1F1F] border border-[#2E2E2E] text-[#B69B65] text-xs font-mono uppercase tracking-widest">
+      <div className="text-center space-y-3 border-b border-[#E6E2D8] pb-8">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-none bg-white border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase tracking-widest">
           <ShieldCheck className="w-3.5 h-3.5 text-[#B69B65]" />
           <span>OFFICIAL LEGAL DOCUMENTATION</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#F5F1E8] tracking-tight">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight">
           Privacy Policy
         </h1>
-        <p className="text-xs sm:text-sm text-[#A39F97] font-light">
+        <p className="text-xs sm:text-sm text-[#5C5852] font-light">
           Subject to the terms of the Site Policy (User Agreement) of NIRVANA GROUP website.
         </p>
       </div>
 
-      <div className="rounded-none bg-[#1F1F1F] p-6 sm:p-10 border border-[#2E2E2E] shadow-xl space-y-8 text-xs sm:text-sm text-[#A39F97] leading-relaxed font-light">
+      <div className="rounded-none bg-white p-6 sm:p-10 border border-[#E6E2D8] shadow-xl space-y-8 text-xs sm:text-sm text-[#5C5852] leading-relaxed font-light">
         
-        <div className="p-4 rounded-none bg-[#171717] border border-[#2E2E2E] text-[#B69B65] text-xs font-mono">
+        <div className="p-4 rounded-none bg-[#FAF9F6] border border-[#E6E2D8] text-[#B69B65] text-xs font-mono">
           This Privacy policy is subject to the terms of the Site Policy (User Agreement) of this website.
         </div>
 
-        <div className="space-y-6 divide-y divide-[#2E2E2E]">
+        <div className="space-y-6 divide-y divide-[#E6E2D8]">
           
           <div className="pt-4 space-y-2">
             <h3 className="font-bold text-[#B69B65] font-mono text-xs uppercase tracking-wider">[1] Third Party Non-Disclosure</h3>
@@ -67,7 +67,7 @@ export default function PrivacyPolicyPage({ onNavigate }) {
           <div className="pt-4 space-y-2">
             <h3 className="font-bold text-[#B69B65] font-mono text-xs uppercase tracking-wider">[5] User Communication & Personalization</h3>
             <p>
-              <strong className="text-[#F5F1E8]">To Communicate with You:</strong> We may use your information to respond to your inquiries, provide customer service support, send you important information about the services, and send you marketing communications (with your consent) via different channels, including but not limited to SMS, Email, WhatsApp, RCS and Voice.
+              <strong className="text-[#171717]">To Communicate with You:</strong> We may use your information to respond to your inquiries, provide customer service support, send you important information about the services, and send you marketing communications (with your consent) via different channels, including but not limited to SMS, Email, WhatsApp, RCS and Voice.
             </p>
             <p className="mt-2">
               In order to provide a personalized browsing experience, we may collect personal information from you. Also, we may require you to complete a registration form or ask for some information seeking your preferences regarding the property you are looking for. Based on your preferences, we will be able to deliver or allow you to access the most relevant information that meets your end.

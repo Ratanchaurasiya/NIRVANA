@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
-/* Nirvana Group - Timeless Luxury Architectural Design System */
+/* Nirvana Group - Timeless Luxury Architectural White Design System */
 html, body, #root {
-  background-color: #171717 !important;
-  color: #F5F1E8 !important;
+  background-color: #FAF9F6 !important;
+  color: #171717 !important;
   min-height: 100vh;
   width: 100%;
   margin: 0;
@@ -13,18 +13,19 @@ html, body, #root {
 
 @layer base {
   :root {
-    /* Primary Luxury Palette */
-    --color-primary: #171717;
-    --color-charcoal-dark: #1F1F1F;
-    --color-charcoal-card: #242424;
-    --color-charcoal-border: #2E2E2E;
-    
-    /* Warm Ivory & Greys */
-    --color-ivory: #F5F1E8;
-    --color-offwhite-card: #FAF9F6;
-    --color-grey-warm: #77736C;
-    --color-grey-light: #A39F97;
-    --color-grey-border: #DEDAD2;
+    /* Primary Architectural White & Ivory Canvas */
+    --color-canvas-main: #FAF9F6;
+    --color-canvas-white: #FFFFFF;
+    --color-canvas-alt: #F5F3EE;
+    --color-card-white: #FFFFFF;
+    --color-border-light: #E6E2D8;
+    --color-border-subtle: #EFECE6;
+
+    /* Charcoal & Contrast Typography */
+    --color-text-primary: #171717;
+    --color-text-secondary: #4B4842;
+    --color-text-muted: #77736C;
+    --color-text-light: #A39F97;
 
     /* Muted Champagne Gold Accent (Subtle & Restrained) */
     --color-gold-muted: #B69B65;
@@ -34,8 +35,8 @@ html, body, #root {
 
   body {
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: #171717 !important;
-    color: #F5F1E8 !important;
+    background-color: #FAF9F6 !important;
+    color: #171717 !important;
     overflow-x: hidden;
     letter-spacing: -0.01em;
   }
@@ -43,6 +44,7 @@ html, body, #root {
   h1, h2, h3, h4, .font-serif-brand {
     font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
     letter-spacing: -0.015em;
+    color: #171717;
   }
 
   .font-display {
@@ -68,32 +70,36 @@ html, body, #root {
 }
 
 .border-gold-subtle {
-  border-color: rgba(182, 155, 101, 0.3);
+  border-color: rgba(182, 155, 101, 0.4);
 }
 
 .border-charcoal-subtle {
-  border-color: #2E2E2E;
+  border-color: #E6E2D8;
 }
 
-/* Architectural Card & Panel Utilities (Clean, Solid, No Heavy Vibe Blurs) */
+/* Architectural Card & Panel Utilities (Clean, Crisp White, Hairline Borders) */
 .architectural-card {
-  background-color: #1F1F1F;
-  border: 1px solid #2E2E2E;
-  transition: border-color 0.3s ease, transform 0.3s ease;
+  background-color: #FFFFFF;
+  border: 1px solid #E6E2D8;
+  box-shadow: 0 4px 25px -2px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .architectural-card:hover {
-  border-color: rgba(182, 155, 101, 0.45);
+  border-color: #B69B65;
+  box-shadow: 0 8px 30px -4px rgba(182, 155, 101, 0.12);
 }
 
 .glass-panel {
-  background: #1F1F1F;
-  border: 1px solid #2E2E2E;
+  background: #FFFFFF;
+  border: 1px solid #E6E2D8;
+  box-shadow: 0 4px 25px -2px rgba(0, 0, 0, 0.04);
 }
 
 .glass-panel-gold {
-  background: #1F1F1F;
-  border: 1px solid rgba(182, 155, 101, 0.25);
+  background: #FFFFFF;
+  border: 1px solid rgba(182, 155, 101, 0.35);
+  box-shadow: 0 4px 25px -2px rgba(0, 0, 0, 0.04);
 }
 
 .glass-card-hover {
@@ -101,12 +107,14 @@ html, body, #root {
 }
 
 .glass-card-hover:hover {
-  border-color: rgba(182, 155, 101, 0.4);
+  border-color: #B69B65;
+  box-shadow: 0 8px 30px -4px rgba(182, 155, 101, 0.15);
 }
 
 /* Legacy gradient fallbacks redirected to refined subtle tones */
 .bg-gold-gradient {
   background: #B69B65;
+  color: #FFFFFF;
 }
 
 .text-gold-gradient {
@@ -114,7 +122,7 @@ html, body, #root {
 }
 
 .border-gold-glow {
-  border: 1px solid rgba(182, 155, 101, 0.3);
+  border: 1px solid rgba(182, 155, 101, 0.35);
 }
 
 /* Refined Luxury Scrollbar */
@@ -122,10 +130,10 @@ html, body, #root {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #171717;
+  background: #F5F3EE;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2E2E2E;
+  background: #DEDAD2;
   border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {

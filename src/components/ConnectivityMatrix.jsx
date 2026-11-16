@@ -68,23 +68,23 @@ export default function ConnectivityMatrix() {
     : CONNECTIVITY_HUBS.filter((item) => item.category === activeCategory);
 
   return (
-    <section className="py-24 relative bg-[#171717] border-t border-[#2E2E2E]">
+    <section className="py-24 relative bg-[#FAF9F6] border-t border-[#E6E2D8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-14">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#2E2E2E] pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#E6E2D8] pb-8">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#1F1F1F] border border-[#2E2E2E] text-[#B69B65] text-xs font-mono uppercase tracking-[0.22em]">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase tracking-[0.22em]">
               <Navigation className="w-3.5 h-3.5 text-[#B69B65]" />
               <span>Transit & Location Index</span>
             </div>
             
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#F5F1E8] tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight leading-tight">
               Strategic Proximity. <br />
               <span className="text-[#B69B65]">Minutes From Every Essential Hub.</span>
             </h2>
 
-            <p className="text-sm sm:text-base text-[#A39F97] font-light leading-relaxed">
+            <p className="text-sm sm:text-base text-[#5C5852] font-light leading-relaxed">
               Positioned along Western Ahmedabad’s highest-velocity growth corridors, balancing residential privacy with instant access to arterial transit.
             </p>
           </div>
@@ -98,8 +98,8 @@ export default function ConnectivityMatrix() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-2 text-xs font-mono uppercase tracking-[0.18em] transition-colors cursor-pointer border ${
                   activeCategory === cat
-                    ? 'bg-[#B69B65] text-[#171717] border-[#B69B65] font-semibold'
-                    : 'bg-[#1F1F1F] text-[#A39F97] hover:text-[#F5F1E8] border-[#2E2E2E]'
+                    ? 'bg-[#B69B65] text-white border-[#B69B65] font-semibold'
+                    : 'bg-white text-[#5C5852] hover:text-[#171717] border-[#E6E2D8]'
                 }`}
               >
                 {cat}
@@ -115,16 +115,16 @@ export default function ConnectivityMatrix() {
             return (
               <div
                 key={hub.id}
-                className="p-6 bg-[#1F1F1F] border border-[#2E2E2E] hover:border-[#B69B65]/40 transition-colors space-y-4"
+                className="p-6 bg-white border border-[#E6E2D8] hover:border-[#B69B65]/40 transition-colors space-y-4"
               >
                 {/* Top Card Bar */}
                 <div className="flex items-center justify-between">
-                  <div className="w-10 h-10 bg-[#171717] border border-[#2E2E2E] flex items-center justify-center text-[#B69B65]">
+                  <div className="w-10 h-10 bg-[#FAF9F6] border border-[#E6E2D8] flex items-center justify-center text-[#B69B65]">
                     <Icon className="w-5 h-5" />
                   </div>
 
                   <div className="text-right">
-                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#171717] border border-[#2E2E2E] text-[#B69B65] font-mono text-xs font-semibold">
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#FAF9F6] border border-[#E6E2D8] text-[#B69B65] font-mono text-xs font-semibold">
                       <Clock className="w-3 h-3" />
                       <span>{hub.time}</span>
                     </div>
@@ -137,21 +137,21 @@ export default function ConnectivityMatrix() {
                   <span className="text-[10px] font-mono uppercase tracking-widest text-[#B69B65] font-semibold block">
                     {hub.category} Corridor
                   </span>
-                  <h3 className="text-base sm:text-lg font-bold text-[#F5F1E8] font-serif">
+                  <h3 className="text-base sm:text-lg font-bold text-[#171717] font-serif">
                     {hub.name}
                   </h3>
-                  <p className="text-xs text-[#A39F97] font-light leading-relaxed">
+                  <p className="text-xs text-[#5C5852] font-light leading-relaxed">
                     {hub.desc}
                   </p>
                 </div>
 
                 {/* Bottom Route Indicator */}
-                <div className="pt-3 border-t border-[#2E2E2E] flex items-center justify-between text-[11px] font-mono text-[#77736C]">
+                <div className="pt-3 border-t border-[#E6E2D8] flex items-center justify-between text-[11px] font-mono text-[#77736C]">
                   <span className="flex items-center gap-1.5">
                     <Car className="w-3.5 h-3.5 text-[#B69B65]" />
                     <span>Direct Arterial Access</span>
                   </span>
-                  <span className="text-[#D5D1C8]">Signal-Free</span>
+                  <span className="text-[#4B4842]">Signal-Free</span>
                 </div>
               </div>
             );

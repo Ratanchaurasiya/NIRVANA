@@ -46,19 +46,19 @@ const REASONS = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-24 relative bg-[#171717] border-t border-[#2E2E2E]">
+    <section className="py-24 relative bg-[#FAF9F6] border-t border-[#E6E2D8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#1F1F1F] border border-[#2E2E2E] text-[#B69B65] text-xs font-mono uppercase tracking-[0.22em]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase tracking-[0.22em]">
             <span>Guiding Principles</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#F5F1E8] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight">
             Why Discerning Clients Choose <span className="text-[#B69B65]">NIRVANA GROUP</span>
           </h2>
           <div className="w-12 h-px bg-[#B69B65] mx-auto" />
-          <p className="text-[#A39F97] text-sm sm:text-base font-light leading-relaxed">
+          <p className="text-[#5C5852] text-sm sm:text-base font-light leading-relaxed">
             Our client-first philosophy prioritizes clarity, structural integrity, and long-term asset value over sales rhetoric.
           </p>
         </div>
@@ -70,20 +70,20 @@ const WhyChooseUs = () => {
             return (
               <div
                 key={idx}
-                className="p-6 bg-[#1F1F1F] border border-[#2E2E2E] hover:border-[#B69B65]/40 transition-colors flex flex-col justify-between"
+                className="p-6 bg-white border border-[#E6E2D8] hover:border-[#B69B65]/40 transition-colors flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-10 h-10 bg-[#171717] border border-[#2E2E2E] text-[#B69B65] flex items-center justify-center mb-5">
+                  <div className="w-10 h-10 bg-[#FAF9F6] border border-[#E6E2D8] text-[#B69B65] flex items-center justify-center mb-5">
                     <IconComp className="w-5 h-5" />
                   </div>
-                  <h3 className="text-base font-bold font-serif text-[#F5F1E8] mb-2">
+                  <h3 className="text-base font-bold font-serif text-[#171717] mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-[#A39F97] font-light leading-relaxed">
+                  <p className="text-xs text-[#5C5852] font-light leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
-                <div className="mt-5 pt-3 border-t border-[#2E2E2E] flex items-center justify-between text-[10px] text-[#77736C] font-mono">
+                <div className="mt-5 pt-3 border-t border-[#E6E2D8] flex items-center justify-between text-[10px] text-[#77736C] font-mono">
                   <span>STANDARD 0{idx + 1}</span>
                   <span className="w-1 h-1 bg-[#B69B65]" />
                 </div>

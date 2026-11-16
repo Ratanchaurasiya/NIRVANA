@@ -115,15 +115,15 @@ function FloorPlanGeometry({ title = "TYPICAL 3BHK RESIDENTIAL SUITE" }) {
 
 export default function FloorPlan3DViewer({ unitName = "TYPICAL 3BHK RESIDENTIAL SUITE" }) {
   return (
-    <div className="w-full h-[450px] sm:h-[550px] relative rounded-none overflow-hidden bg-[#1F1F1F] border border-[#2E2E2E]">
+    <div className="w-full h-[450px] sm:h-[550px] relative rounded-none overflow-hidden bg-white border border-[#E6E2D8]">
       {/* Overlay Helper Badge */}
       <div className="absolute top-4 left-4 right-4 z-10 flex flex-wrap items-center justify-between gap-3 pointer-events-auto">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-none bg-[#171717]/95 border border-[#2E2E2E] text-[#B69B65] text-xs font-mono uppercase tracking-wider">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-none bg-white/95 border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase tracking-wider">
           <span className="w-1.5 h-1.5 rounded-full bg-[#B69B65]" />
           <span>LAYOUT MATRIX: {unitName}</span>
         </div>
 
-        <div className="text-[11px] font-mono text-[#77736C] bg-[#171717]/90 px-3 py-1 rounded-none border border-[#2E2E2E]">
+        <div className="text-[11px] font-mono text-[#77736C] bg-white/95 px-3 py-1 rounded-none border border-[#E6E2D8]">
           Drag to rotate • Pinch to zoom
         </div>
       </div>

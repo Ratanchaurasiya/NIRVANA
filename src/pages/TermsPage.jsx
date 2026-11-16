@@ -8,29 +8,29 @@ export default function TermsPage({ onNavigate }) {
       <div>
         <button
           onClick={() => onNavigate('/')}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-none bg-[#1F1F1F] text-[#B69B65] border border-[#2E2E2E] text-xs font-mono uppercase tracking-wider hover:border-[#B69B65] transition-all"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-none bg-white text-[#B69B65] border border-[#E6E2D8] text-xs font-mono uppercase tracking-wider hover:border-[#B69B65] transition-all"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to Home</span>
         </button>
       </div>
 
-      <div className="text-center space-y-3 border-b border-[#2E2E2E] pb-8">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-none bg-[#1F1F1F] border border-[#2E2E2E] text-[#B69B65] text-xs font-mono uppercase tracking-widest">
+      <div className="text-center space-y-3 border-b border-[#E6E2D8] pb-8">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-none bg-white border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase tracking-widest">
           <FileText className="w-3.5 h-3.5 text-[#B69B65]" />
           <span>OFFICIAL USER AGREEMENT</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#F5F1E8] tracking-tight">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight">
           Terms & Conditions
         </h1>
-        <p className="text-xs sm:text-sm text-[#A39F97] font-light">
+        <p className="text-xs sm:text-sm text-[#5C5852] font-light">
           Nirvana Group Website Terms of Use & Legal Framework
         </p>
       </div>
 
-      <div className="rounded-none bg-[#1F1F1F] p-6 sm:p-10 border border-[#2E2E2E] shadow-xl space-y-8 text-xs sm:text-sm text-[#A39F97] leading-relaxed font-light">
+      <div className="rounded-none bg-white p-6 sm:p-10 border border-[#E6E2D8] shadow-xl space-y-8 text-xs sm:text-sm text-[#5C5852] leading-relaxed font-light">
         
-        <div className="p-4 rounded-none bg-[#171717] border border-[#2E2E2E] text-[#A39F97] space-y-2">
+        <div className="p-4 rounded-none bg-[#FAF9F6] border border-[#E6E2D8] text-[#5C5852] space-y-2">
           <p>
             If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern Nirvana Group' relationship with you in relation to this website. If you disagree with any part of these terms and conditions, please do not use our website.
           </p>
@@ -44,7 +44,7 @@ export default function TermsPage({ onNavigate }) {
             Terms of Use Guidelines:
           </h3>
 
-          <ul className="space-y-4 list-disc list-inside text-[#A39F97]">
+          <ul className="space-y-4 list-disc list-inside text-[#5C5852]">
             <li className="pl-2">
               The content of the pages of this website is for your general information and use only. It is subject to change without notice.
             </li>

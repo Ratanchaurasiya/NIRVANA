@@ -8,7 +8,7 @@ const BrandLogo = ({ variant = "default", className = "" }) => {
       aria-label="NIRVANA GROUP Home"
     >
       {/* Brand Icon Mark */}
-      <div className="relative flex items-center justify-center w-10 h-10 bg-[#1F1F1F] border border-[#B69B65]/40 transition-colors group-hover:border-[#B69B65]">
+      <div className="relative flex items-center justify-center w-10 h-10 bg-white border border-[#B69B65]/40 transition-colors group-hover:border-[#B69B65]">
         <svg 
           viewBox="0 0 100 100" 
           className="w-6 h-6"
@@ -31,7 +31,7 @@ const BrandLogo = ({ variant = "default", className = "" }) => {
 
       {/* Brand Typography */}
       <div className="flex flex-col text-left">
-        <span className="font-serif text-lg font-bold tracking-wider text-[#F5F1E8] group-hover:text-[#B69B65] transition-colors leading-tight">
+        <span className="font-serif text-lg font-bold tracking-wider text-[#171717] group-hover:text-[#B69B65] transition-colors leading-tight">
           NIRVANA <span className="text-[#B69B65]">GROUP</span>
         </span>
         <span className="text-[9px] font-mono uppercase tracking-[0.22em] text-[#77736C] font-medium mt-0.5">

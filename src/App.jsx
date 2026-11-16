@@ -64,7 +64,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen relative font-sans selection:bg-[#B69B65] selection:text-[#171717] bg-[#171717] text-[#F5F1E8]">
+    <div className="min-h-screen relative font-sans selection:bg-[#B69B65] selection:text-white bg-[#FAF9F6] text-[#171717]">
       
       {/* Subtle Architectural Perspective Ambience */}
       <Interactive3DBackground />

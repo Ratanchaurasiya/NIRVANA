@@ -30,19 +30,19 @@ const STEPS = [
 
 const HowWeWork = () => {
   return (
-    <section id="process" className="py-24 relative bg-[#171717] border-t border-[#2E2E2E]">
+    <section id="process" className="py-24 relative bg-[#FAF9F6] border-t border-[#E6E2D8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#1F1F1F] border border-[#2E2E2E] text-[#B69B65] text-xs font-mono uppercase tracking-[0.22em]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase tracking-[0.22em]">
             <span>Methodology</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#F5F1E8] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight">
             How We <span className="text-[#B69B65]">Work</span>
           </h2>
           <div className="w-12 h-px bg-[#B69B65] mx-auto" />
-          <p className="text-[#A39F97] text-sm sm:text-base font-light leading-relaxed">
+          <p className="text-[#5C5852] text-sm sm:text-base font-light leading-relaxed">
             A disciplined, transparent three-stage approach designed to ensure complete clarity when acquiring premier real estate in Gujarat.
           </p>
         </div>
@@ -54,11 +54,11 @@ const HowWeWork = () => {
             return (
               <div
                 key={item.step}
-                className="group bg-[#1F1F1F] border border-[#2E2E2E] p-8 hover:border-[#B69B65]/40 transition-colors flex flex-col justify-between"
+                className="group bg-white border border-[#E6E2D8] p-8 hover:border-[#B69B65]/40 transition-colors flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-10 h-10 bg-[#171717] border border-[#2E2E2E] flex items-center justify-center text-[#B69B65]">
+                    <div className="w-10 h-10 bg-[#FAF9F6] border border-[#E6E2D8] flex items-center justify-center text-[#B69B65]">
                       <IconComp className="w-5 h-5" />
                     </div>
                     <span className="text-3xl font-serif font-bold text-[#77736C] group-hover:text-[#B69B65] transition-colors">
@@ -66,22 +66,22 @@ const HowWeWork = () => {
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold font-serif text-[#F5F1E8] mb-1">
+                  <h3 className="text-lg font-bold font-serif text-[#171717] mb-1">
                     {item.title}
                   </h3>
                   <p className="text-xs font-mono uppercase tracking-wider text-[#B69B65] mb-3">
                     {item.subtitle}
                   </p>
 
-                  <p className="text-xs sm:text-sm text-[#A39F97] font-light leading-relaxed mb-6">
+                  <p className="text-xs sm:text-sm text-[#5C5852] font-light leading-relaxed mb-6">
                     {item.desc}
                   </p>
                 </div>
 
                 {/* Highlights */}
-                <div className="space-y-2 pt-4 border-t border-[#2E2E2E]">
+                <div className="space-y-2 pt-4 border-t border-[#E6E2D8]">
                   {item.details.map((detail, dIdx) => (
-                    <div key={dIdx} className="flex items-center gap-2 text-xs text-[#D5D1C8]">
+                    <div key={dIdx} className="flex items-center gap-2 text-xs text-[#4B4842]">
                       <span className="w-1.5 h-1.5 bg-[#B69B65]" />
                       <span>{detail}</span>
                     </div>
@@ -97,7 +97,7 @@ const HowWeWork = () => {
         <div className="text-center pt-2">
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#B69B65] text-[#171717] text-xs font-semibold uppercase tracking-[0.18em] hover:bg-[#C4A975] transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#B69B65] text-white text-xs font-semibold uppercase tracking-[0.18em] hover:bg-[#A38854] transition-colors"
           >
             <span>Begin Step 01 — Contact Us</span>
             <ArrowRight className="w-4 h-4" />

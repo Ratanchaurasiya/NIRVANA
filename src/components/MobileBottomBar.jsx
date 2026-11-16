@@ -3,7 +3,7 @@ import { Home, Layers, MessageSquare, Phone, Mail } from 'lucide-react';
 
 const MobileBottomBar = () => {
   return (
-    <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#141414]/95 backdrop-blur-md border-t border-[#2E2E2E] px-3 py-2 shadow-lg">
+    <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#F5F3EE]/95 backdrop-blur-md border-t border-[#E6E2D8] px-3 py-2 shadow-lg">
       <div className="grid grid-cols-5 gap-1 text-center">
         
         {/* Home */}
@@ -29,7 +29,7 @@ const MobileBottomBar = () => {
           href="/#contact"
           className="flex flex-col items-center justify-center py-0.5 text-[#B69B65]"
         >
-          <div className="w-7 h-7 bg-[#B69B65] text-[#171717] flex items-center justify-center">
+          <div className="w-7 h-7 bg-[#B69B65] text-white flex items-center justify-center">
             <MessageSquare className="w-3.5 h-3.5" />
           </div>
           <span className="text-[10px] font-mono uppercase font-semibold mt-0.5">Enquire</span>

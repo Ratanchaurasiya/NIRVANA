@@ -12,28 +12,28 @@ export default function AboutPage({ onNavigate }) {
       
       {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-none bg-[#1F1F1F] border border-[#2E2E2E] text-[#B69B65] text-xs font-mono uppercase tracking-widest">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-none bg-white border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase tracking-widest">
           <Sparkles className="w-3.5 h-3.5 text-[#B69B65]" />
           <span>CORPORATE ARCHITECTURE PROFILE</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#F5F1E8] tracking-tight">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight">
           About <span className="text-[#B69B65]">NIRVANA GROUP</span>
         </h1>
         <div className="w-12 h-px bg-[#B69B65]/40 mx-auto" />
       </div>
 
       {/* ---------------- Exact Corporate Profile Block ---------------- */}
-      <div className="rounded-none bg-[#1F1F1F] p-8 sm:p-12 border border-[#2E2E2E] shadow-xl relative overflow-hidden">
+      <div className="rounded-none bg-white p-8 sm:p-12 border border-[#E6E2D8] shadow-xl relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center space-y-6">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-none bg-[#171717] border border-[#2E2E2E] text-[#B69B65] mx-auto">
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-none bg-[#FAF9F6] border border-[#E6E2D8] text-[#B69B65] mx-auto">
             <Award className="w-7 h-7" />
           </div>
           
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#F5F1E8] leading-snug">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#171717] leading-snug">
             "Nirvana Group is a premier real estate development group specializing in Grade-A commercial and residential property engineering based in Gujarat."
           </h2>
 
-          <p className="text-sm sm:text-base text-[#A39F97] font-light leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-[#5C5852] font-light leading-relaxed max-w-2xl mx-auto">
             Combining structural safety, double-glazed energy efficiency, and modern aesthetic elegance to shape Gujarat's skyline across Sola, Science City Road, SG Highway, Thaltej, and Khoraj.
           </p>
         </div>
@@ -51,24 +51,24 @@ export default function AboutPage({ onNavigate }) {
             <span>Structural Integrity Standard</span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#F5F1E8]">
+          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#171717]">
             Seismic-Resistant Structures & Engineering
           </h2>
 
-          <p className="text-xs sm:text-sm text-[#A39F97] font-light leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#5C5852] font-light leading-relaxed">
             Every NIRVANA project incorporates deep bedrock piling, hydraulic damper assemblies, high-tensile steel rebar cages, and BIS Zone 5 compliant concrete cores.
           </p>
 
           <div className="space-y-3 text-xs">
-            <div className="p-3.5 rounded-none bg-[#1F1F1F] border border-[#2E2E2E] text-[#F5F1E8] flex items-center gap-3">
+            <div className="p-3.5 rounded-none bg-white border border-[#E6E2D8] text-[#171717] flex items-center gap-3">
               <CheckCircle2 className="w-4 h-4 text-[#B69B65] shrink-0" />
               <span>BIS Zone 5 Earth Shock Isolation Engineering</span>
             </div>
-            <div className="p-3.5 rounded-none bg-[#1F1F1F] border border-[#2E2E2E] text-[#F5F1E8] flex items-center gap-3">
+            <div className="p-3.5 rounded-none bg-white border border-[#E6E2D8] text-[#171717] flex items-center gap-3">
               <CheckCircle2 className="w-4 h-4 text-[#B69B65] shrink-0" />
               <span>Acoustic & Thermal Double Glazed Curtain Walling</span>
             </div>
-            <div className="p-3.5 rounded-none bg-[#1F1F1F] border border-[#2E2E2E] text-[#F5F1E8] flex items-center gap-3">
+            <div className="p-3.5 rounded-none bg-white border border-[#E6E2D8] text-[#171717] flex items-center gap-3">
               <CheckCircle2 className="w-4 h-4 text-[#B69B65] shrink-0" />
               <span>Solar Grid Clean Energy & Water Harvesting</span>
             </div>
@@ -80,7 +80,7 @@ export default function AboutPage({ onNavigate }) {
       <div className="space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <span className="text-xs font-mono uppercase tracking-widest text-[#B69B65] font-bold">ENGINEERING BENCHMARKS</span>
-          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#F5F1E8]">
+          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#171717]">
             Development Standards (01 to 05)
           </h2>
           <p className="text-xs text-[#77736C] font-light">Select any standard below to inspect engineering specifics</p>
@@ -98,13 +98,13 @@ export default function AboutPage({ onNavigate }) {
                   onClick={() => setActiveStandard(std.id)}
                   className={`w-full p-4 rounded-none text-left border transition-all duration-300 flex items-center justify-between group ${
                     isActive
-                      ? 'bg-[#B69B65] text-[#171717] border-[#B69B65]'
-                      : 'bg-[#1F1F1F] text-[#F5F1E8] border-[#2E2E2E] hover:border-[#B69B65]/40 hover:bg-[#242424]'
+                      ? 'bg-[#B69B65] text-white border-[#B69B65]'
+                      : 'bg-white text-[#171717] border-[#E6E2D8] hover:border-[#B69B65]/40 hover:bg-[#F5F3EE]'
                   }`}
                 >
                   <div className="flex items-center gap-4">
                     <span className={`font-mono text-xs font-extrabold px-2.5 py-1 rounded-none ${
-                      isActive ? 'bg-[#171717] text-[#B69B65]' : 'bg-[#171717] text-[#A39F97] border border-[#2E2E2E]'
+                      isActive ? 'bg-[#FAF9F6] text-[#B69B65]' : 'bg-[#FAF9F6] text-[#5C5852] border border-[#E6E2D8]'
                     }`}>
                       {std.id}
                     </span>
@@ -124,29 +124,29 @@ export default function AboutPage({ onNavigate }) {
             {(() => {
               const active = DEVELOPMENT_STANDARDS.find(s => s.id === activeStandard) || DEVELOPMENT_STANDARDS[0];
               return (
-                <div className="rounded-none bg-[#1F1F1F] p-8 border border-[#2E2E2E] shadow-xl space-y-6 h-full flex flex-col justify-between min-h-[300px]">
+                <div className="rounded-none bg-white p-8 border border-[#E6E2D8] shadow-xl space-y-6 h-full flex flex-col justify-between min-h-[300px]">
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between border-b border-[#2E2E2E] pb-4">
+                    <div className="flex items-center justify-between border-b border-[#E6E2D8] pb-4">
                       <span className="text-xs font-mono uppercase tracking-widest text-[#B69B65] font-bold">
                         STANDARD {active.id} DEFINITION
                       </span>
                       <Layers className="w-5 h-5 text-[#B69B65]" />
                     </div>
 
-                    <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#F5F1E8]">
+                    <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#171717]">
                       {active.title}
                     </h3>
 
-                    <p className="text-sm text-[#A39F97] font-light leading-relaxed">
+                    <p className="text-sm text-[#5C5852] font-light leading-relaxed">
                       {active.description}
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-[#2E2E2E] flex items-center justify-between">
+                  <div className="pt-4 border-t border-[#E6E2D8] flex items-center justify-between">
                     <span className="text-[11px] font-mono text-[#77736C]">COMPLIANCE: BIS ISO 9001 / IGBC GOLD</span>
                     <button
                       onClick={() => onNavigate('/contact')}
-                      className="px-5 py-2.5 rounded-none bg-[#B69B65] text-[#171717] text-xs font-bold uppercase tracking-wider hover:bg-[#c4a973] transition-colors"
+                      className="px-5 py-2.5 rounded-none bg-[#B69B65] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#A38854] transition-colors"
                     >
                       Enquire Specifications
                     </button>

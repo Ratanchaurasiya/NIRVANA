@@ -8,19 +8,19 @@ const AhmedabadMarket = () => {
   const activeLoc = AHMEDABAD_LOCATIONS.find((loc) => loc.id === activeLocId) || AHMEDABAD_LOCATIONS[0];
 
   return (
-    <section id="highlights" className="py-24 relative bg-[#171717] border-t border-[#2E2E2E]">
+    <section id="highlights" className="py-24 relative bg-[#FAF9F6] border-t border-[#E6E2D8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#1F1F1F] border border-[#2E2E2E] text-[#B69B65] text-xs font-mono uppercase tracking-[0.22em]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase tracking-[0.22em]">
             <span>Corridor Intelligence</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#F5F1E8] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight">
             Prime Corridors — <span className="text-[#B69B65]">Architectural Growth</span>
           </h2>
           <div className="w-12 h-px bg-[#B69B65] mx-auto" />
-          <p className="text-[#A39F97] text-sm sm:text-base font-light leading-relaxed">
+          <p className="text-[#5C5852] text-sm sm:text-base font-light leading-relaxed">
             Select a sector below to explore key location advantages, residential/commercial focus, and long-term infrastructural connectivity across Western Ahmedabad.
           </p>
         </div>
@@ -35,8 +35,8 @@ const AhmedabadMarket = () => {
                 onClick={() => setActiveLocId(loc.id)}
                 className={`flex items-center gap-2 px-5 py-2.5 text-xs font-medium uppercase tracking-[0.18em] transition-all cursor-pointer border ${
                   isActive
-                    ? 'bg-[#B69B65] text-[#171717] border-[#B69B65] font-semibold'
-                    : 'bg-[#1F1F1F] text-[#A39F97] hover:text-[#F5F1E8] border-[#2E2E2E]'
+                    ? 'bg-[#B69B65] text-white border-[#B69B65] font-semibold'
+                    : 'bg-white text-[#5C5852] hover:text-[#171717] border-[#E6E2D8]'
                 }`}
               >
                 <MapPin className={`w-3.5 h-3.5 ${isActive ? 'text-[#171717]' : 'text-[#B69B65]'}`} />
@@ -47,14 +47,14 @@ const AhmedabadMarket = () => {
         </div>
 
         {/* Location Showcase Container */}
-        <div className="bg-[#1F1F1F] border border-[#2E2E2E] p-6 sm:p-10">
+        <div className="bg-white border border-[#E6E2D8] p-6 sm:p-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Left Corridor Frame */}
             <div className="lg:col-span-5 relative">
-              <div className="bg-[#171717] border border-[#2E2E2E] p-6 min-h-[320px] flex flex-col justify-between">
+              <div className="bg-[#FAF9F6] border border-[#E6E2D8] p-6 min-h-[320px] flex flex-col justify-between">
                 
-                <div className="flex items-center justify-between border-b border-[#2E2E2E] pb-3 text-xs font-mono">
+                <div className="flex items-center justify-between border-b border-[#E6E2D8] pb-3 text-xs font-mono">
                   <div className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 bg-[#B69B65]" />
                     <span className="text-[#B69B65] uppercase tracking-wider">Active Sector</span>
@@ -63,16 +63,16 @@ const AhmedabadMarket = () => {
                 </div>
 
                 <div className="py-6 text-center space-y-3">
-                  <div className="w-12 h-12 bg-[#1F1F1F] border border-[#2E2E2E] text-[#B69B65] flex items-center justify-center mx-auto">
+                  <div className="w-12 h-12 bg-white border border-[#E6E2D8] text-[#B69B65] flex items-center justify-center mx-auto">
                     <Navigation className="w-6 h-6 stroke-[1.8]" />
                   </div>
-                  <h3 className="text-2xl font-serif font-bold text-[#F5F1E8]">{activeLoc.name}</h3>
+                  <h3 className="text-2xl font-serif font-bold text-[#171717]">{activeLoc.name}</h3>
                   <p className="text-xs text-[#B69B65] font-mono tracking-wider">{activeLoc.tagline}</p>
                 </div>
 
-                <div className="p-3 bg-[#1F1F1F] border border-[#2E2E2E] text-center">
+                <div className="p-3 bg-white border border-[#E6E2D8] text-center">
                   <span className="text-[11px] text-[#77736C] uppercase font-mono block">Primary Segment</span>
-                  <span className="text-xs font-semibold text-[#F5F1E8] mt-0.5 block">{activeLoc.focus}</span>
+                  <span className="text-xs font-semibold text-[#171717] mt-0.5 block">{activeLoc.focus}</span>
                 </div>
 
               </div>
@@ -85,22 +85,22 @@ const AhmedabadMarket = () => {
                 <span className="text-xs font-mono uppercase tracking-[0.22em] text-[#B69B65] font-semibold block">
                   CORRIDOR PROFILE
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#F5F1E8]">
+                <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#171717]">
                   {activeLoc.name} <span className="text-[#B69B65]">Outlook</span>
                 </h3>
-                <p className="text-[#A39F97] text-sm leading-relaxed font-light">
+                <p className="text-[#5C5852] text-sm leading-relaxed font-light">
                   {activeLoc.description}
                 </p>
               </div>
 
               {/* Property Focus Box */}
-              <div className="p-4 bg-[#171717] border border-[#2E2E2E] flex items-center gap-4">
-                <div className="w-9 h-9 bg-[#1F1F1F] border border-[#2E2E2E] flex items-center justify-center shrink-0 text-[#B69B65]">
+              <div className="p-4 bg-[#FAF9F6] border border-[#E6E2D8] flex items-center gap-4">
+                <div className="w-9 h-9 bg-white border border-[#E6E2D8] flex items-center justify-center shrink-0 text-[#B69B65]">
                   <Building className="w-4 h-4" />
                 </div>
                 <div>
                   <h4 className="text-[10px] font-mono uppercase tracking-wider text-[#77736C]">Asset Class Focus</h4>
-                  <p className="text-sm font-semibold text-[#F5F1E8] mt-0.5">{activeLoc.focus}</p>
+                  <p className="text-sm font-semibold text-[#171717] mt-0.5">{activeLoc.focus}</p>
                 </div>
               </div>
 
@@ -109,7 +109,7 @@ const AhmedabadMarket = () => {
                 <h4 className="text-xs font-mono uppercase tracking-wider text-[#77736C]">Infrastructural Benchmarks:</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {activeLoc.highlights.map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-2.5 p-3 bg-[#171717] border border-[#2E2E2E] text-xs text-[#D5D1C8]">
+                    <div key={idx} className="flex items-center gap-2.5 p-3 bg-[#FAF9F6] border border-[#E6E2D8] text-xs text-[#4B4842]">
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#B69B65] shrink-0" />
                       <span>{item}</span>
                     </div>
@@ -121,7 +121,7 @@ const AhmedabadMarket = () => {
               <div className="pt-2">
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#B69B65] text-[#171717] text-xs font-semibold uppercase tracking-[0.18em] hover:bg-[#C4A975] transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#B69B65] text-white text-xs font-semibold uppercase tracking-[0.18em] hover:bg-[#A38854] transition-colors"
                 >
                   <span>Inquire for {activeLoc.name}</span>
                   <ArrowRight className="w-3.5 h-3.5" />

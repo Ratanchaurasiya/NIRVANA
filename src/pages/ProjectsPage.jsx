@@ -24,15 +24,15 @@ export default function ProjectsPage({ onNavigate }) {
       
       {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-none bg-[#1F1F1F] border border-[#2E2E2E] text-[#B69B65] text-xs font-mono uppercase tracking-widest">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-none bg-white border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase tracking-widest">
           <Sparkles className="w-3.5 h-3.5 text-[#B69B65]" />
           <span>Interactive 3D Portfolio Grid</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#F5F1E8] tracking-tight">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight">
           Landmark <span className="text-[#B69B65]">Projects Portfolio</span>
         </h1>
         <div className="w-12 h-px bg-[#B69B65]/40 mx-auto" />
-        <p className="text-[#A39F97] text-base font-light leading-relaxed">
+        <p className="text-[#5C5852] text-base font-light leading-relaxed">
           Hover cards for architectural perspective • Click any card to launch full layout view
         </p>
       </div>
@@ -45,8 +45,8 @@ export default function ProjectsPage({ onNavigate }) {
             onClick={() => setFilterType(type)}
             className={`px-5 py-2.5 rounded-none text-xs font-mono uppercase tracking-wider transition-all ${
               filterType === type
-                ? 'bg-[#B69B65] text-[#171717] border border-[#B69B65]'
-                : 'bg-[#1F1F1F] text-[#A39F97] hover:text-[#F5F1E8] border border-[#2E2E2E] hover:border-[#B69B65]/40'
+                ? 'bg-[#B69B65] text-white border border-[#B69B65]'
+                : 'bg-white text-[#5C5852] hover:text-[#171717] border border-[#E6E2D8] hover:border-[#B69B65]/40'
             }`}
           >
             {type}
@@ -64,7 +64,7 @@ export default function ProjectsPage({ onNavigate }) {
               whileHover={{ y: -6 }}
               transition={{ duration: 0.3 }}
               onClick={() => handleCardClick(project.id)}
-              className={`group cursor-pointer rounded-none bg-[#1F1F1F] border border-[#2E2E2E] hover:border-[#B69B65]/50 overflow-hidden flex flex-col justify-between shadow-xl transition-all relative ${
+              className={`group cursor-pointer rounded-none bg-white border border-[#E6E2D8] hover:border-[#B69B65]/50 overflow-hidden flex flex-col justify-between shadow-xl transition-all relative ${
                 isZooming ? 'scale-105 z-50 opacity-90' : ''
               }`}
             >
@@ -78,16 +78,16 @@ export default function ProjectsPage({ onNavigate }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1F1F1F] via-transparent to-black/60" />
 
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                  <span className="px-3 py-1 rounded-none bg-[#171717]/90 backdrop-blur-md border border-[#2E2E2E] text-[#F5F1E8] text-[10px] font-mono uppercase tracking-wider">
+                  <span className="px-3 py-1 rounded-none bg-white/95 backdrop-blur-md border border-[#E6E2D8] text-[#171717] text-[10px] font-mono uppercase tracking-wider">
                     {project.status}
                   </span>
-                  <span className="px-3 py-1 rounded-none bg-[#B69B65] text-[#171717] text-[10px] font-mono font-bold uppercase tracking-wider">
+                  <span className="px-3 py-1 rounded-none bg-[#B69B65] text-white text-[10px] font-mono font-bold uppercase tracking-wider">
                     {project.badge}
                   </span>
                 </div>
 
                 <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#F5F1E8] group-hover:text-[#B69B65] transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#171717] group-hover:text-[#B69B65] transition-colors">
                     {project.name}
                   </h3>
                   <p className="text-xs text-[#B69B65] font-mono mt-0.5">{project.subtitle}</p>
@@ -96,20 +96,20 @@ export default function ProjectsPage({ onNavigate }) {
 
               {/* Card Body */}
               <div className="p-6 space-y-4">
-                <div className="flex items-center gap-1.5 text-xs text-[#A39F97] font-medium">
+                <div className="flex items-center gap-1.5 text-xs text-[#5C5852] font-medium">
                   <MapPin className="w-3.5 h-3.5 text-[#B69B65]" />
                   <span>{project.location}</span>
                 </div>
 
-                <p className="text-xs text-[#A39F97] font-light leading-relaxed line-clamp-2">
+                <p className="text-xs text-[#5C5852] font-light leading-relaxed line-clamp-2">
                   {project.description}
                 </p>
 
                 {/* Key Specs Bar */}
-                <div className="pt-3 border-t border-[#2E2E2E] grid grid-cols-2 gap-2 text-[11px] text-[#A39F97]">
+                <div className="pt-3 border-t border-[#E6E2D8] grid grid-cols-2 gap-2 text-[11px] text-[#5C5852]">
                   <div>
                     <span className="text-[#77736C] block text-[10px] uppercase font-mono">Configurations</span>
-                    <span className="font-bold text-[#F5F1E8]">{project.config}</span>
+                    <span className="font-bold text-[#171717]">{project.config}</span>
                   </div>
                   <div>
                     <span className="text-[#77736C] block text-[10px] uppercase font-mono">Unit Size</span>
@@ -120,7 +120,7 @@ export default function ProjectsPage({ onNavigate }) {
 
               {/* Card Action Link */}
               <div className="p-6 pt-0">
-                <div className="w-full py-3 rounded-none bg-[#171717] group-hover:bg-[#B69B65] group-hover:text-[#171717] text-[#B69B65] border border-[#2E2E2E] group-hover:border-[#B69B65] text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                <div className="w-full py-3 rounded-none bg-[#FAF9F6] group-hover:bg-[#B69B65] group-hover:text-[#171717] text-[#B69B65] border border-[#E6E2D8] group-hover:border-[#B69B65] text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2">
                   <Eye className="w-4 h-4" />
                   <span>Inspect Layout & Details</span>
                   <ArrowRight className="w-4 h-4" />

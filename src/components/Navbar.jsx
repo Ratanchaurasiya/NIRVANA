@@ -21,18 +21,18 @@ export default function Navbar({ currentPath, onNavigate }) {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-3">
-        <div className="border transition-all duration-300 backdrop-blur-md px-6 py-3.5 flex items-center justify-between bg-[#171717]/95 border-[#2E2E2E] shadow-sm text-[#F5F1E8]">
+        <div className="border transition-all duration-300 backdrop-blur-md px-6 py-3.5 flex items-center justify-between bg-white/95 border-[#E6E2D8] shadow-sm text-[#171717]">
           
           {/* Brand Logo & Monogram */}
           <button
             onClick={() => handleLinkClick('/')}
             className="flex items-center gap-3.5 group text-left cursor-pointer"
           >
-            <div className="w-9 h-9 border border-[#B69B65]/40 bg-[#1F1F1F] flex items-center justify-center shrink-0 transition-colors group-hover:border-[#B69B65]">
+            <div className="w-9 h-9 border border-[#E6E2D8] bg-[#F5F3EE] flex items-center justify-center shrink-0 transition-colors group-hover:border-[#B69B65]">
               <Building2 className="w-4 h-4 text-[#B69B65]" />
             </div>
             <div className="flex flex-col">
-              <span className="font-serif font-bold text-base sm:text-lg tracking-wider uppercase text-[#F5F1E8] leading-tight">
+              <span className="font-serif font-bold text-base sm:text-lg tracking-wider uppercase text-[#171717] leading-tight">
                 NIRVANA <span className="text-[#B69B65]">GROUP</span>
               </span>
               <span className="text-[9px] font-mono text-[#77736C] tracking-[0.25em] block uppercase mt-0.5">
@@ -51,8 +51,8 @@ export default function Navbar({ currentPath, onNavigate }) {
                   onClick={() => handleLinkClick(link.path)}
                   className={`text-xs uppercase tracking-[0.2em] font-medium transition-all py-1 border-b-2 cursor-pointer ${
                     isActive
-                      ? 'text-[#B69B65] border-[#B69B65]'
-                      : 'text-[#A39F97] border-transparent hover:text-[#F5F1E8] hover:border-[#77736C]'
+                      ? 'text-[#B69B65] border-[#B69B65] font-semibold'
+                      : 'text-[#4B4842] border-transparent hover:text-[#171717] hover:border-[#171717]'
                   }`}
                 >
                   {link.name}
@@ -65,7 +65,7 @@ export default function Navbar({ currentPath, onNavigate }) {
           <div className="flex items-center gap-3">
             <button
               onClick={() => handleLinkClick('/contact')}
-              className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-[#B69B65] text-[#171717] text-xs font-semibold uppercase tracking-[0.18em] hover:bg-[#C4A975] transition-colors cursor-pointer"
+              className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-[#B69B65] text-white text-xs font-semibold uppercase tracking-[0.18em] hover:bg-[#A38854] transition-colors cursor-pointer"
             >
               <span>Connect With Us</span>
               <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.2]" />
@@ -73,7 +73,7 @@ export default function Navbar({ currentPath, onNavigate }) {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-[#F5F1E8] hover:text-[#B69B65] transition-colors border border-[#2E2E2E]"
+              className="lg:hidden p-2 text-[#171717] hover:text-[#B69B65] transition-colors border border-[#E6E2D8]"
               aria-label="Toggle Mobile Menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -84,7 +84,7 @@ export default function Navbar({ currentPath, onNavigate }) {
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden mt-2 p-5 bg-[#1F1F1F] border border-[#2E2E2E] shadow-xl space-y-3">
+          <div className="lg:hidden mt-2 p-5 bg-white border border-[#E6E2D8] shadow-xl space-y-3">
             {navLinks.map((link) => {
               const isActive = currentPath === link.path;
               return (
@@ -93,8 +93,8 @@ export default function Navbar({ currentPath, onNavigate }) {
                   onClick={() => handleLinkClick(link.path)}
                   className={`w-full p-2.5 text-left text-xs uppercase tracking-[0.2em] font-medium transition-colors block ${
                     isActive
-                      ? 'text-[#B69B65] bg-[#242424] font-semibold'
-                      : 'text-[#A39F97] hover:text-[#F5F1E8] hover:bg-[#242424]'
+                      ? 'text-[#B69B65] bg-[#F5F3EE] font-semibold'
+                      : 'text-[#4B4842] hover:text-[#171717] hover:bg-[#F5F3EE]'
                   }`}
                 >
                   {link.name}
@@ -104,7 +104,7 @@ export default function Navbar({ currentPath, onNavigate }) {
             
             <button
               onClick={() => handleLinkClick('/contact')}
-              className="w-full mt-3 py-3 bg-[#B69B65] text-[#171717] font-semibold text-xs uppercase tracking-[0.2em] text-center flex items-center justify-center gap-2"
+              className="w-full mt-3 py-3 bg-[#B69B65] text-white font-semibold text-xs uppercase tracking-[0.2em] text-center flex items-center justify-center gap-2 hover:bg-[#A38854]"
             >
               <span>Connect With Us</span>
               <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.2]" />

@@ -77,6 +77,6 @@ $csrfToken = generateCsrfToken();
   }
   </script>
 </head>
-<body class="bg-[#171717] text-[#F5F1E8] selection:bg-[#B69B65] selection:text-[#171717] font-sans min-h-screen relative overflow-x-hidden antialiased">
+<body class="bg-[#FAF9F6] text-[#171717] selection:bg-[#B69B65] selection:text-white font-sans min-h-screen relative overflow-x-hidden antialiased">
 
 <?php require_once __DIR__ . '/navbar.php'; ?>

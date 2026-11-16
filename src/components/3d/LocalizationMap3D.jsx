@@ -96,23 +96,23 @@ export default function LocalizationMap3D() {
   const [selectedSite, setSelectedSite] = useState(SITES[0]);
 
   return (
-    <div className="w-full h-[420px] sm:h-[500px] relative rounded-none overflow-hidden bg-[#1F1F1F] border border-[#2E2E2E]">
+    <div className="w-full h-[420px] sm:h-[500px] relative rounded-none overflow-hidden bg-white border border-[#E6E2D8]">
       {/* Top Helper Badge */}
-      <div className="absolute top-4 left-4 z-10 inline-flex items-center gap-2 px-3.5 py-1 rounded-none bg-[#171717]/95 border border-[#2E2E2E] text-[#B69B65] text-xs font-mono uppercase">
+      <div className="absolute top-4 left-4 z-10 inline-flex items-center gap-2 px-3.5 py-1 rounded-none bg-white/95 border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase">
         <span className="w-1.5 h-1.5 rounded-full bg-[#B69B65]" />
         <span>LOCALIZATION COORDINATES: Select pins to inspect</span>
       </div>
 
       {/* Selected Site Details Overlay */}
       {selectedSite && (
-        <div className="absolute bottom-4 left-4 right-4 z-10 p-4 rounded-none bg-[#171717]/95 border border-[#2E2E2E] space-y-1">
+        <div className="absolute bottom-4 left-4 right-4 z-10 p-4 rounded-none bg-white/95 border border-[#E6E2D8] space-y-1">
           <div className="flex items-center justify-between">
             <span className="text-xs font-mono uppercase tracking-widest text-[#B69B65] font-bold">
               {selectedSite.name}
             </span>
             <span className="w-2 h-2 rounded-full" style={{ backgroundColor: selectedSite.color }} />
           </div>
-          <p className="text-xs text-[#A39F97] font-light">{selectedSite.desc}</p>
+          <p className="text-xs text-[#5C5852] font-light">{selectedSite.desc}</p>
         </div>
       )}
 

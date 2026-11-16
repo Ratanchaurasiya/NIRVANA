@@ -79,17 +79,17 @@ export default function SeismicFoundation3D() {
   const [isExploded, setIsExploded] = useState(true);
 
   return (
-    <div className="w-full h-[420px] sm:h-[500px] relative rounded-none overflow-hidden bg-[#1F1F1F] border border-[#2E2E2E]">
+    <div className="w-full h-[420px] sm:h-[500px] relative rounded-none overflow-hidden bg-white border border-[#E6E2D8]">
       {/* Control Overlay */}
       <div className="absolute top-4 left-4 right-4 z-10 flex items-center justify-between pointer-events-auto">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-none bg-[#171717]/95 border border-[#2E2E2E] text-[#B69B65] text-xs font-mono uppercase">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-none bg-white/95 border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase">
           <span className="w-1.5 h-1.5 rounded-full bg-[#B69B65]" />
           <span>SEISMIC STRUCTURAL EXPLODED VIEW</span>
         </div>
 
         <button
           onClick={() => setIsExploded(!isExploded)}
-          className="px-4 py-1.5 rounded-none bg-[#B69B65] text-[#171717] text-xs font-bold uppercase tracking-wider hover:bg-[#c4a973] transition-all"
+          className="px-4 py-1.5 rounded-none bg-[#B69B65] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#A38854] transition-all"
         >
           {isExploded ? 'Assemble Core' : 'Explode View'}
         </button>

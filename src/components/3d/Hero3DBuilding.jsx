@@ -62,7 +62,7 @@ export default function Hero3DBuilding() {
       {/* Architectural Exhibition Frame */}
       <div
         ref={cardRef}
-        className="w-full h-full relative overflow-hidden border border-[#2E2E2E] bg-[#1F1F1F] transition-all duration-300 ease-out group"
+        className="w-full h-full relative overflow-hidden border border-[#E6E2D8] bg-white shadow-md transition-all duration-300 ease-out group"
         style={{
           transform: `perspective(1000px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
           transformStyle: 'preserve-3d',
@@ -86,13 +86,13 @@ export default function Hero3DBuilding() {
           className="absolute top-4 left-4 right-4 flex items-center justify-between gap-3 z-20 pointer-events-auto"
           style={{ transform: 'translateZ(25px)' }}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#171717]/90 border border-[#2E2E2E] text-[11px] font-mono uppercase tracking-[0.18em] text-[#B69B65]">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/95 border border-[#E6E2D8] shadow-sm text-[11px] font-mono uppercase tracking-[0.18em] text-[#B69B65]">
             <span className="w-1.5 h-1.5 bg-[#B69B65]" />
             <span>NIRVANA ABODE</span>
           </div>
 
           {/* Minimalist Lighting Tabs */}
-          <div className="inline-flex items-center bg-[#171717]/90 border border-[#2E2E2E] p-0.5">
+          <div className="inline-flex items-center bg-white/95 border border-[#E6E2D8] shadow-sm p-0.5">
             <button
               type="button"
               onClick={(e) => {
@@ -102,8 +102,8 @@ export default function Hero3DBuilding() {
               title="Daylight View"
               className={`flex items-center gap-1 px-2.5 py-1 text-[10px] font-mono tracking-wider transition-colors ${
                 lightingMode === 'day'
-                  ? 'bg-[#B69B65] text-[#171717] font-semibold'
-                  : 'text-[#A39F97] hover:text-[#F5F1E8]'
+                  ? 'bg-[#B69B65] text-white font-semibold'
+                  : 'text-[#77736C] hover:text-[#171717]'
               }`}
             >
               <Sun className="w-3 h-3" />
@@ -119,8 +119,8 @@ export default function Hero3DBuilding() {
               title="Dusk View"
               className={`flex items-center gap-1 px-2.5 py-1 text-[10px] font-mono tracking-wider transition-colors ${
                 lightingMode === 'sunset'
-                  ? 'bg-[#B69B65] text-[#171717] font-semibold'
-                  : 'text-[#A39F97] hover:text-[#F5F1E8]'
+                  ? 'bg-[#B69B65] text-white font-semibold'
+                  : 'text-[#77736C] hover:text-[#171717]'
               }`}
             >
               <Sunset className="w-3 h-3" />
@@ -136,8 +136,8 @@ export default function Hero3DBuilding() {
               title="Night View"
               className={`flex items-center gap-1 px-2.5 py-1 text-[10px] font-mono tracking-wider transition-colors ${
                 lightingMode === 'night'
-                  ? 'bg-[#B69B65] text-[#171717] font-semibold'
-                  : 'text-[#A39F97] hover:text-[#F5F1E8]'
+                  ? 'bg-[#B69B65] text-white font-semibold'
+                  : 'text-[#77736C] hover:text-[#171717]'
               }`}
             >
               <Moon className="w-3 h-3" />
@@ -148,14 +148,14 @@ export default function Hero3DBuilding() {
 
         {/* Bottom Architectural Caption */}
         <div
-          className="absolute bottom-4 left-4 right-4 z-20 pointer-events-none p-4 bg-[#171717]/90 border border-[#2E2E2E] flex flex-col gap-1"
+          className="absolute bottom-4 left-4 right-4 z-20 pointer-events-none p-4 bg-white/95 border border-[#E6E2D8] shadow-md flex flex-col gap-1"
           style={{ transform: 'translateZ(20px)' }}
         >
           <div className="flex items-center justify-between text-[11px] font-mono tracking-[0.15em] text-[#B69B65] uppercase">
             <span>{currentLighting.label}</span>
             <span className="text-[#77736C]">Gujarat</span>
           </div>
-          <p className="text-xs text-[#F5F1E8] font-serif tracking-wide">
+          <p className="text-xs text-[#171717] font-serif tracking-wide">
             Curated Architectural Residences with Double-Height Private Sky Terraces
           </p>
         </div>

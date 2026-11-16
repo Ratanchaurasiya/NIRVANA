@@ -49,28 +49,28 @@ export default function AmenityMatrix() {
   const currentLevel = AMENITY_LEVELS.find((l) => l.id === activeTab) || AMENITY_LEVELS[0];
 
   return (
-    <section className="py-24 relative bg-[#171717] border-t border-[#2E2E2E]">
+    <section className="py-24 relative bg-[#FAF9F6] border-t border-[#E6E2D8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#1F1F1F] border border-[#2E2E2E] text-[#B69B65] text-xs font-mono uppercase tracking-[0.22em]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase tracking-[0.22em]">
             <span>Spatial Zoning & Blueprints</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#F5F1E8] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight">
             Floor-by-Floor <span className="text-[#B69B65]">Lifestyle Blueprints</span>
           </h2>
           <div className="w-12 h-px bg-[#B69B65] mx-auto" />
 
-          <p className="text-sm sm:text-base text-[#A39F97] font-light leading-relaxed">
+          <p className="text-sm sm:text-base text-[#5C5852] font-light leading-relaxed">
             Every square foot is engineered for privacy, tranquility, and refined hospitality, separating resident quiet zones from active wellness facilities.
           </p>
         </div>
 
         {/* Level Selector Tabs */}
         <div className="flex justify-center">
-          <div className="inline-flex bg-[#1F1F1F] border border-[#2E2E2E] p-1 gap-1">
+          <div className="inline-flex bg-white border border-[#E6E2D8] p-1 gap-1">
             {AMENITY_LEVELS.map((lvl) => (
               <button
                 key={lvl.id}
@@ -78,8 +78,8 @@ export default function AmenityMatrix() {
                 onClick={() => setActiveTab(lvl.id)}
                 className={`px-5 py-2.5 text-xs font-mono uppercase tracking-[0.18em] transition-all cursor-pointer ${
                   activeTab === lvl.id
-                    ? 'bg-[#B69B65] text-[#171717] font-semibold'
-                    : 'text-[#A39F97] hover:text-[#F5F1E8]'
+                    ? 'bg-[#B69B65] text-white font-semibold'
+                    : 'text-[#5C5852] hover:text-[#171717]'
                 }`}
               >
                 {lvl.level}
@@ -89,7 +89,7 @@ export default function AmenityMatrix() {
         </div>
 
         {/* Level Showcase Card */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center p-6 sm:p-10 bg-[#1F1F1F] border border-[#2E2E2E]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center p-6 sm:p-10 bg-white border border-[#E6E2D8]">
           
           {/* Left: Detail Specifications */}
           <div className="lg:col-span-7 space-y-6">
@@ -97,10 +97,10 @@ export default function AmenityMatrix() {
               <span className="text-xs font-mono uppercase tracking-[0.22em] text-[#B69B65] font-semibold block">
                 {currentLevel.level} SPECIFICATION
               </span>
-              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#F5F1E8]">
+              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#171717]">
                 {currentLevel.title}
               </h3>
-              <p className="text-sm text-[#A39F97] font-light leading-relaxed">
+              <p className="text-sm text-[#5C5852] font-light leading-relaxed">
                 {currentLevel.tagline}
               </p>
             </div>
@@ -108,10 +108,10 @@ export default function AmenityMatrix() {
             {/* Feature Points Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
               {currentLevel.features.map((feat, idx) => (
-                <div key={idx} className="p-4 bg-[#171717] border border-[#2E2E2E] space-y-1">
+                <div key={idx} className="p-4 bg-[#FAF9F6] border border-[#E6E2D8] space-y-1">
                   <div className="flex items-center gap-2">
                     <Check className="w-3.5 h-3.5 text-[#B69B65] shrink-0" />
-                    <h4 className="text-xs font-semibold text-[#F5F1E8] font-mono">{feat.name}</h4>
+                    <h4 className="text-xs font-semibold text-[#171717] font-mono">{feat.name}</h4>
                   </div>
                   <p className="text-[11px] text-[#77736C] leading-relaxed pl-5 font-light">
                     {feat.desc}
@@ -124,7 +124,7 @@ export default function AmenityMatrix() {
             <div className="pt-2">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#B69B65] text-[#171717] text-xs font-semibold uppercase tracking-[0.18em] hover:bg-[#C4A975] transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#B69B65] text-white text-xs font-semibold uppercase tracking-[0.18em] hover:bg-[#A38854] transition-colors"
               >
                 <span>Schedule Private Amenities Tour</span>
               </a>
@@ -132,7 +132,7 @@ export default function AmenityMatrix() {
           </div>
 
           {/* Right: Architectural Image Presentation */}
-          <div className="lg:col-span-5 h-[340px] sm:h-[400px] relative overflow-hidden border border-[#2E2E2E] bg-[#171717] group">
+          <div className="lg:col-span-5 h-[340px] sm:h-[400px] relative overflow-hidden border border-[#E6E2D8] bg-[#FAF9F6] group">
             <img
               src={currentLevel.image}
               alt={currentLevel.title}
@@ -140,9 +140,9 @@ export default function AmenityMatrix() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#171717] via-transparent to-transparent pointer-events-none" />
             
-            <div className="absolute bottom-4 left-4 right-4 p-3 bg-[#171717]/95 border border-[#2E2E2E] text-xs">
+            <div className="absolute bottom-4 left-4 right-4 p-3 bg-white/95 border border-[#E6E2D8] text-xs">
               <span className="font-mono text-[#B69B65] text-[10px] uppercase block">NIRVANA ABODE</span>
-              <p className="font-serif font-bold text-[#F5F1E8] mt-0.5">{currentLevel.title}</p>
+              <p className="font-serif font-bold text-[#171717] mt-0.5">{currentLevel.title}</p>
             </div>
           </div>
 

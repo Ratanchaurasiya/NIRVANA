@@ -38,21 +38,21 @@ const PropertyDecisionTool = ({ onShowToast }) => {
   };
 
   return (
-    <section className="py-24 relative bg-[#171717] border-t border-[#2E2E2E]">
+    <section className="py-24 relative bg-[#FAF9F6] border-t border-[#E6E2D8]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Tool Outer Card Container */}
-        <div className="bg-[#1F1F1F] border border-[#2E2E2E] p-6 sm:p-10 relative">
+        <div className="bg-white border border-[#E6E2D8] p-6 sm:p-10 relative">
           
-          <div className="text-center space-y-3 pb-8 border-b border-[#2E2E2E] mb-8">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#171717] border border-[#2E2E2E] text-[#B69B65] text-xs font-mono uppercase tracking-[0.22em]">
+          <div className="text-center space-y-3 pb-8 border-b border-[#E6E2D8] mb-8">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#FAF9F6] border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase tracking-[0.22em]">
               <HelpCircle className="w-3.5 h-3.5 text-[#B69B65]" />
               <span>Interactive Decision Framework</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#F5F1E8]">
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#171717]">
               Which Asset Class Fits Your Requirement?
             </h2>
-            <p className="text-xs sm:text-sm text-[#A39F97] font-light">
+            <p className="text-xs sm:text-sm text-[#5C5852] font-light">
               Answer 4 questions to generate a tailored preliminary direction for Gujarat property acquisitions.
             </p>
           </div>
@@ -66,7 +66,7 @@ const PropertyDecisionTool = ({ onShowToast }) => {
               </div>
 
               {/* Progress Bar */}
-              <div className="w-full h-1 bg-[#171717] overflow-hidden">
+              <div className="w-full h-1 bg-[#FAF9F6] overflow-hidden">
                 <div 
                   className="h-full bg-[#B69B65] transition-all duration-500" 
                   style={{ width: `${(step / 4) * 100}%` }}
@@ -76,13 +76,13 @@ const PropertyDecisionTool = ({ onShowToast }) => {
               {/* Question 1: Purpose */}
               {step === 1 && (
                 <div className="space-y-4">
-                  <h3 className="text-base sm:text-lg font-bold font-serif text-[#F5F1E8]">1. Primary Acquisition Objective</h3>
+                  <h3 className="text-base sm:text-lg font-bold font-serif text-[#171717]">1. Primary Acquisition Objective</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {['Personal Family Residence', 'Corporate / Commercial Suite', 'Capital Growth & Yield'].map((opt) => (
                       <button
                         key={opt}
                         onClick={() => handleSelect('purpose', opt)}
-                        className="p-4 bg-[#171717] hover:bg-[#252525] border border-[#2E2E2E] hover:border-[#B69B65] text-left text-xs font-medium text-[#F5F1E8] transition-colors cursor-pointer"
+                        className="p-4 bg-[#FAF9F6] hover:bg-[#F0EEEA] border border-[#E6E2D8] hover:border-[#B69B65] text-left text-xs font-medium text-[#171717] transition-colors cursor-pointer"
                       >
                         {opt}
                       </button>
@@ -94,13 +94,13 @@ const PropertyDecisionTool = ({ onShowToast }) => {
               {/* Question 2: Type */}
               {step === 2 && (
                 <div className="space-y-4">
-                  <h3 className="text-base sm:text-lg font-bold font-serif text-[#F5F1E8]">2. Asset Category</h3>
+                  <h3 className="text-base sm:text-lg font-bold font-serif text-[#171717]">2. Asset Category</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {['Residential (Apartment / Villa)', 'Commercial (Office / Retail)', 'Plotted Land (Residential / NA)'].map((opt) => (
                       <button
                         key={opt}
                         onClick={() => handleSelect('type', opt)}
-                        className="p-4 bg-[#171717] hover:bg-[#252525] border border-[#2E2E2E] hover:border-[#B69B65] text-left text-xs font-medium text-[#F5F1E8] transition-colors cursor-pointer"
+                        className="p-4 bg-[#FAF9F6] hover:bg-[#F0EEEA] border border-[#E6E2D8] hover:border-[#B69B65] text-left text-xs font-medium text-[#171717] transition-colors cursor-pointer"
                       >
                         {opt}
                       </button>
@@ -112,13 +112,13 @@ const PropertyDecisionTool = ({ onShowToast }) => {
               {/* Question 3: Location */}
               {step === 3 && (
                 <div className="space-y-4">
-                  <h3 className="text-base sm:text-lg font-bold font-serif text-[#F5F1E8]">3. Target Corridor</h3>
+                  <h3 className="text-base sm:text-lg font-bold font-serif text-[#171717]">3. Target Corridor</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {['Sola & Science City Road', 'SG Highway Corporate Corridor', 'Bopal - Ambli & Shela', 'Gota & Thaltej Extension'].map((opt) => (
                       <button
                         key={opt}
                         onClick={() => handleSelect('location', opt)}
-                        className="p-4 bg-[#171717] hover:bg-[#252525] border border-[#2E2E2E] hover:border-[#B69B65] text-left text-xs font-medium text-[#F5F1E8] transition-colors cursor-pointer"
+                        className="p-4 bg-[#FAF9F6] hover:bg-[#F0EEEA] border border-[#E6E2D8] hover:border-[#B69B65] text-left text-xs font-medium text-[#171717] transition-colors cursor-pointer"
                       >
                         {opt}
                       </button>
@@ -130,13 +130,13 @@ const PropertyDecisionTool = ({ onShowToast }) => {
               {/* Question 4: Timeline */}
               {step === 4 && (
                 <div className="space-y-4">
-                  <h3 className="text-base sm:text-lg font-bold font-serif text-[#F5F1E8]">4. Target Acquisition Timeline</h3>
+                  <h3 className="text-base sm:text-lg font-bold font-serif text-[#171717]">4. Target Acquisition Timeline</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {['Immediate Move-In', 'Under Construction (1-2 Yrs)', 'Long-Term Horizon'].map((opt) => (
                       <button
                         key={opt}
                         onClick={() => handleSelect('timeline', opt)}
-                        className="p-4 bg-[#171717] hover:bg-[#252525] border border-[#2E2E2E] hover:border-[#B69B65] text-left text-xs font-medium text-[#F5F1E8] transition-colors cursor-pointer"
+                        className="p-4 bg-[#FAF9F6] hover:bg-[#F0EEEA] border border-[#E6E2D8] hover:border-[#B69B65] text-left text-xs font-medium text-[#171717] transition-colors cursor-pointer"
                       >
                         {opt}
                       </button>
@@ -149,17 +149,17 @@ const PropertyDecisionTool = ({ onShowToast }) => {
           ) : (
             /* Result Output */
             <div className="space-y-6 text-center animate-fadeIn">
-              <div className="p-6 bg-[#171717] border border-[#2E2E2E] space-y-4 text-left">
-                <div className="flex items-center justify-between border-b border-[#2E2E2E] pb-3">
+              <div className="p-6 bg-[#FAF9F6] border border-[#E6E2D8] space-y-4 text-left">
+                <div className="flex items-center justify-between border-b border-[#E6E2D8] pb-3">
                   <span className="text-xs font-mono uppercase tracking-widest text-[#B69B65] font-semibold">Preliminary Advisory Direction</span>
                   <span className="text-[10px] font-mono text-[#77736C] uppercase">NIRVANA INSIGHT</span>
                 </div>
                 
-                <p className="text-xs sm:text-sm text-[#D5D1C8] leading-relaxed font-light">
+                <p className="text-xs sm:text-sm text-[#4B4842] leading-relaxed font-light">
                   {getRecommendation()}
                 </p>
 
-                <div className="p-3 bg-[#1F1F1F] border border-[#2E2E2E] flex items-start gap-2.5 text-[11px] text-[#A39F97]">
+                <div className="p-3 bg-white border border-[#E6E2D8] flex items-start gap-2.5 text-[11px] text-[#5C5852]">
                   <ShieldAlert className="w-4 h-4 text-[#B69B65] shrink-0 mt-0.5" />
                   <span>
                     <strong>Disclaimer:</strong> This assessment provides general guidance based on your inputs and does not constitute formal valuation or contractual commitment.
@@ -171,7 +171,7 @@ const PropertyDecisionTool = ({ onShowToast }) => {
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#B69B65] text-[#171717] text-xs font-semibold uppercase tracking-[0.18em] hover:bg-[#C4A975] transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#B69B65] text-white text-xs font-semibold uppercase tracking-[0.18em] hover:bg-[#A38854] transition-colors"
                 >
                   <MessageSquare className="w-4 h-4" />
                   <span>Submit to Advisory Desk</span>
@@ -179,7 +179,7 @@ const PropertyDecisionTool = ({ onShowToast }) => {
 
                 <button
                   onClick={handleReset}
-                  className="inline-flex items-center gap-1.5 px-4 py-3.5 text-xs font-medium text-[#77736C] hover:text-[#F5F1E8] transition-colors cursor-pointer uppercase tracking-wider"
+                  className="inline-flex items-center gap-1.5 px-4 py-3.5 text-xs font-medium text-[#77736C] hover:text-[#171717] transition-colors cursor-pointer uppercase tracking-wider"
                 >
                   <RotateCcw className="w-4 h-4" />
                   <span>Retake Wizard</span>
