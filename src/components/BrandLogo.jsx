@@ -31,7 +31,7 @@ const BrandLogo = ({ variant = "default", className = "" }) => {
 
       {/* Brand Typography */}
       <div className="flex flex-col text-left">
-        <span className="font-cinzel text-lg font-bold tracking-[0.06em] text-[#171717] group-hover:text-[#B69B65] transition-colors leading-tight">
+        <span className="font-cinzel text-base sm:text-lg font-semibold tracking-[0.16em] uppercase text-[#171717] group-hover:text-[#B69B65] transition-colors leading-tight">
           NIRVANA <span className="text-[#B69B65]">GROUP</span>
         </span>
         <span className="text-[10px] font-sans font-semibold uppercase tracking-[0.25em] text-[#77736C] mt-0.5">

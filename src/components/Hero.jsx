@@ -33,7 +33,7 @@ const Hero = ({ onNavigate, onOpenDossier }) => {
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#DEDAD2] text-[#B69B65] text-[10px] font-sans font-bold uppercase tracking-[0.25em] shadow-sm">
                 <span>Official Developer Portfolio</span>
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-cinzel font-bold text-[#171717] tracking-[0.04em] leading-[1.06]">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-cinzel font-semibold text-[#171717] tracking-[0.12em] uppercase leading-[1.08]">
                 NIRVANA GROUP
               </h1>
               <p className="text-xl sm:text-2xl font-editorial italic text-[#B69B65] tracking-wide pt-0.5">
