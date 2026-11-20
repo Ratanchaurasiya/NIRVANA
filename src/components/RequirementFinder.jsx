@@ -25,12 +25,9 @@ const RequirementFinder = ({ onShowToast }) => {
         
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 mb-8 border-b border-[#DEDAD2]">
           <div>
-            <div className="inline-flex items-center gap-2 text-[10px] font-sans tracking-[0.25em] text-[#B69B65] uppercase font-bold">
-              <span>Interactive Portfolio Finder</span>
-            </div>
             <TypewriterTitle
               as="h2"
-              className="text-2xl sm:text-3xl font-serif font-bold text-[#171717] mt-1"
+              className="text-2xl sm:text-3xl font-serif font-bold text-[#171717]"
             >
               Identify Your Property Objective
             </TypewriterTitle>

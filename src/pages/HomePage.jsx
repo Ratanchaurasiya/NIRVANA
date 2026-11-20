@@ -1,42 +1,57 @@
-import React, { useState } from 'react';
+import React, { lazy, useEffect } from 'react';
 import Hero from '../components/Hero';
 import RequirementFinder from '../components/RequirementFinder';
-import TopProjectsShowcase from '../components/TopProjectsShowcase';
-import AmenityMatrix from '../components/AmenityMatrix';
-import ConnectivityMatrix from '../components/ConnectivityMatrix';
-import ServicesSection from '../components/ServicesSection';
-import AhmedabadMarket from '../components/AhmedabadMarket';
-import HighlightsStats from '../components/HighlightsStats';
-import WhyChooseUs from '../components/WhyChooseUs';
-import HowWeWork from '../components/HowWeWork';
-import PropertyDecisionTool from '../components/PropertyDecisionTool';
-import FeaturedOpportunities from '../components/FeaturedOpportunities';
-import Testimonials from '../components/Testimonials';
-import FaqAccordion from '../components/FaqAccordion';
-import ContactSection from '../components/ContactSection';
-import ConfidentialDossierModal from '../components/ConfidentialDossierModal';
 import LazySection from '../components/LazySection';
 import ScrollReveal from '../components/ScrollReveal';
 
+// Below-the-fold sections ship as separate chunks and load on approach
+const AmenityMatrix = lazy(() => import('../components/AmenityMatrix'));
+const ConnectivityMatrix = lazy(() => import('../components/ConnectivityMatrix'));
+const ServicesSection = lazy(() => import('../components/ServicesSection'));
+const AhmedabadMarket = lazy(() => import('../components/AhmedabadMarket'));
+const HighlightsStats = lazy(() => import('../components/HighlightsStats'));
+const WhyChooseUs = lazy(() => import('../components/WhyChooseUs'));
+const HowWeWork = lazy(() => import('../components/HowWeWork'));
+const PropertyDecisionTool = lazy(() => import('../components/PropertyDecisionTool'));
+const FeaturedOpportunities = lazy(() => import('../components/FeaturedOpportunities'));
+const Testimonials = lazy(() => import('../components/Testimonials'));
+const FaqAccordion = lazy(() => import('../components/FaqAccordion'));
+const ContactSection = lazy(() => import('../components/ContactSection'));
+
+// Warm the chunks once the browser is idle so sections appear instantly on scroll
+const prefetchSections = () => {
+  [
+    () => import('../components/AmenityMatrix'),
+    () => import('../components/ConnectivityMatrix'),
+    () => import('../components/ServicesSection'),
+    () => import('../components/AhmedabadMarket'),
+    () => import('../components/HighlightsStats'),
+    () => import('../components/WhyChooseUs'),
+    () => import('../components/HowWeWork'),
+    () => import('../components/PropertyDecisionTool'),
+    () => import('../components/FeaturedOpportunities'),
+    () => import('../components/Testimonials'),
+    () => import('../components/FaqAccordion'),
+    () => import('../components/ContactSection'),
+  ].forEach((load, i) => setTimeout(load, i * 150));
+};
+
 export default function HomePage({ onShowToast, onNavigate }) {
-  const [isDossierOpen, setIsDossierOpen] = useState(false);
+  useEffect(() => {
+    const idle = window.requestIdleCallback || ((cb) => setTimeout(cb, 1500));
+    const id = idle(prefetchSections);
+    return () => (window.cancelIdleCallback ? window.cancelIdleCallback(id) : clearTimeout(id));
+  }, []);
 
   return (
-    <div className="space-y-24">
+    <div className="space-y-24 lg:space-y-32">
       {/* 1. HERO SECTION with Lighting Mode & 3D Parallax */}
-      <Hero onNavigate={onNavigate} onOpenDossier={() => setIsDossierOpen(true)} />
+      <Hero onNavigate={onNavigate} />
 
       {/* 2. Interactive Property Requirement Finder */}
       <LazySection minHeight="240px" placeholderText="Loading Property Finder...">
         <ScrollReveal>
           <RequirementFinder onShowToast={onShowToast} />
-        </ScrollReveal>
-      </LazySection>
-
-      {/* 3. Landmark Projects Showcase (6 Verified Developments) */}
-      <LazySection minHeight="600px" placeholderText="Loading Landmark Projects...">
-        <ScrollReveal>
-          <TopProjectsShowcase onShowToast={onShowToast} />
         </ScrollReveal>
       </LazySection>
 
@@ -123,13 +138,6 @@ export default function HomePage({ onShowToast, onNavigate }) {
           <ContactSection onShowToast={onShowToast} />
         </ScrollReveal>
       </LazySection>
-
-      {/* Confidential Project Dossier Modal */}
-      <ConfidentialDossierModal
-        isOpen={isDossierOpen}
-        onClose={() => setIsDossierOpen(false)}
-        onShowToast={onShowToast}
-      />
     </div>
   );
 }

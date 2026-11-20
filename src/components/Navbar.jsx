@@ -1,8 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
 import { Building2, Menu, X, ArrowUpRight } from 'lucide-react';
 
 export default function Navbar({ currentPath, onNavigate }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const scrollProgress = useMotionValue(0);
+  const pathLength = useSpring(scrollProgress, { stiffness: 220, damping: 30, restDelta: 0.0005 });
+
+  useEffect(() => {
+    const update = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      scrollProgress.set(max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0);
+    };
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+      update();
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    // Lazy sections change the page height as they mount; keep progress accurate
+    const ro = new ResizeObserver(update);
+    ro.observe(document.documentElement);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      ro.disconnect();
+    };
+  }, [scrollProgress]);
 
   // Executive Primary Navigation (Legal links belong in the footer)
   const navLinks = [
@@ -18,10 +42,32 @@ export default function Navbar({ currentPath, onNavigate }) {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-4">
-        <div className="border transition-all duration-300 backdrop-blur-md px-6 sm:px-8 py-4 flex items-center justify-between bg-white/95 border-[#DEDAD2] shadow-sm text-[#171717]">
+    <motion.header
+      initial={{ y: -40, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+      className="fixed top-0 left-0 right-0 z-50"
+    >
+      <nav className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 transition-[margin] duration-500 ease-out ${scrolled ? 'mt-2' : 'mt-4'}`}>
+        <div className={`relative border transition-all duration-500 ease-out backdrop-blur-md px-6 sm:px-8 flex items-center justify-between border-[#DEDAD2] text-[#171717] ${scrolled ? 'py-2.5 bg-white/85 shadow-[0_10px_40px_-18px_rgba(23,23,23,0.25)]' : 'py-4 bg-white/95 shadow-sm'}`}>
           
+          {/* Scroll progress: a gold line that walks the perimeter of this box */}
+          <svg
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full pointer-events-none overflow-visible"
+          >
+            <motion.rect
+              x="0"
+              y="0"
+              width="100%"
+              height="100%"
+              fill="none"
+              stroke="#B69B65"
+              strokeWidth="2.5"
+              style={{ pathLength }}
+            />
+          </svg>
+
           {/* Brand Logo & Monogram */}
           <button
             onClick={() => handleLinkClick('/')}
@@ -48,13 +94,20 @@ export default function Navbar({ currentPath, onNavigate }) {
                 <button
                   key={link.path}
                   onClick={() => handleLinkClick(link.path)}
-                  className={`text-xs uppercase tracking-[0.22em] font-medium transition-all py-1 border-b-2 cursor-pointer ${
-                    isActive
-                      ? 'text-[#B69B65] border-[#B69B65] font-semibold'
-                      : 'text-[#4B4842] border-transparent hover:text-[#171717] hover:border-[#171717]'
+                  className={`relative text-xs uppercase tracking-[0.22em] font-medium transition-colors py-1.5 cursor-pointer group/nav ${
+                    isActive ? 'text-[#B69B65] font-semibold' : 'text-[#4B4842] hover:text-[#171717]'
                   }`}
                 >
                   {link.name}
+                  {isActive ? (
+                    <motion.span
+                      layoutId="nav-underline"
+                      className="absolute left-0 right-0 -bottom-0.5 h-[2px] bg-[#B69B65]"
+                      transition={{ type: 'spring', stiffness: 380, damping: 34 }}
+                    />
+                  ) : (
+                    <span className="absolute left-0 right-0 -bottom-0.5 h-[2px] bg-[#171717] origin-left scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-500 ease-out" />
+                  )}
                 </button>
               );
             })}
@@ -82,8 +135,15 @@ export default function Navbar({ currentPath, onNavigate }) {
         </div>
 
         {/* Mobile Dropdown Menu */}
+        <AnimatePresence>
         {mobileMenuOpen && (
-          <div className="lg:hidden mt-2 p-5 bg-white border border-[#DEDAD2] shadow-xl space-y-3">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:hidden mt-2 p-5 bg-white border border-[#DEDAD2] shadow-xl space-y-3"
+          >
             {navLinks.map((link) => {
               const isActive = currentPath === link.path;
               return (
@@ -105,10 +165,11 @@ export default function Navbar({ currentPath, onNavigate }) {
               <button onClick={() => handleLinkClick('/privacy-policy')} className="hover:text-[#171717]">Privacy Policy</button>
               <button onClick={() => handleLinkClick('/terms-and-conditions')} className="hover:text-[#171717]">Terms & Conditions</button>
             </div>
-          </div>
+          </motion.div>
         )}
+        </AnimatePresence>
 
       </nav>
-    </header>
+    </motion.header>
   );
 }

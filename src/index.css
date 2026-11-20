@@ -213,3 +213,149 @@ html, body, #root {
 .shimmer-hover:hover::after {
   transform: translateX(100%);
 }
+
+/* ==========================================================================
+   Premium Motion System
+   ========================================================================== */
+:root {
+  --ease-luxe: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+/* Scroll-reveal entrance states (attributes are applied by ScrollReveal) */
+[data-rv] {
+  opacity: 0;
+  transition:
+    opacity 0.9s var(--ease-luxe),
+    transform 1s var(--ease-luxe);
+  transition-delay: var(--rv-delay, 0ms);
+}
+[data-rv="head"] { transform: translate3d(0, 22px, 0); }
+[data-rv="item"] { transform: translate3d(0, 34px, 0) scale(0.985); }
+[data-rv="img"]  { transform: scale(1.07); transition-duration: 1.2s, 1.6s, 1s; }
+[data-rv="in"]   { opacity: 1; transform: none; will-change: opacity, transform; }
+
+/* Section mount (after lazy load) */
+@keyframes sectionEnter {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.section-enter { animation: sectionEnter 0.7s var(--ease-soft) both; }
+
+/* Skeleton shimmer for lazy sections */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: #EFEBE1;
+}
+.skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.75), transparent);
+  transform: translateX(-100%);
+  animation: shimmerSweep 1.6s var(--ease-soft) infinite;
+}
+
+/* Page loader */
+@keyframes loaderSweep {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+.loader-sweep { animation: loaderSweep 1.3s var(--ease-soft) infinite; }
+@keyframes loaderFrame {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(182, 155, 101, 0.25); }
+  50%      { box-shadow: 0 0 0 12px rgba(182, 155, 101, 0); }
+}
+.loader-frame { animation: loaderFrame 2s ease-out infinite; }
+
+/* Route transition */
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+.page-enter { animation: pageEnter 0.7s var(--ease-luxe) both; }
+
+/* Ambient hero glow */
+@keyframes driftGlow {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50%      { transform: translate3d(30px, -24px, 0) scale(1.08); }
+}
+.ambient-glow {
+  position: absolute;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(196, 169, 117, 0.22), transparent 68%);
+  will-change: transform;
+  animation: driftGlow 14s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Gold hairline that draws itself */
+@keyframes lineDraw {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.line-draw { transform-origin: left; animation: lineDraw 1.4s var(--ease-luxe) 0.4s both; }
+
+/* Card hover lift for grid tiles (only once their entrance has finished) */
+.grid > [class*="bg-white"][class*="border"]:not([data-rv]),
+.architectural-card:not([data-rv]) {
+  transition:
+    transform 0.5s var(--ease-luxe),
+    box-shadow 0.5s var(--ease-luxe),
+    border-color 0.3s ease;
+}
+.grid > [class*="bg-white"][class*="border"]:not([data-rv]):hover,
+.architectural-card:not([data-rv]):hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px -16px rgba(23, 23, 23, 0.14), 0 0 0 1px rgba(182, 155, 101, 0.35);
+}
+
+/* Slow, premium image zoom on hover inside any .group */
+.group img { transition: transform 1.4s var(--ease-luxe); }
+.group:hover img { transform: scale(1.045); }
+
+/* Champagne CTA sheen */
+button[class*="bg-[#B69B65]"],
+a[class*="bg-[#B69B65]"] {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+button[class*="bg-[#B69B65]"]::after,
+a[class*="bg-[#B69B65]"]::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; left: -60%;
+  width: 40%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.9s var(--ease-luxe);
+  pointer-events: none;
+  z-index: -1;
+}
+button[class*="bg-[#B69B65]"]:hover::after,
+a[class*="bg-[#B69B65]"]:hover::after { left: 130%; }
+
+/* Tactile press feedback */
+button:active:not(:disabled) { transform: scale(0.985); }
+
+/* Accessible, on-brand focus ring */
+:focus-visible {
+  outline: 2px solid #B69B65;
+  outline-offset: 3px;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  [data-rv] { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
+  .ambient-glow, .skeleton::after, .loader-sweep, .loader-frame { animation: none !important; }
+  .page-enter, .section-enter, .line-draw { animation: none !important; }
+  .group img, .group:hover img { transition: none; transform: none; }
+}
+
+/* Lenis smooth-scroll support */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }

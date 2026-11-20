@@ -75,14 +75,9 @@ export default function ConnectivityMatrix() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#E6E2D8] pb-8">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase tracking-[0.22em]">
-              <Navigation className="w-3.5 h-3.5 text-[#B69B65]" />
-              <span>Transit & Location Index</span>
-            </div>
-            
             <TypewriterTitle
               as="h2"
-              className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight leading-tight"
+              className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight leading-tight block"
             >
               Strategic Proximity. <span className="text-[#B69B65]">Minutes From Every Essential Hub.</span>
             </TypewriterTitle>

@@ -1,13 +1,37 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, Suspense } from 'react';
+
+// Background mounting queue: after the first screen is interactive, remaining
+// sections are mounted one at a time while the browser is idle. This keeps the
+// initial load fast, but the full page height becomes known (and stable) within
+// a couple of seconds, so the scroll progress line never jumps backwards.
+const queue = [];
+let draining = false;
+const idle = (cb) => (window.requestIdleCallback ? window.requestIdleCallback(cb, { timeout: 600 }) : setTimeout(cb, 120));
+
+function drain() {
+  if (draining) return;
+  draining = true;
+  const step = () => {
+    const next = queue.shift();
+    if (!next) {
+      draining = false;
+      return;
+    }
+    next();
+    setTimeout(() => idle(step), 160);
+  };
+  setTimeout(() => idle(step), 1200);
+}
 
 /**
  * LazySection - Intersection-driven lazy loader for page sections.
- * Delays mounting and resource initialization until the user approaches the section.
+ * Mounts content as the reader approaches, showing an architectural shimmer
+ * skeleton in the meantime so the page never feels empty or jumpy.
  */
 export default function LazySection({
   children,
   minHeight = '320px',
-  rootMargin = '300px 0px',
+  rootMargin = '400px 0px',
   className = '',
   placeholderText = 'Loading Section...',
 }) {
@@ -16,7 +40,8 @@ export default function LazySection({
 
   useEffect(() => {
     if (isVisible) return;
-    if (!containerRef.current) return;
+    const node = containerRef.current;
+    if (!node) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -28,33 +53,48 @@ export default function LazySection({
       { rootMargin, threshold: 0.01 }
     );
 
-    observer.observe(containerRef.current);
+    observer.observe(node);
     return () => observer.disconnect();
   }, [isVisible, rootMargin]);
 
-  if (!isVisible) {
-    return (
-      <div
-        ref={containerRef}
-        style={{ minHeight }}
-        className={`w-full flex items-center justify-center relative overflow-hidden transition-opacity duration-500 ${className}`}
-      >
-        {/* Subtle Architectural Grid Skeleton */}
-        <div className="absolute inset-0 bg-transparent flex flex-col items-center justify-center opacity-40">
-          <div className="w-8 h-8 border border-[#B69B65]/40 animate-pulse flex items-center justify-center">
-            <span className="w-1.5 h-1.5 bg-[#B69B65]" />
-          </div>
-          <span className="text-[10px] font-sans uppercase tracking-[0.25em] text-[#77736C] mt-2">
-            {placeholderText}
-          </span>
-        </div>
+  // Warm up in the background so the total page length is known early
+  useEffect(() => {
+    if (isVisible) return;
+    const mount = () => setIsVisible(true);
+    queue.push(mount);
+    drain();
+    return () => {
+      const i = queue.indexOf(mount);
+      if (i !== -1) queue.splice(i, 1);
+    };
+  }, [isVisible]);
+
+  const skeleton = (ref) => (
+    <div
+      ref={ref}
+      style={{ minHeight }}
+      aria-busy="true"
+      aria-label={placeholderText}
+      className={`w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 ${className}`}
+    >
+      <div className="space-y-5">
+        <div className="skeleton h-2.5 w-28" />
+        <div className="skeleton h-8 w-2/3 max-w-md" />
+        <div className="skeleton h-3 w-full max-w-xl" />
       </div>
-    );
-  }
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-10">
+        <div className="skeleton h-40" />
+        <div className="skeleton h-40 hidden sm:block" />
+        <div className="skeleton h-40 hidden sm:block" />
+      </div>
+    </div>
+  );
+
+  if (!isVisible) return skeleton(containerRef);
 
   return (
-    <div className={`transition-opacity duration-700 ease-out opacity-100 ${className}`}>
-      {children}
-    </div>
+    <Suspense fallback={skeleton(null)}>
+      <div className={`section-enter ${className}`}>{children}</div>
+    </Suspense>
   );
 }

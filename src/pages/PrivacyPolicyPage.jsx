@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ShieldCheck, Lock, ArrowLeft, FileText, CheckCircle2, Mail, Phone } from 'lucide-react';
 import TypewriterTitle from '../components/TypewriterTitle';
+import ScrollReveal from '../components/ScrollReveal';
 
 const SECTIONS = [
   { id: 'non-disclosure', title: '1. Third Party Non-Disclosure' },
@@ -16,7 +17,8 @@ export default function PrivacyPolicyPage({ onNavigate }) {
   const [activeSection, setActiveSection] = useState('non-disclosure');
 
   return (
-    <div className="pt-28 sm:pt-36 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <ScrollReveal>
+<div className="pt-28 sm:pt-36 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
       {/* 1. Top Breadcrumb Navigation */}
       <div className="flex items-center justify-between border-b border-[#DEDAD2] pb-4">
@@ -34,15 +36,11 @@ export default function PrivacyPolicyPage({ onNavigate }) {
       </div>
 
       {/* 2. Executive Page Banner */}
-      <div className="bg-[#FAF9F6] border border-[#DEDAD2] p-8 sm:p-12 relative overflow-hidden">
+      <div className="rv-block bg-[#FAF9F6] border border-[#DEDAD2] p-8 sm:p-12 relative overflow-hidden">
         <div className="max-w-3xl space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#DEDAD2] text-[#B69B65] text-[10px] font-sans font-bold uppercase tracking-[0.25em]">
-            <ShieldCheck className="w-3.5 h-3.5" />
-            <span>Corporate Governance</span>
-          </div>
           <TypewriterTitle
             as="h1"
-            className="text-3xl sm:text-4xl lg:text-5xl font-cinzel font-bold text-[#171717] tracking-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl font-cinzel font-bold text-[#171717] tracking-tight block"
           >
             Privacy Policy
           </TypewriterTitle>
@@ -111,7 +109,7 @@ export default function PrivacyPolicyPage({ onNavigate }) {
           </div>
 
           {/* Clause 1 */}
-          <section id="non-disclosure" className="space-y-3 pt-2">
+          <section id="non-disclosure" className="rv-block space-y-3 pt-2">
             <h2 className="text-lg sm:text-xl font-serif font-bold text-[#171717]">
               1. Third Party Non-Disclosure Framework
             </h2>
@@ -121,7 +119,7 @@ export default function PrivacyPolicyPage({ onNavigate }) {
           </section>
 
           {/* Clause 2 */}
-          <section id="data-protection" className="space-y-3 pt-6 border-t border-[#DEDAD2]">
+          <section id="data-protection" className="rv-block space-y-3 pt-6 border-t border-[#DEDAD2]">
             <h2 className="text-lg sm:text-xl font-serif font-bold text-[#171717]">
               2. Data Protection, Storage & Consent
             </h2>
@@ -131,7 +129,7 @@ export default function PrivacyPolicyPage({ onNavigate }) {
           </section>
 
           {/* Clause 3 */}
-          <section id="credentials" className="space-y-3 pt-6 border-t border-[#DEDAD2]">
+          <section id="credentials" className="rv-block space-y-3 pt-6 border-t border-[#DEDAD2]">
             <h2 className="text-lg sm:text-xl font-serif font-bold text-[#171717]">
               3. User Credentials & Financial Transaction Disclaimer
             </h2>
@@ -141,7 +139,7 @@ export default function PrivacyPolicyPage({ onNavigate }) {
           </section>
 
           {/* Clause 4 */}
-          <section id="optional-info" className="space-y-3 pt-6 border-t border-[#DEDAD2]">
+          <section id="optional-info" className="rv-block space-y-3 pt-6 border-t border-[#DEDAD2]">
             <h2 className="text-lg sm:text-xl font-serif font-bold text-[#171717]">
               4. Optional Information Choice
             </h2>
@@ -151,7 +149,7 @@ export default function PrivacyPolicyPage({ onNavigate }) {
           </section>
 
           {/* Clause 5 */}
-          <section id="communication" className="space-y-3 pt-6 border-t border-[#DEDAD2]">
+          <section id="communication" className="rv-block space-y-3 pt-6 border-t border-[#DEDAD2]">
             <h2 className="text-lg sm:text-xl font-serif font-bold text-[#171717]">
               5. Communications & Cookie Preferences
             </h2>
@@ -164,7 +162,7 @@ export default function PrivacyPolicyPage({ onNavigate }) {
           </section>
 
           {/* Clause 6 */}
-          <section id="compliance" className="space-y-3 pt-6 border-t border-[#DEDAD2]">
+          <section id="compliance" className="rv-block space-y-3 pt-6 border-t border-[#DEDAD2]">
             <h2 className="text-lg sm:text-xl font-serif font-bold text-[#171717]">
               6. Regulatory & Law Enforcement Cooperation
             </h2>
@@ -174,7 +172,7 @@ export default function PrivacyPolicyPage({ onNavigate }) {
           </section>
 
           {/* Clause 7 */}
-          <section id="remarketing" className="space-y-3 pt-6 border-t border-[#DEDAD2]">
+          <section id="remarketing" className="rv-block space-y-3 pt-6 border-t border-[#DEDAD2]">
             <h2 className="text-lg sm:text-xl font-serif font-bold text-[#171717]">
               7. Authenticity & Display Remarketing
             </h2>
@@ -188,5 +186,6 @@ export default function PrivacyPolicyPage({ onNavigate }) {
       </div>
 
     </div>
+    </ScrollReveal>
   );
 }

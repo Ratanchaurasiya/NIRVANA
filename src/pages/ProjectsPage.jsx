@@ -25,13 +25,9 @@ export default function ProjectsPage({ onNavigate }) {
       
       {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-none bg-white border border-[#E6E2D8] text-[#B69B65] text-xs font-mono uppercase tracking-widest">
-          <Sparkles className="w-3.5 h-3.5 text-[#B69B65]" />
-          <span>Interactive 3D Portfolio Grid</span>
-        </div>
         <TypewriterTitle
           as="h1"
-          className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight"
+          className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight block"
         >
           Landmark <span className="text-[#B69B65]">Projects Portfolio</span>
         </TypewriterTitle>
@@ -60,15 +56,18 @@ export default function ProjectsPage({ onNavigate }) {
 
       {/* ---------------- 3D MASONRY GRID OF PROJECT CARDS WITH 3D TILT ---------------- */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredProjects.map((project) => {
+        {filteredProjects.map((project, idx) => {
           const isZooming = zoomingId === project.id;
           return (
             <motion.div
               key={project.id}
+              initial={{ opacity: 0, y: 36 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.8, delay: (idx % 3) * 0.1, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -6 }}
-              transition={{ duration: 0.3 }}
               onClick={() => handleCardClick(project.id)}
-              className={`group cursor-pointer rounded-none bg-white border border-[#E6E2D8] hover:border-[#B69B65]/50 overflow-hidden flex flex-col justify-between shadow-xl transition-all relative ${
+              className={`group cursor-pointer rounded-none bg-white border border-[#E6E2D8] hover:border-[#B69B65] overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl transition-all relative ${
                 isZooming ? 'scale-105 z-50 opacity-90' : ''
               }`}
             >

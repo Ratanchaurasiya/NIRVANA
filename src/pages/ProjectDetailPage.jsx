@@ -6,6 +6,7 @@ import {
   MessageSquare, Phone, ShieldCheck, Layers, Maximize2, Compass
 } from 'lucide-react';
 import TypewriterTitle from '../components/TypewriterTitle';
+import ScrollReveal from '../components/ScrollReveal';
 
 export default function ProjectDetailPage({ projectId, onNavigate, onShowToast }) {
   const [bookingSuccess, setBookingSuccess] = useState(false);
@@ -23,7 +24,8 @@ export default function ProjectDetailPage({ projectId, onNavigate, onShowToast }
   };
 
   return (
-    <div className="pt-28 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <ScrollReveal>
+<div className="pt-28 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
       {/* Top Navigation Back Link */}
       <div>
@@ -37,14 +39,14 @@ export default function ProjectDetailPage({ projectId, onNavigate, onShowToast }
       </div>
 
       {/* ---------------- 1. HEADER SECTION ---------------- */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-[#E6E2D8]">
+      <div className="rv-block flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-[#E6E2D8]">
         <div className="space-y-3">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="px-3 py-1 rounded-none bg-[#B69B65] text-white text-xs font-mono font-bold uppercase tracking-wider">
+            <span className="px-3 py-1 bg-[#B69B65] text-white text-xs font-mono font-bold uppercase tracking-wider">
               {project.status}
             </span>
-            <span className="px-3 py-1 rounded-none bg-white text-[#B69B65] border border-[#E6E2D8] text-xs font-mono uppercase tracking-wider">
-              {project.badge}
+            <span className="text-xs font-mono text-[#77736C] uppercase tracking-wider font-semibold">
+              • {project.badge}
             </span>
           </div>
 
@@ -64,7 +66,7 @@ export default function ProjectDetailPage({ projectId, onNavigate, onShowToast }
       </div>
 
       {/* ---------------- 2. ARCHITECTURAL FLOOR PLAN LAYOUT STUDIO ---------------- */}
-      <div className="space-y-4">
+      <div className="rv-block space-y-4">
         <div className="flex items-center justify-between border-b border-[#DEDAD2] pb-3">
           <h2 className="text-xl font-serif font-bold text-[#171717] flex items-center gap-2">
             <Layers className="w-5 h-5 text-[#B69B65]" />
@@ -78,7 +80,7 @@ export default function ProjectDetailPage({ projectId, onNavigate, onShowToast }
       </div>
 
       {/* ---------------- 3. DEVELOPMENT METRICS GRID ---------------- */}
-      <div className="bg-white p-6 sm:p-8 border border-[#DEDAD2] shadow-sm space-y-6">
+      <div className="rv-block bg-white p-6 sm:p-8 border border-[#DEDAD2] shadow-sm space-y-6">
         <h3 className="text-lg font-serif font-bold text-[#171717] border-b border-[#E6E2D8] pb-3">
           Development Metrics & Specifications
         </h3>
@@ -140,7 +142,7 @@ export default function ProjectDetailPage({ projectId, onNavigate, onShowToast }
       </div>
 
       {/* ---------------- 4. SITE VISIT BOOKING FORM ---------------- */}
-      <div className="rounded-none bg-white p-6 sm:p-10 border border-[#E6E2D8] shadow-xl space-y-6">
+      <div className="rv-block rounded-none bg-white p-6 sm:p-10 border border-[#E6E2D8] shadow-xl space-y-6">
         <div className="border-b border-[#E6E2D8] pb-4">
           <span className="text-xs font-mono uppercase tracking-widest text-[#B69B65] font-bold">OFFICIAL SITE VISIT REGISTRATION</span>
           <h3 className="text-2xl font-serif font-bold text-[#171717] mt-1">Book Private Inspection: {project.name}</h3>
@@ -205,5 +207,6 @@ export default function ProjectDetailPage({ projectId, onNavigate, onShowToast }
       </div>
 
     </div>
+    </ScrollReveal>
   );
 }

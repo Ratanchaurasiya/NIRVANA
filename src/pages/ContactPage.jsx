@@ -4,6 +4,7 @@ import ContactSection from '../components/ContactSection';
 import { Phone, Mail, MapPin, Clock, Send, Sparkles, CheckCircle2, ShieldCheck } from 'lucide-react';
 import InstagramIcon from '../components/icons/InstagramIcon';
 import TypewriterTitle from '../components/TypewriterTitle';
+import ScrollReveal from '../components/ScrollReveal';
 
 export default function ContactPage({ onShowToast }) {
   const [commForm, setCommForm] = useState({
@@ -28,13 +29,9 @@ export default function ContactPage({ onShowToast }) {
       
       {/* Page Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white border border-[#DEDAD2] text-[#B69B65] text-[10px] font-sans font-bold uppercase tracking-[0.25em]">
-          <ShieldCheck className="w-3.5 h-3.5 text-[#B69B65]" />
-          <span>Corporate Advisory & Consultations</span>
-        </div>
         <TypewriterTitle
           as="h1"
-          className="text-3xl sm:text-4xl lg:text-5xl font-cinzel font-bold text-[#171717] tracking-tight"
+          className="text-3xl sm:text-4xl lg:text-5xl font-cinzel font-bold text-[#171717] tracking-tight block"
         >
           Connect With <span className="text-[#B69B65]">NIRVANA GROUP</span>
         </TypewriterTitle>
@@ -45,21 +42,24 @@ export default function ContactPage({ onShowToast }) {
       </div>
 
       {/* Strategic Corridor Navigator */}
-      <div className="space-y-4">
-        <div className="flex items-center justify-between border-b border-[#DEDAD2] pb-3">
-          <h2 className="text-xl font-serif font-bold text-[#171717] flex items-center gap-2">
-            <MapPin className="w-5 h-5 text-[#B69B65]" />
-            <span>Western Ahmedabad Strategic Corridors</span>
-          </h2>
-          <span className="text-xs font-sans text-[#77736C]">Science City • Sola • SG Highway • Jagatpur • Thaltej</span>
-        </div>
+      <ScrollReveal>
+        <div className="space-y-4">
+          <div className="flex items-center justify-between border-b border-[#DEDAD2] pb-3">
+            <h2 className="text-xl font-serif font-bold text-[#171717] flex items-center gap-2">
+              <MapPin className="w-5 h-5 text-[#B69B65]" />
+              <span>Western Ahmedabad Strategic Corridors</span>
+            </h2>
+            <span className="text-xs font-sans text-[#77736C]">Science City • Sola • SG Highway • Jagatpur • Thaltej</span>
+          </div>
 
-        {/* Strategic Corridor Map Navigator */}
-        <LocalizationMap3D />
-      </div>
+          {/* Strategic Corridor Map Navigator */}
+          <LocalizationMap3D />
+        </div>
+      </ScrollReveal>
 
       {/* Advisory Query Form & Corporate Headquarters */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      <ScrollReveal>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         
         {/* Left Column: Official Headquarters Brief */}
         <div className="lg:col-span-5 space-y-6">
@@ -223,6 +223,7 @@ export default function ContactPage({ onShowToast }) {
         </div>
 
       </div>
+      </ScrollReveal>
 
     </div>
   );

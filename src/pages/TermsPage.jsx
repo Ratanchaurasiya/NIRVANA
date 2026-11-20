@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FileText, ArrowLeft, ShieldCheck, Mail, Phone, Scale } from 'lucide-react';
 import TypewriterTitle from '../components/TypewriterTitle';
+import ScrollReveal from '../components/ScrollReveal';
 
 const TERMS_SECTIONS = [
   { id: 'general-use', title: '1. General Terms of Use' },
@@ -16,7 +17,8 @@ export default function TermsPage({ onNavigate }) {
   const [activeSection, setActiveSection] = useState('general-use');
 
   return (
-    <div className="pt-28 sm:pt-36 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <ScrollReveal>
+<div className="pt-28 sm:pt-36 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
       {/* 1. Top Breadcrumb Navigation */}
       <div className="flex items-center justify-between border-b border-[#DEDAD2] pb-4">
@@ -34,20 +36,16 @@ export default function TermsPage({ onNavigate }) {
       </div>
 
       {/* 2. Executive Page Banner */}
-      <div className="bg-[#FAF9F6] border border-[#DEDAD2] p-8 sm:p-12 relative overflow-hidden">
+      <div className="rv-block bg-[#FAF9F6] border border-[#DEDAD2] p-8 sm:p-12 relative overflow-hidden">
         <div className="max-w-3xl space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#DEDAD2] text-[#B69B65] text-[10px] font-sans font-bold uppercase tracking-[0.25em]">
-            <Scale className="w-3.5 h-3.5" />
-            <span>Statutory Agreement</span>
-          </div>
           <TypewriterTitle
             as="h1"
-            className="text-3xl sm:text-4xl lg:text-5xl font-cinzel font-bold text-[#171717] tracking-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl font-cinzel font-bold text-[#171717] tracking-tight block"
           >
             Terms & Conditions
           </TypewriterTitle>
           <p className="text-sm sm:text-base text-[#5C5852] font-light leading-relaxed">
-            Please read these terms and conditions carefully before utilizing the Nirvana Group digital platform, scheduling site walkthroughs, or downloading official architectural dossiers.
+            Please read these terms and conditions carefully before utilizing the Nirvana Group digital platform or scheduling site walkthroughs.
           </p>
         </div>
       </div>
@@ -116,7 +114,7 @@ export default function TermsPage({ onNavigate }) {
           </div>
 
           {/* Clause 1 */}
-          <section id="general-use" className="space-y-3 pt-2">
+          <section id="general-use" className="rv-block space-y-3 pt-2">
             <h2 className="text-lg sm:text-xl font-serif font-bold text-[#171717]">
               1. General Terms of Platform Use
             </h2>
@@ -126,7 +124,7 @@ export default function TermsPage({ onNavigate }) {
           </section>
 
           {/* Clause 2 */}
-          <section id="disclaimer" className="space-y-3 pt-6 border-t border-[#DEDAD2]">
+          <section id="disclaimer" className="rv-block space-y-3 pt-6 border-t border-[#DEDAD2]">
             <h2 className="text-lg sm:text-xl font-serif font-bold text-[#171717]">
               2. Warranty & Accuracy Disclaimer
             </h2>
@@ -136,7 +134,7 @@ export default function TermsPage({ onNavigate }) {
           </section>
 
           {/* Clause 3 */}
-          <section id="user-risk" className="space-y-3 pt-6 border-t border-[#DEDAD2]">
+          <section id="user-risk" className="rv-block space-y-3 pt-6 border-t border-[#DEDAD2]">
             <h2 className="text-lg sm:text-xl font-serif font-bold text-[#171717]">
               3. Independent Due Diligence & Capital Allocation
             </h2>
@@ -146,7 +144,7 @@ export default function TermsPage({ onNavigate }) {
           </section>
 
           {/* Clause 4 */}
-          <section id="intellectual-property" className="space-y-3 pt-6 border-t border-[#DEDAD2]">
+          <section id="intellectual-property" className="rv-block space-y-3 pt-6 border-t border-[#DEDAD2]">
             <h2 className="text-lg sm:text-xl font-serif font-bold text-[#171717]">
               4. Copyright, Brand Marks & Intellectual Property
             </h2>
@@ -156,7 +154,7 @@ export default function TermsPage({ onNavigate }) {
           </section>
 
           {/* Clause 5 */}
-          <section id="third-party-links" className="space-y-3 pt-6 border-t border-[#DEDAD2]">
+          <section id="third-party-links" className="rv-block space-y-3 pt-6 border-t border-[#DEDAD2]">
             <h2 className="text-lg sm:text-xl font-serif font-bold text-[#171717]">
               5. External References & Map Integrations
             </h2>
@@ -166,7 +164,7 @@ export default function TermsPage({ onNavigate }) {
           </section>
 
           {/* Clause 6 */}
-          <section id="jurisdiction" className="space-y-3 pt-6 border-t border-[#DEDAD2]">
+          <section id="jurisdiction" className="rv-block space-y-3 pt-6 border-t border-[#DEDAD2]">
             <h2 className="text-lg sm:text-xl font-serif font-bold text-[#171717]">
               6. Governing Law & Competent Jurisdiction
             </h2>
@@ -176,7 +174,7 @@ export default function TermsPage({ onNavigate }) {
           </section>
 
           {/* Clause 7 */}
-          <section id="communications-consent" className="space-y-3 pt-6 border-t border-[#DEDAD2]">
+          <section id="communications-consent" className="rv-block space-y-3 pt-6 border-t border-[#DEDAD2]">
             <h2 className="text-lg sm:text-xl font-serif font-bold text-[#171717]">
               7. Multi-Channel Advisory Communications
             </h2>
@@ -190,5 +188,6 @@ export default function TermsPage({ onNavigate }) {
       </div>
 
     </div>
+    </ScrollReveal>
   );
 }

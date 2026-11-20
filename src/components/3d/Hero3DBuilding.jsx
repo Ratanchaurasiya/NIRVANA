@@ -4,7 +4,6 @@ import { Sun, Moon, Sunset, Compass } from 'lucide-react';
 export default function Hero3DBuilding() {
   const cardRef = useRef(null);
   const [lightingMode, setLightingMode] = useState('night'); // 'day', 'sunset', 'night'
-  const [rotate, setRotate] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;
@@ -19,11 +18,15 @@ export default function Hero3DBuilding() {
     const rotateX = ((y - centerY) / centerY) * -4;
     const rotateY = ((x - centerX) / centerX) * 4;
 
-    setRotate({ x: rotateX, y: rotateY });
+    // Write the transform straight to the DOM - no React re-render per mouse move
+    cardRef.current.style.transition = 'transform 0.12s ease-out';
+    cardRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   };
 
   const handleMouseLeave = () => {
-    setRotate({ x: 0, y: 0 });
+    if (!cardRef.current) return;
+    cardRef.current.style.transition = 'transform 0.7s cubic-bezier(0.22, 1, 0.36, 1)';
+    cardRef.current.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
   };
 
   const getLightingStyles = () => {
@@ -62,11 +65,8 @@ export default function Hero3DBuilding() {
       {/* Architectural Exhibition Frame */}
       <div
         ref={cardRef}
-        className="w-full h-full relative overflow-hidden border border-[#E6E2D8] bg-white shadow-md transition-all duration-300 ease-out group"
-        style={{
-          transform: `perspective(1000px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
-          transformStyle: 'preserve-3d',
-        }}
+        className="w-full h-full relative overflow-hidden border border-[#E6E2D8] bg-white shadow-md group will-change-transform"
+        style={{ transformStyle: 'preserve-3d' }}
       >
         {/* Background Building Architectural Photograph */}
         <img
@@ -74,7 +74,7 @@ export default function Hero3DBuilding() {
           alt="Nirvana Abode Architectural Landmark"
           decoding="async"
           fetchPriority="high"
-          className="w-full h-full object-cover object-center transition-all duration-700 ease-out"
+          className="w-full h-full object-cover object-center transition-[filter] duration-700 ease-out"
           style={{ filter: currentLighting.filter }}
         />
 
@@ -88,7 +88,7 @@ export default function Hero3DBuilding() {
           className="absolute top-4 left-4 right-4 flex items-center justify-between gap-3 z-20 pointer-events-auto"
           style={{ transform: 'translateZ(25px)' }}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/95 border border-[#DEDAD2] shadow-sm text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-[#B69B65]">
+          <div className="flex items-center gap-2 text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-white drop-shadow">
             <span className="w-1.5 h-1.5 bg-[#B69B65]" />
             <span>NIRVANA ABODE</span>
           </div>
