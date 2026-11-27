@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SeismicFoundation3D from '../components/3d/SeismicFoundation3D';
 import { DEVELOPMENT_STANDARDS } from '../data/projectsData';
 import AboutSection from '../components/AboutSection';
-import { ShieldCheck, Sparkles, CheckCircle2, ChevronRight, Award, Layers } from 'lucide-react';
+import { ShieldCheck, Sparkles, CheckCircle2, ChevronRight, Layers } from 'lucide-react';
 import TypewriterTitle from '../components/TypewriterTitle';
 import ScrollReveal from '../components/ScrollReveal';
 
@@ -27,10 +27,6 @@ export default function AboutPage({ onNavigate }) {
       <ScrollReveal>
         <div className="bg-white p-8 sm:p-12 border border-[#DEDAD2] shadow-sm relative overflow-hidden">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <div className="inline-flex items-center justify-center w-14 h-14 bg-[#FAF9F6] border border-[#DEDAD2] text-[#B69B65] mx-auto">
-              <Award className="w-7 h-7" />
-            </div>
-            
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#171717] leading-snug">
               "Nirvana Builders is a premier real estate development group specializing in Grade-A commercial and residential property engineering based in Gujarat."
             </h2>

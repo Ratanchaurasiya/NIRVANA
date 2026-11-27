@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Building2, Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
+import BrandLogo from './BrandLogo';
 
 export default function Navbar({ currentPath, onNavigate }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -20,24 +21,15 @@ export default function Navbar({ currentPath, onNavigate }) {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-4">
-        <div className="border transition-all duration-300 backdrop-blur-md px-6 sm:px-8 py-4 flex items-center justify-between bg-white/95 border-[#DEDAD2] shadow-sm text-[#171717]">
+        <div className="border transition-all duration-300 backdrop-blur-md px-4 sm:px-8 py-3 flex items-center justify-between bg-white/95 border-[#DEDAD2] shadow-sm text-[#171717]">
           
-          {/* Brand Logo & Monogram */}
+          {/* Brand Logo */}
           <button
             onClick={() => handleLinkClick('/')}
-            className="flex items-center gap-3.5 group text-left cursor-pointer"
+            className="flex items-center shrink-0 cursor-pointer transition-opacity hover:opacity-85"
+            aria-label="Nirvana Builders home"
           >
-            <div className="w-10 h-10 border border-[#DEDAD2] bg-[#FAF9F6] flex items-center justify-center shrink-0 transition-colors group-hover:border-[#B69B65]">
-              <Building2 className="w-5 h-5 text-[#B69B65]" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-cinzel font-semibold text-base sm:text-lg tracking-[0.16em] uppercase text-[#171717] leading-tight group-hover:text-[#B69B65] transition-colors">
-                NIRVANA <span className="text-[#B69B65]">BUILDERS</span>
-              </span>
-              <span className="text-[9px] font-sans font-semibold text-[#77736C] tracking-[0.25em] block uppercase mt-0.5">
-                EST. 2026 • GUJARAT
-              </span>
-            </div>
+            <BrandLogo className="h-12 sm:h-14" />
           </button>
 
           {/* Desktop Navigation Links */}

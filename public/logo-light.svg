@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="80 148 1184 310" width="1184" height="310" role="img" aria-label="Nirvana Builders">
+<path d="M160 264 L204 239 L204 380 L160 408 Z" fill="#F5F1E8"/>
+<path d="M204 242 L222 253 L222 372" fill="none" stroke="#F5F1E8" stroke-width="7" stroke-linejoin="miter"/>
+<path d="M227 190 L276 159 L276 336 L227 372 Z" fill="#F5F1E8"/>
+<path d="M276 162 L322 191 L322 340" fill="none" stroke="#F5F1E8" stroke-width="7" stroke-linejoin="miter"/>
+<path d="M293 255 L339 228 L339 378 L293 345 Z" fill="#DCD6C8"/>
+<path d="M339 231 L389 262 L389 408" fill="none" stroke="#F5F1E8" stroke-width="7" stroke-linejoin="miter"/>
+<path d="M126 434 L281 322 L436 434" fill="none" stroke="#171717" stroke-width="13"/>
+<path d="M286 322 L392 398" fill="none" stroke="#C4A464" stroke-width="6"/>
+<path d="M86 451 C112 446 132 438 150 426 L281 329 L412 426 C430 438 450 446 476 451 C446 452 420 449 398 438 L281 362 L164 438 C142 449 116 452 86 451 Z" fill="#F5F1E8"/>
+<rect x="254" y="396" width="24" height="23" fill="#C4A464"/>
+<rect x="254" y="426" width="24" height="23" fill="#C4A464"/>
+<rect x="285" y="396" width="24" height="23" fill="#C4A464"/>
+<rect x="285" y="426" width="24" height="23" fill="#C4A464"/>
+<path d="M462 376 V257 H492 L546 326 V257 H574 V376 H545 L490 306 V376 Z" fill="#F5F1E8" fill-rule="evenodd"/>
+<path d="M595 257 H624 V376 H595 Z" fill="#F5F1E8" fill-rule="evenodd"/>
+<path d="M646 257 H714 C738 257 750 270 750 292 C750 310 741 321 725 325 L754 376 H720 L694 328 H675 V376 H646 Z M675 281 V305 H710 C718 305 722 301 722 293 C722 285 718 281 710 281 Z" fill="#F5F1E8" fill-rule="evenodd"/>
+<path d="M752 257 H785 L816 340 L847 257 H879 L831 376 H800 Z" fill="#F5F1E8" fill-rule="evenodd"/>
+<path d="M862 376 L910 257 H942 L990 376 H958 L926 292 L894 376 Z" fill="#F5F1E8" fill-rule="evenodd"/>
+<path d="M1001 376 V257 H1031 L1085 326 V257 H1113 V376 H1084 L1029 306 V376 Z" fill="#F5F1E8" fill-rule="evenodd"/>
+<path d="M1126 376 L1174 257 H1206 L1254 376 H1222 L1190 292 L1158 376 Z" fill="#F5F1E8" fill-rule="evenodd"/>
+<path d="M926 326 L948 376 H904 Z" fill="#C4A464"/>
+<path d="M1190 326 L1212 376 H1168 Z" fill="#C4A464"/>
+<path d="M608 399 V441 M603 399 H625 C640 399 640 419 625 419 H608 M625 419 C644 419 644 441 625 441 H603" transform="translate(0 0)" fill="none" stroke="#C4A464" stroke-width="10"/>
+<path d="M679 394 V427 C679 446 712 446 712 427 V394" transform="translate(0 0)" fill="none" stroke="#C4A464" stroke-width="10"/>
+<path d="M751 394 V446" transform="translate(6 0)" fill="none" stroke="#C4A464" stroke-width="10"/>
+<path d="M790 394 V441 H816" transform="translate(12 0)" fill="none" stroke="#C4A464" stroke-width="10"/>
+<path d="M851 399 V441 M846 399 H862 C894 399 894 441 862 441 H846" transform="translate(17 0)" fill="none" stroke="#C4A464" stroke-width="10"/>
+<path d="M950 399 H922 V441 H950 M922 420 H945" transform="translate(21 0)" fill="none" stroke="#C4A464" stroke-width="10"/>
+<path d="M988 446 V399 H1007 C1023 399 1023 422 1007 422 H988 M1005 422 L1021 446" transform="translate(23 0)" fill="none" stroke="#C4A464" stroke-width="10"/>
+<path d="M1116 404 C1105 394 1086 398 1087 410 C1088 422 1117 417 1117 430 C1117 445 1093 445 1084 435" transform="translate(0 0)" fill="none" stroke="#C4A464" stroke-width="10"/>
+<rect x="466" y="417" width="101" height="6" fill="#C4A464"/>
+<rect x="1157" y="417" width="98" height="6" fill="#C4A464"/>
+</svg>

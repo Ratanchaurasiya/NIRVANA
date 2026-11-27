@@ -1,6 +1,7 @@
 import React from 'react';
-import { Building2, Phone, Mail, MapPin, ArrowUp, ShieldCheck, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowUp, ShieldCheck, MessageCircle } from 'lucide-react';
 import InstagramIcon from './icons/InstagramIcon';
+import BrandLogo from './BrandLogo';
 
 export default function Footer({ onNavigate }) {
   const scrollToTop = () => {
@@ -14,18 +15,11 @@ export default function Footer({ onNavigate }) {
           
           {/* Brand Info Column */}
           <div className="md:col-span-5 space-y-4">
-            <div className="flex items-center gap-3.5">
-              <div className="w-10 h-10 bg-[#1F1F1F] border border-[#B69B65]/40 flex items-center justify-center shrink-0">
-                <Building2 className="w-5 h-5 text-[#B69B65]" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-cinzel font-bold text-xl sm:text-2xl tracking-[0.06em] uppercase text-[#F5F1E8] leading-tight">
-                  NIRVANA <span className="text-[#B69B65]">BUILDERS</span>
-                </span>
-                <span className="text-[11px] font-editorial italic text-[#A39F97] tracking-wider mt-0.5">
-                  Building Dreams. Creating Landmarks.
-                </span>
-              </div>
+            <div className="space-y-3">
+              <BrandLogo variant="light" className="h-16 sm:h-[72px]" />
+              <span className="block text-[11px] font-editorial italic text-[#A39F97] tracking-wider">
+                Building Dreams. Creating Landmarks.
+              </span>
             </div>
 
             <p className="text-xs sm:text-sm text-[#A39F97] font-light leading-relaxed max-w-md">
