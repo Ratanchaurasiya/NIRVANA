@@ -24,21 +24,17 @@ env:
   NODE_ENV: production
   PORT: "3000"
 
-# 5. Nginx: reverse proxy to the static server that PM2 runs below
+# 5. Nginx: reverse proxy to server.js, which PM2 runs below
 nginx:
   proxy_pass: "http://127.0.0.1:3000"
 
-# 6. PM2: serves dist/ using PM2's built-in static file server.
-# SPA mode makes direct visits and refreshes on /about, /projects, etc. load
-# index.html instead of returning 404.
+# 6. PM2: runs server.js, which serves dist/ and sends React routes such as
+# /about and /projects to index.html instead of returning 404.
 pm2:
   name: nirvana-group
-  script: serve
+  script: server.js
   instances: 1
   exec_mode: fork
   env:
-    PM2_SERVE_PATH: dist
-    PM2_SERVE_PORT: 3000
-    PM2_SERVE_SPA: "true"
-    PM2_SERVE_HOMEPAGE: /index.html
+    PORT: 3000
     NODE_ENV: production
