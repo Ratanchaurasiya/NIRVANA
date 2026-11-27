@@ -2,7 +2,7 @@ export const TOP_PROJECTS_DATA = [
   {
     id: "nirvana-abode",
     name: "Nirvana Abode",
-    developer: "Nirvana Group / Shiv Buildcon",
+    developer: "Nirvana Builders / Shiv Buildcon",
     config: "2 & 3 BHK Apartments",
     size: "1,440 – 1,872 sq. ft.",
     highlight: "Under Construction (Possession: Nov 2026 – Dec 2028)",
@@ -14,7 +14,7 @@ export const TOP_PROJECTS_DATA = [
   {
     id: "the-neemland",
     name: "The Neemland",
-    developer: "K3 / Nirvana Group",
+    developer: "K3 / Nirvana Builders",
     config: "2 & 3 BHK + Retail Shops",
     size: "1,422 – 1,944 sq. ft. (158 – 216 sq. yd.)",
     highlight: "Pre-Launch / New Launch (3 Towers, 14 Floors, 334 Units)",
@@ -77,7 +77,7 @@ export const PROPERTIES_DATA = [
   {
     id: 101,
     title: "Nirvana Abode",
-    developer: "Nirvana Group / Shiv Buildcon",
+    developer: "Nirvana Builders / Shiv Buildcon",
     type: "Residential",
     location: "Jagatpur Rd, Near Godrej Garden City, Tragad (North-West)",
     image: "/images/about_property.jpg",
@@ -88,7 +88,7 @@ export const PROPERTIES_DATA = [
   {
     id: 102,
     title: "The Neemland",
-    developer: "K3 / Nirvana Group",
+    developer: "K3 / Nirvana Builders",
     type: "Residential",
     location: "Jagatpur (North-West), Ahmedabad",
     image: "/images/hero_building.jpg",
@@ -252,8 +252,8 @@ export const TESTIMONIALS_DATA = [
 
 export const FAQS_DATA = [
   {
-    question: "What are Nirvana Group's active projects in Ahmedabad?",
-    answer: "Nirvana Group and its associated developments currently feature 6 flagship projects: Nirvana Abode (Jagatpur/Tragad), The Neemland (Jagatpur), Sankalp Nirvana (Shahibaug), Nirvana Safal Greens (Sanand), SP Nirvana (South Bopal), and Nirvana Arise (Navrangpura)."
+    question: "What are Nirvana Builders' active projects in Ahmedabad?",
+    answer: "Nirvana Builders and its associated developments currently feature 6 flagship projects: Nirvana Abode (Jagatpur/Tragad), The Neemland (Jagatpur), Sankalp Nirvana (Shahibaug), Nirvana Safal Greens (Sanand), SP Nirvana (South Bopal), and Nirvana Arise (Navrangpura)."
   },
   {
     question: "What configurations and sizes are available at Nirvana Abode?",

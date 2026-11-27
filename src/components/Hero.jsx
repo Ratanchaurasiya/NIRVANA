@@ -38,7 +38,7 @@ const Hero = ({ onNavigate, onOpenDossier }) => {
                 className="text-4xl sm:text-5xl lg:text-6xl font-cinzel font-semibold text-[#171717] tracking-[0.12em] uppercase leading-[1.08] block"
                 delay={180}
               >
-                NIRVANA GROUP
+                NIRVANA BUILDERS
               </TypewriterTitle>
               <p className="text-xl sm:text-2xl font-editorial italic text-[#B69B65] tracking-wide pt-0.5">
                 "Building Dreams. Creating Landmarks."

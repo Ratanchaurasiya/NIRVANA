@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import GoogleMapCard from './GoogleMapCard';
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle2, MessageCircle } from 'lucide-react';
 import InstagramIcon from './icons/InstagramIcon';
 import TypewriterTitle from './TypewriterTitle';
 
@@ -59,7 +59,7 @@ const ContactSection = ({ onShowToast }) => {
             <div className="bg-white border border-[#DEDAD2] p-6 sm:p-8 space-y-6 shadow-sm">
               <div>
                 <span className="text-[10px] font-sans font-bold uppercase tracking-[0.25em] text-[#B69B65]">OFFICIAL PRESENCE</span>
-                <h3 className="text-2xl font-serif font-bold text-[#171717] mt-1">NIRVANA GROUP</h3>
+                <h3 className="text-2xl font-serif font-bold text-[#171717] mt-1">NIRVANA BUILDERS</h3>
                 <p className="text-xs text-[#77736C] mt-1 font-sans">Corporate Property Development & Advisory</p>
               </div>
 
@@ -88,8 +88,8 @@ const ContactSection = ({ onShowToast }) => {
                   </div>
                   <div>
                     <span className="text-[10px] font-sans text-[#77736C] uppercase tracking-wider font-semibold block">Advisory Desk</span>
-                    <a href="tel:+917940007890" className="text-sm font-semibold text-[#171717] hover:text-[#B69B65] transition-colors block mt-0.5">
-                      +91 79 4000 7890
+                    <a href="tel:8128266969" className="text-sm font-semibold text-[#171717] hover:text-[#B69B65] transition-colors block mt-0.5">
+                      +91 81282 66969
                     </a>
                     <p className="text-[11px] text-[#77736C] mt-0.5">
                       Direct consultation line
@@ -104,11 +104,33 @@ const ContactSection = ({ onShowToast }) => {
                   </div>
                   <div className="min-w-0">
                     <span className="text-[10px] font-sans text-[#77736C] uppercase tracking-wider font-semibold block">Corporate Inquiries</span>
-                    <a href="mailto:contact@nirvana.group" className="text-sm font-semibold text-[#171717] hover:text-[#B69B65] transition-colors block mt-0.5 truncate">
-                      contact@nirvana.group
+                    <a href="mailto:info@nirvanabuilders.in" className="text-sm font-semibold text-[#171717] hover:text-[#B69B65] transition-colors block mt-0.5 truncate">
+                      info@nirvanabuilders.in
                     </a>
                     <p className="text-[11px] text-[#77736C] mt-0.5">
                       Official correspondence desk
+                    </p>
+                  </div>
+                </div>
+
+                {/* WhatsApp Concierge */}
+                <div className="flex items-start gap-4 p-4 bg-[#FAF9F6] border border-[#DEDAD2]">
+                  <div className="w-9 h-9 bg-white border border-[#DEDAD2] flex items-center justify-center shrink-0 text-[#B69B65]">
+                    <MessageCircle className="w-4 h-4" />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="text-[10px] font-sans text-[#77736C] uppercase tracking-wider font-semibold block">Direct WhatsApp</span>
+                    <a 
+                      href="https://wa.me/918128266969" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-sm font-semibold text-[#171717] hover:text-[#B69B65] transition-colors inline-flex items-center gap-1.5 mt-0.5"
+                    >
+                      <span>Connect via WhatsApp</span>
+                      <span className="text-[#B69B65] text-xs">↗</span>
+                    </a>
+                    <p className="text-[11px] text-[#77736C] mt-0.5">
+                      Instant project specs & site walkthrough bookings
                     </p>
                   </div>
                 </div>

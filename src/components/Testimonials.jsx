@@ -22,7 +22,7 @@ const Testimonials = () => {
   };
 
   const item = TESTIMONIALS_DATA[currentIndex] || TESTIMONIALS_DATA[0];
-  const testimonialText = item.comment || item.quote || "NIRVANA GROUP delivers extraordinary build quality, architectural privacy, and transparent documentation.";
+  const testimonialText = item.comment || item.quote || "NIRVANA BUILDERS delivers extraordinary build quality, architectural privacy, and transparent documentation.";
 
   return (
     <section className="py-24 relative bg-[#FAF9F6] border-t border-[#E6E2D8]">

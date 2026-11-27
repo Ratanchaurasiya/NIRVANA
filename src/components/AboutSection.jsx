@@ -13,7 +13,7 @@ const AboutSection = () => {
             as="h2"
             className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight block"
           >
-            About <span className="text-[#B69B65]">NIRVANA GROUP</span>
+            About <span className="text-[#B69B65]">NIRVANA BUILDERS</span>
           </TypewriterTitle>
           <div className="w-12 h-px bg-[#B69B65] mx-auto" />
           <p className="text-[#5C5852] text-sm sm:text-base font-light leading-relaxed">
@@ -29,7 +29,7 @@ const AboutSection = () => {
             <div className="relative overflow-hidden border border-[#E6E2D8] bg-white group">
               <img
                 src="/images/about_property.jpg"
-                alt="NIRVANA GROUP Ahmedabad Property Guidance"
+                alt="NIRVANA BUILDERS Ahmedabad Property Guidance"
                 loading="lazy"
                 decoding="async"
                 className="w-full h-[450px] lg:h-[500px] object-cover object-center group-hover:scale-105 transition-transform duration-700"

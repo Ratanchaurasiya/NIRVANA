@@ -56,7 +56,7 @@ const WhyChooseUs = () => {
             as="h2"
             className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight block"
           >
-            Why Discerning Clients Choose <span className="text-[#B69B65]">NIRVANA GROUP</span>
+            Why Discerning Clients Choose <span className="text-[#B69B65]">NIRVANA BUILDERS</span>
           </TypewriterTitle>
           <div className="w-12 h-px bg-[#B69B65] mx-auto" />
           <p className="text-[#5C5852] text-sm sm:text-base font-light leading-relaxed">

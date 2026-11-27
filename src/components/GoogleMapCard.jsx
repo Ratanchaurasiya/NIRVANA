@@ -33,7 +33,7 @@ const GoogleMapCard = () => {
       {/* Styled Regional Map Preview Container */}
       <div className="relative overflow-hidden h-[250px] border border-[#DEDAD2] group">
         <iframe
-          title="NIRVANA GROUP Corporate Territory"
+          title="NIRVANA BUILDERS Corporate Territory"
           src={regionalMapUrl}
           className="w-full h-full border-0 grayscale-[30%] contrast-[102%] opacity-90 group-hover:opacity-100 transition-opacity duration-500"
           loading="lazy"

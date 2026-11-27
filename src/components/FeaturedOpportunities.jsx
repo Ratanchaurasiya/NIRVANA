@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { PROPERTIES_DATA } from '../data/propertyData';
 import { MapPin, X, Phone, MessageSquare, Check } from 'lucide-react';
 import TypewriterTitle from './TypewriterTitle';
@@ -8,6 +9,18 @@ const CATEGORIES = ['All', 'Residential', 'Commercial', 'Plots', 'Investment'];
 const FeaturedOpportunities = ({ onShowToast }) => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [selectedProp, setSelectedProp] = useState(null);
+
+  useEffect(() => {
+    if (!selectedProp) return;
+    const orig = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const onKey = (e) => { if (e.key === 'Escape') setSelectedProp(null); };
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = orig;
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [selectedProp]);
 
   const filteredProperties = activeFilter === 'All'
     ? PROPERTIES_DATA
@@ -120,13 +133,23 @@ const FeaturedOpportunities = ({ onShowToast }) => {
       </div>
 
       {/* Property Details Modal */}
-      {selectedProp && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm animate-fadeIn">
-          <div className="bg-white max-w-2xl w-full p-6 sm:p-8 border border-[#E6E2D8] shadow-2xl relative space-y-6 max-h-[90vh] overflow-y-auto">
+      {selectedProp && typeof document !== 'undefined' && createPortal(
+        <div
+          className="modal-backdrop-overlay"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setSelectedProp(null);
+          }}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="modal-dialog-container max-w-2xl bg-white p-6 sm:p-8 border border-[#E6E2D8] shadow-2xl relative space-y-6 max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
             
             <button
               onClick={() => setSelectedProp(null)}
-              className="absolute top-5 right-5 p-2 bg-[#FAF9F6] border border-[#E6E2D8] text-[#5C5852] hover:text-[#171717] transition-colors cursor-pointer"
+              className="absolute top-5 right-5 p-2 bg-[#FAF9F6] border border-[#E6E2D8] text-[#5C5852] hover:text-[#171717] hover:border-[#B69B65] transition-colors cursor-pointer"
               aria-label="Close details modal"
             >
               <X className="w-5 h-5" />
@@ -184,7 +207,8 @@ const FeaturedOpportunities = ({ onShowToast }) => {
             </div>
 
           </div>
-        </div>
+        </div>,
+        document.getElementById('modal-root') || document.body
       )}
 
     </section>

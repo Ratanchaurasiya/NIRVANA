@@ -17,7 +17,7 @@ export default function PageLoader() {
 
       <div className="text-center space-y-1">
         <span className="font-cinzel text-xs font-semibold tracking-[0.25em] uppercase text-[#171717] block">
-          NIRVANA GROUP
+          NIRVANA BUILDERS
         </span>
         <span className="text-[11px] font-sans text-[#77736C] tracking-wider block">
           Curating Architectural Portfolio...

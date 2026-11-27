@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { 
   Home, Building2, MapPin, ListFilter, TrendingUp, Calendar, Scale, 
   ArrowRight, X, ChevronDown, ChevronUp, FileText, Globe
@@ -85,6 +86,18 @@ const INITIAL_VISIBLE_COUNT = 3;
 const ServicesSection = ({ onShowToast }) => {
   const [selectedService, setSelectedService] = useState(null);
   const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_COUNT);
+
+  useEffect(() => {
+    if (!selectedService) return;
+    const orig = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const onKey = (e) => { if (e.key === 'Escape') setSelectedService(null); };
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = orig;
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [selectedService]);
 
   const isAllShown = visibleCount >= SERVICES_LIST.length;
 
@@ -180,21 +193,31 @@ const ServicesSection = ({ onShowToast }) => {
       </div>
 
       {/* Learn More Modal */}
-      {selectedService && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm animate-fadeIn">
-          <div className="bg-white max-w-xl w-full p-6 sm:p-8 border border-[#E6E2D8] shadow-2xl relative space-y-6">
+      {selectedService && typeof document !== 'undefined' && createPortal(
+        <div
+          className="modal-backdrop-overlay"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setSelectedService(null);
+          }}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="modal-dialog-container max-w-xl bg-white p-6 sm:p-8 border border-[#E6E2D8] shadow-2xl relative space-y-6 max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
             
             {/* Close Button */}
             <button
               onClick={() => setSelectedService(null)}
-              className="absolute top-5 right-5 p-2 bg-[#FAF9F6] border border-[#E6E2D8] text-[#5C5852] hover:text-[#171717] transition-colors cursor-pointer"
+              className="absolute top-5 right-5 p-2 bg-[#FAF9F6] border border-[#E6E2D8] text-[#5C5852] hover:text-[#171717] hover:border-[#B69B65] transition-colors cursor-pointer"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
             </button>
 
             {/* Modal Header */}
-            <div className="flex items-center gap-4 border-b border-[#E6E2D8] pb-5">
+            <div className="flex items-center gap-4 border-b border-[#E6E2D8] pb-5 pr-10">
               <div className="w-12 h-12 bg-[#FAF9F6] border border-[#B69B65]/40 text-[#B69B65] flex items-center justify-center font-bold text-lg shrink-0">
                 {selectedService.num}
               </div>
@@ -235,7 +258,8 @@ const ServicesSection = ({ onShowToast }) => {
             </div>
 
           </div>
-        </div>
+        </div>,
+        document.getElementById('modal-root') || document.body
       )}
 
     </section>

@@ -43,7 +43,7 @@ export default function PrivacyPolicyPage({ onNavigate }) {
             Privacy Policy
           </TypewriterTitle>
           <p className="text-sm sm:text-base text-[#5C5852] font-light leading-relaxed">
-            Nirvana Group is committed to upholding strict confidentiality, digital data protection, and transparent advisory standards across all investor and client communications.
+            Nirvana Builders is committed to upholding strict confidentiality, digital data protection, and transparent advisory standards across all investor and client communications.
           </p>
         </div>
       </div>
@@ -86,13 +86,13 @@ export default function PrivacyPolicyPage({ onNavigate }) {
               For inquiries regarding personal data processing or to opt out of communications, contact our legal desk:
             </p>
             <div className="space-y-2 pt-1 text-xs">
-              <a href="mailto:contact@nirvana.group" className="flex items-center gap-2 text-[#171717] hover:text-[#B69B65] transition-colors truncate">
+              <a href="mailto:info@nirvanabuilders.in" className="flex items-center gap-2 text-[#171717] hover:text-[#B69B65] transition-colors truncate">
                 <Mail className="w-3.5 h-3.5 text-[#B69B65] shrink-0" />
-                <span className="truncate">contact@nirvana.group</span>
+                <span className="truncate">info@nirvanabuilders.in</span>
               </a>
-              <a href="tel:+917940007890" className="flex items-center gap-2 text-[#171717] hover:text-[#B69B65] transition-colors">
+              <a href="tel:8128266969" className="flex items-center gap-2 text-[#171717] hover:text-[#B69B65] transition-colors">
                 <Phone className="w-3.5 h-3.5 text-[#B69B65] shrink-0" />
-                <span>+91 79 4000 7890</span>
+                <span>+91 81282 66969</span>
               </a>
             </div>
           </div>
@@ -103,7 +103,7 @@ export default function PrivacyPolicyPage({ onNavigate }) {
         <div className="lg:col-span-8 bg-white border border-[#DEDAD2] p-8 sm:p-12 shadow-sm space-y-10 text-xs sm:text-sm text-[#3D3A35] leading-relaxed font-light">
           
           <div className="p-4 bg-[#FAF9F6] border border-[#DEDAD2] text-xs text-[#5C5852] font-sans">
-            <strong className="text-[#171717] font-semibold">Statutory Preamble:</strong> This Privacy Policy is subject to the terms of the Master Site Policy (User Agreement) of the NIRVANA GROUP digital platform.
+            <strong className="text-[#171717] font-semibold">Statutory Preamble:</strong> This Privacy Policy is subject to the terms of the Master Site Policy (User Agreement) of the NIRVANA BUILDERS digital platform.
           </div>
 
           {/* Clause 1 */}
@@ -112,7 +112,7 @@ export default function PrivacyPolicyPage({ onNavigate }) {
               1. Third Party Non-Disclosure Framework
             </h2>
             <p>
-              The personal information provided by clients and investors to NIRVANA GROUP will not be shared, rented, or distributed to non-affiliated third parties without the prior explicit consent of the concerned user. Non-personally identifiable statistical summaries of a general demographic nature may be utilized internally for architectural portfolio planning.
+              The personal information provided by clients and investors to NIRVANA BUILDERS will not be shared, rented, or distributed to non-affiliated third parties without the prior explicit consent of the concerned user. Non-personally identifiable statistical summaries of a general demographic nature may be utilized internally for architectural portfolio planning.
             </p>
           </section>
 
@@ -132,7 +132,7 @@ export default function PrivacyPolicyPage({ onNavigate }) {
               3. User Credentials & Financial Transaction Disclaimer
             </h2>
             <p>
-              Clients are solely responsible for maintaining the confidentiality of any access credentials, consultation portals, and personal transmission IDs. NIRVANA GROUP explicitly does not solicit banking passwords or debit/credit card CVV credentials over telephone or unencrypted channels.
+              Clients are solely responsible for maintaining the confidentiality of any access credentials, consultation portals, and personal transmission IDs. NIRVANA BUILDERS explicitly does not solicit banking passwords or debit/credit card CVV credentials over telephone or unencrypted channels.
             </p>
           </section>
 
@@ -165,7 +165,7 @@ export default function PrivacyPolicyPage({ onNavigate }) {
               6. Regulatory & Law Enforcement Cooperation
             </h2>
             <p>
-              All NIRVANA GROUP web properties operate in strict conformity with applicable Indian regulatory frameworks, including the Real Estate (Regulation and Development) Act (RERA) and the Information Technology Act. We cooperate fully with verified statutory authorities under lawful directives.
+              All NIRVANA BUILDERS web properties operate in strict conformity with applicable Indian regulatory frameworks, including the Real Estate (Regulation and Development) Act (RERA) and the Information Technology Act. We cooperate fully with verified statutory authorities under lawful directives.
             </p>
           </section>
 
@@ -175,7 +175,7 @@ export default function PrivacyPolicyPage({ onNavigate }) {
               7. Authenticity & Display Remarketing
             </h2>
             <p>
-              NIRVANA GROUP undertakes exhaustive verification of all architectural benchmarks, unit sizes, and corridor specifications published on this platform. Users may opt out of third-party analytics remarketing through Google Ads Preferences at any time.
+              NIRVANA BUILDERS undertakes exhaustive verification of all architectural benchmarks, unit sizes, and corridor specifications published on this platform. Users may opt out of third-party analytics remarketing through Google Ads Preferences at any time.
             </p>
           </section>
 

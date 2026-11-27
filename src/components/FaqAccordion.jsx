@@ -24,7 +24,7 @@ const FaqAccordion = () => {
           </TypewriterTitle>
           <div className="w-12 h-px bg-[#B69B65] mx-auto" />
           <p className="text-[#5C5852] text-sm sm:text-base font-light leading-relaxed">
-            Essential information regarding NIRVANA GROUP's development standards, acquisition procedures, and advisory framework in Gujarat.
+            Essential information regarding NIRVANA BUILDERS' development standards, acquisition procedures, and advisory framework in Gujarat.
           </p>
         </div>
 

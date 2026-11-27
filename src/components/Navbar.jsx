@@ -32,7 +32,7 @@ export default function Navbar({ currentPath, onNavigate }) {
             </div>
             <div className="flex flex-col">
               <span className="font-cinzel font-semibold text-base sm:text-lg tracking-[0.16em] uppercase text-[#171717] leading-tight group-hover:text-[#B69B65] transition-colors">
-                NIRVANA <span className="text-[#B69B65]">GROUP</span>
+                NIRVANA <span className="text-[#B69B65]">BUILDERS</span>
               </span>
               <span className="text-[9px] font-sans font-semibold text-[#77736C] tracking-[0.25em] block uppercase mt-0.5">
                 EST. 2026 • GUJARAT

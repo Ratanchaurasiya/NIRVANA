@@ -8,7 +8,7 @@
   --font-editorial: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
 }
 
-/* Nirvana Group - Timeless Luxury Architectural White Design System */
+/* Nirvana Builders - Timeless Luxury Architectural White Design System */
 html, body, #root {
   background-color: #FAF9F6 !important;
   color: #171717 !important;
@@ -213,3 +213,63 @@ html, body, #root {
 .shimmer-hover:hover::after {
   transform: translateX(100%);
 }
+
+/* Modal Stacking Architecture & Isolated Viewport Overlay */
+#modal-root {
+  position: relative;
+  z-index: 99999;
+}
+
+.modal-backdrop-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  background-color: rgba(0, 0, 0, 0.82);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
+  animation: modalOverlayFade 0.22s ease-out forwards;
+}
+
+@media (min-width: 640px) {
+  .modal-backdrop-overlay {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+.modal-dialog-container {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  box-sizing: border-box;
+  animation: modalContentZoom 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalOverlayFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalContentZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+

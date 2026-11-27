@@ -2,7 +2,7 @@ export const PROJECTS_LIST = [
   {
     id: "nirvana-abode",
     name: "Nirvana Abode",
-    developer: "Nirvana Group / Shiv Buildcon",
+    developer: "Nirvana Builders / Shiv Buildcon",
     subtitle: "2 & 3 BHK Contemporary Residences",
     location: "Jagatpur Rd, Near Godrej Garden City, Tragad (North-West), Ahmedabad",
     status: "Under Construction",
@@ -32,7 +32,7 @@ export const PROJECTS_LIST = [
   {
     id: "the-neemland",
     name: "The Neemland",
-    developer: "K3 / Nirvana Group",
+    developer: "K3 / Nirvana Builders",
     subtitle: "Premium Living & High-Street Retail",
     location: "Jagatpur (North-West), Ahmedabad",
     status: "Pre-Launch / New Launch",

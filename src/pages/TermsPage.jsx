@@ -43,7 +43,7 @@ export default function TermsPage({ onNavigate }) {
             Terms & Conditions
           </TypewriterTitle>
           <p className="text-sm sm:text-base text-[#5C5852] font-light leading-relaxed">
-            Please read these terms and conditions carefully before utilizing the Nirvana Group digital platform, scheduling site walkthroughs, or downloading official architectural dossiers.
+            Please read these terms and conditions carefully before utilizing the Nirvana Builders digital platform, scheduling site walkthroughs, or downloading official architectural dossiers.
           </p>
         </div>
       </div>
@@ -86,13 +86,13 @@ export default function TermsPage({ onNavigate }) {
               For legal inquiries regarding ownership agreements, RERA disclosures, or title clearances:
             </p>
             <div className="space-y-2 pt-1 text-xs">
-              <a href="mailto:contact@nirvana.group" className="flex items-center gap-2 text-[#171717] hover:text-[#B69B65] transition-colors truncate">
+              <a href="mailto:info@nirvanabuilders.in" className="flex items-center gap-2 text-[#171717] hover:text-[#B69B65] transition-colors truncate">
                 <Mail className="w-3.5 h-3.5 text-[#B69B65]" />
-                <span className="truncate">contact@nirvana.group</span>
+                <span className="truncate">info@nirvanabuilders.in</span>
               </a>
-              <a href="tel:+917940007890" className="flex items-center gap-2 text-[#171717] hover:text-[#B69B65] transition-colors">
+              <a href="tel:8128266969" className="flex items-center gap-2 text-[#171717] hover:text-[#B69B65] transition-colors">
                 <Phone className="w-3.5 h-3.5 text-[#B69B65]" />
-                <span>+91 79 4000 7890</span>
+                <span>+91 81282 66969</span>
               </a>
             </div>
           </div>
@@ -104,10 +104,10 @@ export default function TermsPage({ onNavigate }) {
           
           <div className="p-4 bg-[#FAF9F6] border border-[#DEDAD2] text-xs text-[#5C5852] font-sans space-y-1">
             <p>
-              By accessing and utilizing this digital platform, you acknowledge and agree to comply with and be bound by the following Terms & Conditions, which together with our Privacy Policy govern Nirvana Group's relationship with you.
+              By accessing and utilizing this digital platform, you acknowledge and agree to comply with and be bound by the following Terms & Conditions, which together with our Privacy Policy govern Nirvana Builders' relationship with you.
             </p>
             <p className="text-[#B69B65] font-semibold pt-1">
-              Entity Definition: "Nirvana Group", "us", or "we" refers to the registered corporate developer and holdings group based in Ahmedabad, Gujarat, India.
+              Entity Definition: "Nirvana Builders", "us", or "we" refers to the registered corporate developer and holdings group based in Ahmedabad, Gujarat, India.
             </p>
           </div>
 
@@ -127,7 +127,7 @@ export default function TermsPage({ onNavigate }) {
               2. Warranty & Accuracy Disclaimer
             </h2>
             <p>
-              Neither Nirvana Group nor any technical partner provides an unconditional warranty as to the exhaustive completeness or real-time inventory availability of units represented on this platform. Users are encouraged to execute physical site inspections and verify sanction files at our advisory boardroom.
+              Neither Nirvana Builders nor any technical partner provides an unconditional warranty as to the exhaustive completeness or real-time inventory availability of units represented on this platform. Users are encouraged to execute physical site inspections and verify sanction files at our advisory boardroom.
             </p>
           </section>
 
@@ -147,7 +147,7 @@ export default function TermsPage({ onNavigate }) {
               4. Copyright, Brand Marks & Intellectual Property
             </h2>
             <p>
-              All architectural blueprints, photographs, 3D renderings, written content, logos, and UI layout frameworks presented on this platform are owned by or licensed to NIRVANA GROUP. Unauthorized reproduction or scraping for commercial distribution is strictly prohibited.
+              All architectural blueprints, photographs, 3D renderings, written content, logos, and UI layout frameworks presented on this platform are owned by or licensed to NIRVANA BUILDERS. Unauthorized reproduction or scraping for commercial distribution is strictly prohibited.
             </p>
           </section>
 

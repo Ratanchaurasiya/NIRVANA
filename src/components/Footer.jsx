@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building2, Phone, Mail, MapPin, ArrowUp, ShieldCheck } from 'lucide-react';
+import { Building2, Phone, Mail, MapPin, ArrowUp, ShieldCheck, MessageCircle } from 'lucide-react';
 import InstagramIcon from './icons/InstagramIcon';
 
 export default function Footer({ onNavigate }) {
@@ -20,7 +20,7 @@ export default function Footer({ onNavigate }) {
               </div>
               <div className="flex flex-col">
                 <span className="font-cinzel font-bold text-xl sm:text-2xl tracking-[0.06em] uppercase text-[#F5F1E8] leading-tight">
-                  NIRVANA <span className="text-[#B69B65]">GROUP</span>
+                  NIRVANA <span className="text-[#B69B65]">BUILDERS</span>
                 </span>
                 <span className="text-[11px] font-editorial italic text-[#A39F97] tracking-wider mt-0.5">
                   Building Dreams. Creating Landmarks.
@@ -29,7 +29,7 @@ export default function Footer({ onNavigate }) {
             </div>
 
             <p className="text-xs sm:text-sm text-[#A39F97] font-light leading-relaxed max-w-md">
-              A premier property development group and real estate holding company. Engineering Grade-A commercial office environments and luxury residential estates across Gujarat.
+              A premier property development company and real estate holding firm. Engineering Grade-A commercial office environments and luxury residential estates across Gujarat.
             </p>
 
             <div className="pt-2 flex items-center gap-3">
@@ -81,25 +81,36 @@ export default function Footer({ onNavigate }) {
 
               <div className="flex items-center gap-3 text-[#A39F97]">
                 <Phone className="w-4 h-4 text-[#B69B65] shrink-0" />
-                <a href="tel:+917940007890" className="hover:text-[#F5F1E8] transition-colors">
-                  +91 79 4000 7890
+                <a href="tel:8128266969" className="hover:text-[#F5F1E8] transition-colors">
+                  +91 81282 66969
                 </a>
               </div>
 
               <div className="flex items-center gap-3 text-[#A39F97]">
                 <Mail className="w-4 h-4 text-[#B69B65] shrink-0" />
-                <a href="mailto:contact@nirvana.group" className="hover:text-[#F5F1E8] transition-colors truncate">
-                  contact@nirvana.group
+                <a href="mailto:info@nirvanabuilders.in" className="hover:text-[#F5F1E8] transition-colors truncate">
+                  info@nirvanabuilders.in
                 </a>
               </div>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-2 flex flex-wrap items-center gap-2.5">
+              <a
+                href="https://wa.me/918128266969"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-3 py-2 bg-[#1F1F1F] border border-[#2E2E2E] hover:border-[#B69B65] text-xs font-mono uppercase tracking-[0.14em] text-[#F5F1E8] hover:text-[#B69B65] transition-all group"
+              >
+                <MessageCircle className="w-4 h-4 text-[#B69B65] group-hover:scale-110 transition-transform" />
+                <span>WhatsApp</span>
+                <span className="text-[#B69B65]">↗</span>
+              </a>
+
               <a
                 href="https://www.instagram.com/nirvana.group._/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-3 py-2 bg-[#1F1F1F] border border-[#2E2E2E] hover:border-[#B69B65] text-xs font-mono uppercase tracking-[0.14em] text-[#F5F1E8] hover:text-[#B69B65] transition-all group"
+                className="inline-flex items-center gap-2 px-3 py-2 bg-[#1F1F1F] border border-[#2E2E2E] hover:border-[#B69B65] text-xs font-mono uppercase tracking-[0.14em] text-[#F5F1E8] hover:text-[#B69B65] transition-all group"
               >
                 <InstagramIcon className="w-4 h-4 text-[#B69B65] group-hover:scale-110 transition-transform" />
                 <span>@nirvana.group._</span>
@@ -112,7 +123,7 @@ export default function Footer({ onNavigate }) {
 
         {/* Bottom Legal & Back to Top Bar */}
         <div className="pt-8 border-t border-[#2E2E2E] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#77736C]">
-          <p>© 2026 NIRVANA GROUP. All rights reserved. RERA Gujarat Compliant.</p>
+          <p>© 2026 NIRVANA BUILDERS. All rights reserved. RERA Gujarat Compliant.</p>
 
           <button
             onClick={scrollToTop}

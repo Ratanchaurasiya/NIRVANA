@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { TOP_PROJECTS_DATA } from '../data/propertyData';
 import { 
   Building2, MapPin, ShieldCheck, X, Calendar, 
@@ -15,6 +16,26 @@ const TopProjectsShowcase = ({ onShowToast }) => {
   // Compare checkboxes (default 2 projects selected for comparison)
   const [selectedCompareIds, setSelectedCompareIds] = useState(['nb-legacy-tower', 'harmony-harikesh']);
   const [showCompareModal, setShowCompareModal] = useState(false);
+
+  const hasAnyModalOpen = Boolean(showCompareModal || bookingProject || selectedProjectModal);
+
+  useEffect(() => {
+    if (!hasAnyModalOpen) return;
+    const orig = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const onKey = (e) => {
+      if (e.key === 'Escape') {
+        setShowCompareModal(false);
+        setBookingProject(null);
+        setSelectedProjectModal(null);
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = orig;
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [hasAnyModalOpen]);
 
   const activeProject = TOP_PROJECTS_DATA.find((p) => p.id === activeTabId) || TOP_PROJECTS_DATA[0];
 
@@ -334,18 +355,28 @@ const TopProjectsShowcase = ({ onShowToast }) => {
       </div>
 
       {/* ----------------- SIDE-BY-SIDE COMPARISON MODAL ----------------- */}
-      {showCompareModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm animate-fadeIn">
-          <div className="bg-white max-w-4xl w-full p-6 sm:p-8 border border-[#E6E2D8] shadow-2xl relative space-y-6 max-h-[90vh] overflow-y-auto">
+      {showCompareModal && typeof document !== 'undefined' && createPortal(
+        <div
+          className="modal-backdrop-overlay"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setShowCompareModal(false);
+          }}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="modal-dialog-container max-w-4xl bg-white p-6 sm:p-8 border border-[#E6E2D8] shadow-2xl relative space-y-6 max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
             
             <button
               onClick={() => setShowCompareModal(false)}
-              className="absolute top-5 right-5 p-2 bg-[#FAF9F6] border border-[#E6E2D8] text-[#5C5852] hover:text-[#171717] transition-colors cursor-pointer"
+              className="absolute top-5 right-5 p-2 bg-[#FAF9F6] border border-[#E6E2D8] text-[#5C5852] hover:text-[#171717] hover:border-[#B69B65] transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <div className="border-b border-[#E6E2D8] pb-4">
+            <div className="border-b border-[#E6E2D8] pb-4 pr-10">
               <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#B69B65] font-semibold">SIDE-BY-SIDE COMPARISON</span>
               <h3 className="text-2xl font-serif font-bold text-[#171717] mt-1">Landmark Projects Matrix</h3>
             </div>
@@ -397,22 +428,36 @@ const TopProjectsShowcase = ({ onShowToast }) => {
             </div>
 
           </div>
-        </div>
+        </div>,
+        document.getElementById('modal-root') || document.body
       )}
 
       {/* ----------------- SITE VISIT BOOKING MODAL ----------------- */}
-      {bookingProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm animate-fadeIn">
-          <div className="bg-white max-w-md w-full p-6 sm:p-8 border border-[#E6E2D8] shadow-2xl relative space-y-6">
+      {bookingProject && typeof document !== 'undefined' && createPortal(
+        <div
+          className="modal-backdrop-overlay"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setBookingProject(null);
+              setBookingSuccess(false);
+            }
+          }}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="modal-dialog-container max-w-md bg-white p-6 sm:p-8 border border-[#E6E2D8] shadow-2xl relative space-y-6 max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
             
             <button
               onClick={() => { setBookingProject(null); setBookingSuccess(false); }}
-              className="absolute top-5 right-5 p-2 bg-[#FAF9F6] border border-[#E6E2D8] text-[#5C5852] hover:text-[#171717] transition-colors cursor-pointer"
+              className="absolute top-5 right-5 p-2 bg-[#FAF9F6] border border-[#E6E2D8] text-[#5C5852] hover:text-[#171717] hover:border-[#B69B65] transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <div className="border-b border-[#E6E2D8] pb-4">
+            <div className="border-b border-[#E6E2D8] pb-4 pr-10">
               <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#B69B65] font-semibold">SCHEDULE SITE VISIT</span>
               <h3 className="text-xl font-serif font-bold text-[#171717] mt-1">{bookingProject.name}</h3>
               <p className="text-xs text-[#5C5852] mt-0.5">{bookingProject.location} • {bookingProject.config}</p>
@@ -466,7 +511,7 @@ const TopProjectsShowcase = ({ onShowToast }) => {
                 </p>
                 <button
                   onClick={() => { setBookingProject(null); setBookingSuccess(false); }}
-                  className="px-6 py-2.5 bg-[#2E2E2E] text-xs text-[#171717] hover:bg-[#3E3E3E] cursor-pointer"
+                  className="px-6 py-2.5 bg-[#2E2E2E] text-xs text-white hover:bg-[#3E3E3E] cursor-pointer"
                 >
                   Close Window
                 </button>
@@ -474,17 +519,28 @@ const TopProjectsShowcase = ({ onShowToast }) => {
             )}
 
           </div>
-        </div>
+        </div>,
+        document.getElementById('modal-root') || document.body
       )}
 
       {/* ----------------- PROJECT DETAIL MODAL ----------------- */}
-      {selectedProjectModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm animate-fadeIn">
-          <div className="bg-white max-w-2xl w-full p-6 sm:p-8 border border-[#E6E2D8] shadow-2xl relative space-y-6 max-h-[90vh] overflow-y-auto">
+      {selectedProjectModal && typeof document !== 'undefined' && createPortal(
+        <div
+          className="modal-backdrop-overlay"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setSelectedProjectModal(null);
+          }}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="modal-dialog-container max-w-2xl bg-white p-6 sm:p-8 border border-[#E6E2D8] shadow-2xl relative space-y-6 max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
             
             <button
               onClick={() => setSelectedProjectModal(null)}
-              className="absolute top-5 right-5 p-2 bg-[#FAF9F6] border border-[#E6E2D8] text-[#5C5852] hover:text-[#171717] transition-colors cursor-pointer"
+              className="absolute top-5 right-5 p-2 bg-[#FAF9F6] border border-[#E6E2D8] text-[#5C5852] hover:text-[#171717] hover:border-[#B69B65] transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
@@ -545,7 +601,8 @@ const TopProjectsShowcase = ({ onShowToast }) => {
             </div>
 
           </div>
-        </div>
+        </div>,
+        document.getElementById('modal-root') || document.body
       )}
 
     </section>

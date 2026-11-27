@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { X, FileText, Download, ShieldCheck, CheckCircle2, Lock } from 'lucide-react';
 
 export default function ConfidentialDossierModal({ isOpen, onClose, onShowToast }) {
@@ -10,6 +11,27 @@ export default function ConfidentialDossierModal({ isOpen, onClose, onShowToast 
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+
+  // Lock body scroll and handle Escape key while modal is open
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -29,7 +51,7 @@ export default function ConfidentialDossierModal({ isOpen, onClose, onShowToast 
   const handleDownloadSimulated = () => {
     const blob = new Blob(
       [
-        `NIRVANA GROUP - CONFIDENTIAL PROJECT DOSSIER\n\n` +
+        `NIRVANA BUILDERS - CONFIDENTIAL PROJECT DOSSIER\n\n` +
         `Project: ${formData.project}\n` +
         `Prepared For: ${formData.name}\n` +
         `Contact: ${formData.phone}\n` +
@@ -39,27 +61,40 @@ export default function ConfidentialDossierModal({ isOpen, onClose, onShowToast 
         `- Structural RERA Compliance Documentation\n` +
         `- Material Craftsmanship & Finishing Specifications\n` +
         `- Private Concierge & Amenity Access Guide\n\n` +
-        `All rights reserved © 2026 NIRVANA GROUP. Building Dreams. Creating Landmarks.`
+        `All rights reserved © 2026 NIRVANA BUILDERS. Building Dreams. Creating Landmarks.`
       ],
       { type: 'text/plain;charset=utf-8' }
     );
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `Nirvana_Group_Dossier_${formData.project.replace(/\s+/g, '_')}.txt`;
+    a.download = `Nirvana_Builders_Dossier_${formData.project.replace(/\s+/g, '_')}.txt`;
     a.click();
     URL.revokeObjectURL(url);
   };
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm animate-fadeIn">
-      <div className="bg-white max-w-lg w-full p-6 sm:p-8 border border-[#E6E2D8] shadow-2xl relative space-y-6">
+  const modalContent = (
+    <div
+      className="modal-backdrop-overlay"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) {
+          onClose();
+        }
+      }}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="dossier-modal-title"
+    >
+      <div
+        className="modal-dialog-container max-w-lg bg-white p-6 sm:p-8 border border-[#E6E2D8] shadow-2xl relative space-y-6 max-h-[90vh] overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
         
         {/* Close Button */}
         <button
           onClick={onClose}
           type="button"
-          className="absolute top-5 right-5 p-2 bg-[#FAF9F6] border border-[#E6E2D8] text-[#5C5852] hover:text-[#171717] transition-colors cursor-pointer"
+          className="absolute top-5 right-5 p-2 bg-[#FAF9F6] border border-[#E6E2D8] text-[#5C5852] hover:text-[#171717] hover:border-[#B69B65] transition-colors cursor-pointer"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
@@ -68,12 +103,12 @@ export default function ConfidentialDossierModal({ isOpen, onClose, onShowToast 
         {!isSuccess ? (
           <div className="space-y-5">
             {/* Modal Header */}
-            <div className="space-y-2">
+            <div className="space-y-2 pr-10">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#FAF9F6] border border-[#E6E2D8] text-[#B69B65] text-[11px] font-mono uppercase tracking-wider">
                 <Lock className="w-3 h-3 text-[#B69B65]" />
                 <span>CONFIDENTIAL ARCHITECTURAL ACCESS</span>
               </div>
-              <h3 className="text-2xl font-serif font-bold text-[#171717]">
+              <h3 id="dossier-modal-title" className="text-2xl font-serif font-bold text-[#171717]">
                 Download Project Dossier
               </h3>
               <p className="text-xs text-[#5C5852] font-light leading-relaxed">
@@ -192,4 +227,7 @@ export default function ConfidentialDossierModal({ isOpen, onClose, onShowToast 
       </div>
     </div>
   );
+
+  const modalRoot = typeof document !== 'undefined' ? (document.getElementById('modal-root') || document.body) : null;
+  return modalRoot ? createPortal(modalContent, modalRoot) : modalContent;
 }

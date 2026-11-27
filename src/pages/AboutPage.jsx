@@ -18,7 +18,7 @@ export default function AboutPage({ onNavigate }) {
           as="h1"
           className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171717] tracking-tight block"
         >
-          About <span className="text-[#B69B65]">NIRVANA GROUP</span>
+          About <span className="text-[#B69B65]">NIRVANA BUILDERS</span>
         </TypewriterTitle>
         <div className="w-12 h-px bg-[#B69B65]/40 mx-auto" />
       </div>
@@ -32,7 +32,7 @@ export default function AboutPage({ onNavigate }) {
             </div>
             
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#171717] leading-snug">
-              "Nirvana Group is a premier real estate development group specializing in Grade-A commercial and residential property engineering based in Gujarat."
+              "Nirvana Builders is a premier real estate development group specializing in Grade-A commercial and residential property engineering based in Gujarat."
             </h2>
 
             <p className="text-sm sm:text-base text-[#5C5852] font-light leading-relaxed max-w-2xl mx-auto">

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import LocalizationMap3D from '../components/3d/LocalizationMap3D';
 import ContactSection from '../components/ContactSection';
-import { Phone, Mail, MapPin, Clock, Send, Sparkles, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, Sparkles, CheckCircle2, ShieldCheck, MessageCircle } from 'lucide-react';
 import InstagramIcon from '../components/icons/InstagramIcon';
 import TypewriterTitle from '../components/TypewriterTitle';
 import ScrollReveal from '../components/ScrollReveal';
@@ -20,7 +20,7 @@ export default function ContactPage({ onShowToast }) {
     e.preventDefault();
     setSubmitted(true);
     if (onShowToast) {
-      onShowToast('Inquiry received. Nirvana Group advisory desk will connect shortly.');
+      onShowToast('Inquiry received. Nirvana Builders advisory desk will connect shortly.');
     }
   };
 
@@ -33,7 +33,7 @@ export default function ContactPage({ onShowToast }) {
           as="h1"
           className="text-3xl sm:text-4xl lg:text-5xl font-cinzel font-bold text-[#171717] tracking-tight block"
         >
-          Connect With <span className="text-[#B69B65]">NIRVANA GROUP</span>
+          Connect With <span className="text-[#B69B65]">NIRVANA BUILDERS</span>
         </TypewriterTitle>
         <div className="w-12 h-px bg-[#B69B65]/40 mx-auto" />
         <p className="text-[#5C5852] text-sm sm:text-base font-light leading-relaxed">
@@ -66,7 +66,7 @@ export default function ContactPage({ onShowToast }) {
           <div className="bg-white p-8 border border-[#DEDAD2] shadow-sm space-y-6">
             <div>
               <span className="text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-[#B69B65]">CORPORATE HEADQUARTERS</span>
-              <h3 className="text-2xl font-cinzel font-bold text-[#171717] mt-1">NIRVANA GROUP</h3>
+              <h3 className="text-2xl font-cinzel font-bold text-[#171717] mt-1">NIRVANA BUILDERS</h3>
               <p className="text-xs text-[#5C5852] mt-1">Real Estate Development & Asset Management</p>
             </div>
 
@@ -84,8 +84,8 @@ export default function ContactPage({ onShowToast }) {
 
               <div className="p-4 bg-[#FAF9F6] border border-[#DEDAD2] space-y-1">
                 <span className="text-[10px] font-sans font-semibold text-[#77736C] uppercase tracking-wider block">Advisory Desk</span>
-                <a href="tel:+917940007890" className="text-sm font-semibold text-[#171717] hover:text-[#B69B65] transition-colors block">
-                  +91 79 4000 7890
+                <a href="tel:8128266969" className="text-sm font-semibold text-[#171717] hover:text-[#B69B65] transition-colors block">
+                  +91 81282 66969
                 </a>
                 <p className="text-[11px] text-[#5C5852]">
                   Monday to Saturday: 10:00 AM – 7:00 PM
@@ -94,11 +94,28 @@ export default function ContactPage({ onShowToast }) {
 
               <div className="p-4 bg-[#FAF9F6] border border-[#DEDAD2] space-y-1">
                 <span className="text-[10px] font-sans font-semibold text-[#77736C] uppercase tracking-wider block">Corporate Correspondence</span>
-                <a href="mailto:contact@nirvana.group" className="text-sm font-semibold text-[#171717] hover:text-[#B69B65] transition-colors block truncate">
-                  contact@nirvana.group
+                <a href="mailto:info@nirvanabuilders.in" className="text-sm font-semibold text-[#171717] hover:text-[#B69B65] transition-colors block truncate">
+                  info@nirvanabuilders.in
                 </a>
                 <p className="text-[11px] text-[#5C5852]">
                   Direct client & investor communications
+                </p>
+              </div>
+
+              <div className="p-4 bg-[#FAF9F6] border border-[#DEDAD2] space-y-1">
+                <span className="text-[10px] font-sans font-semibold text-[#77736C] uppercase tracking-wider block">Direct WhatsApp</span>
+                <a 
+                  href="https://wa.me/918128266969" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#171717] hover:text-[#B69B65] transition-colors"
+                >
+                  <MessageCircle className="w-3.5 h-3.5 text-[#B69B65]" />
+                  <span>Connect via WhatsApp</span>
+                  <span className="text-[#B69B65] text-xs">↗</span>
+                </a>
+                <p className="text-[11px] text-[#5C5852]">
+                  Instant advisory & site walkthrough bookings
                 </p>
               </div>
 
@@ -215,7 +232,7 @@ export default function ContactPage({ onShowToast }) {
                 </div>
                 <h4 className="text-xl font-serif font-bold text-[#171717]">Inquiry Registered Successfully</h4>
                 <p className="text-xs text-[#5C5852]">
-                  Thank you. Your consultation parameters have been received by the NIRVANA GROUP advisory desk.
+                  Thank you. Your consultation parameters have been received by the NIRVANA BUILDERS advisory desk.
                 </p>
               </div>
             )}

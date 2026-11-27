@@ -1,16 +1,17 @@
-# NIRVANA GROUP
+# NIRVANA BUILDERS
 
 > **"Building Dreams. Creating Landmarks."**  
 > Premium Real Estate | Architecture | Construction | Property Development
 
-Official Website: [https://nirvana.group](https://nirvana.group)  
+Official Website: [https://nirvanabuilders.in](https://nirvanabuilders.in)  
+Contact: +91 81282 66969 | info@nirvanabuilders.in  
 Official Instagram: [https://www.instagram.com/nirvana.group._/](https://www.instagram.com/nirvana.group._/)
 
 ---
 
 ## 🌟 Overview
 
-**NIRVANA GROUP** is a world-class real estate development and investment holding company delivering Grade-A commercial office environments and luxury residential estates across Gujarat's prime growth corridors (Science City, Sola, SG Highway, Ahmedabad).
+**NIRVANA BUILDERS** is a world-class real estate development and investment holding company delivering Grade-A commercial office environments and luxury residential estates across Gujarat's prime growth corridors (Science City, Sola, SG Highway, Ahmedabad).
 
 This repository features both:
 1. **Modern Frontend App**: React 19, Tailwind CSS v4, Lucide Icons, Three.js 3D interactive wireframes, and responsive luxury UI.
@@ -50,4 +51,4 @@ npm run build
 ---
 
 ## 📄 License
-Proprietary & Confidential - © 2026 NIRVANA GROUP. All Rights Reserved.
+Proprietary & Confidential - © 2026 NIRVANA BUILDERS. All Rights Reserved.
